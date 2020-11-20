@@ -28,11 +28,11 @@ return(
         </div>
     </div>
     <div className="row">
-    <div className="col-xl-3 col-lg-3 col-md-3">
+    {/* <div className="col-xl-3 col-lg-3 col-md-3">
     <StyledSectionLink to ="/">
 
     </StyledSectionLink>
-    </div>
+    </div> */}
     </div>
     </Container>
     </React.Fragment>
@@ -75,6 +75,7 @@ color:var(--maiinBlack)
 
 `
 
-const StyledSectionLink =styled(Link) `
-
-`
+// const StyledSectionLink =styled(Link) `
+// width:268px;
+// height:24px;
+// `
