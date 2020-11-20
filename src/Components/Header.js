@@ -63,7 +63,7 @@ const NavWrapper = styled.div`
 `;
 const Container = styled.div`
   @media (min-width: 1200px) {
-    width: 1200px;
+    width: 1012px;
     margin: auto;
   }
 `;
