@@ -9,6 +9,16 @@ export default function BannerSection() {
     const ScrolltoMarketPlace = () => {
         animateScrollTo(450);
       };
+      const ScrolltoInternationalPayment = () => {
+        animateScrollTo(1970);
+      };
+      const ScrolltoLogistics = () => {
+        animateScrollTo(2830);
+      };
+      const ScrolltoFinance = () => {
+        animateScrollTo(3380);
+      };
+      
   return (
     <React.Fragment>
       <Container>
@@ -31,11 +41,11 @@ export default function BannerSection() {
         <ButtonSection>
           <StyledSectionButton onClick={ScrolltoMarketPlace}>CROSSBORDER MARKETPLACE</StyledSectionButton>
 
-          <StyledSectionButton>INTERNATIONAL PAYMENT</StyledSectionButton>
+          <StyledSectionButton onClick={ScrolltoInternationalPayment}>INTERNATIONAL PAYMENT</StyledSectionButton>
 
-          <StyledSectionButton>OVERSEAS LOGISTICS</StyledSectionButton>
+          <StyledSectionButton onClick={ScrolltoLogistics}>OVERSEAS LOGISTICS</StyledSectionButton>
 
-          <StyledSectionButton>FINANCIAL TOOLS</StyledSectionButton>
+          <StyledSectionButton onClick={ScrolltoFinance}>FINANCIAL TOOLS</StyledSectionButton>
         </ButtonSection>
         <DividerContainer>
           <Line />
@@ -89,6 +99,15 @@ const StyledSectionButton = styled.button`
   line-height: 24px;
   border: 1px solid var(--mainBlue);
   padding: 8px 16px 8px 16px;
+  background-color:transparent;
+  :focus{
+    border:1px solid var(--mainBlue);
+    outline:0;
+  }
+  :hover{
+    background-color:var(--mainBlue);
+    color:white;
+  }
 `;
 const ButtonSection = styled.div`
   display: flex;
@@ -117,4 +136,9 @@ const DividerButton = styled.a`
   padding: 5px 18px 5px 18px;
   background-color: var(--mainGreen);
   color: var(--mainWhite);
+  :hover{
+    text-decoration:none;
+    background-color:var(--mainGreen);
+    color:black;
+  }
 `;
