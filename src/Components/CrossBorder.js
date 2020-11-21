@@ -73,7 +73,7 @@ export default function CrossBorder() {
             </div>
           </div>
         </TickSection>
-        <ActionButton href="">SEE IN ACTION</ActionButton>
+        <ActionButton href="https://app.digitrad.world">SEE IN ACTION</ActionButton>
         <LineEnding />
       </Container>
     </React.Fragment>
@@ -207,7 +207,7 @@ const ActionButton = styled.a`
   line-height: 24px;
   justify-content: center;
   margin: auto;
-  
+
 `;
 const LineEnding = styled.hr`
   width: 974px;
