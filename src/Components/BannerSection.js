@@ -2,9 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import FreightShip from "../assets/ship.png";
+import animateScrollTo from "animated-scroll-to";
 // import { HashLink as Link } from "react-router-hash-link";
 
 export default function BannerSection() {
+    const ScrolltoMarketPlace = () => {
+        animateScrollTo(450);
+      };
   return (
     <React.Fragment>
       <Container>
@@ -25,13 +29,13 @@ export default function BannerSection() {
           </div>
         </div>
         <ButtonSection>
-          <StyledSectionLink>CROSSBORDER MARKETPLACE</StyledSectionLink>
+          <StyledSectionButton onClick={ScrolltoMarketPlace}>CROSSBORDER MARKETPLACE</StyledSectionButton>
 
-          <StyledSectionLink>INTERNATIONAL PAYMENT</StyledSectionLink>
+          <StyledSectionButton>INTERNATIONAL PAYMENT</StyledSectionButton>
 
-          <StyledSectionLink>OVERSEAS LOGISTICS</StyledSectionLink>
+          <StyledSectionButton>OVERSEAS LOGISTICS</StyledSectionButton>
 
-          <StyledSectionLink>FINANCIAL TOOLS</StyledSectionLink>
+          <StyledSectionButton>FINANCIAL TOOLS</StyledSectionButton>
         </ButtonSection>
         <DividerContainer>
           <Line />
@@ -75,7 +79,7 @@ const EnglishBannerText = styled.div`
   color: var(--mainBlack);
 `;
 
-const StyledSectionLink = styled.button`
+const StyledSectionButton = styled.button`
   display: flex;
   align-items: center;
   height: 40px;
