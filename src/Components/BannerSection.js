@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import FreightShip from "../assets/ship.png";
-import { HashLink as Link } from "react-router-hash-link";
+// import { HashLink as Link } from "react-router-hash-link";
 
 export default function BannerSection() {
   return (

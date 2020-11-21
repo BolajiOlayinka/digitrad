@@ -21,6 +21,7 @@ export default function Header() {
   };
 
   window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", fixedScroll);
   return (
     <React.Fragment>
       <NavWrapper background={background} fixed={fixed}>
@@ -31,13 +32,13 @@ export default function Header() {
             </IconSection>
             <ItemsContainer>
               <NavItems>
-                <a href="">ニュース</a>
+                <a href="https://app.digitrad.world/">ニュース</a>
               </NavItems>
               <NavItems>
-                <a href="">お問い合わせ</a>
+                <a href="https://app.digitrad.world/">お問い合わせ</a>
               </NavItems>
               <NavItems>
-                <a href="">ABOUT</a>
+                <a href="https://app.digitrad.world/">ABOUT</a>
               </NavItems>
             </ItemsContainer>
           </LargeNav>

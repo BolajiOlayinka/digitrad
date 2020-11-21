@@ -207,6 +207,7 @@ const ActionButton = styled.a`
   line-height: 24px;
   justify-content: center;
   margin: auto;
+  
 `;
 const LineEnding = styled.hr`
   width: 974px;
