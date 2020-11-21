@@ -5,6 +5,7 @@ import Facebook from "../assets/facebook.png";
 import Instagram from "../assets/instagram.png";
 import Linkedin from "../assets/linkedin.png";
 import Twitter from "../assets/twitter.png";
+import {Link} from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -14,7 +15,7 @@ export default function Footer() {
             
             <FooterLeft>
             <div>DiGiTRAD is a registered trademark and product by STANDAGE, Inc</div>
-            <div>Privacy Policy</div>
+            <Link to ="/">Privacy Policy</Link>
             </FooterLeft>
             <FooterRight>
                <IconContainer>
@@ -38,6 +39,8 @@ height: 86px;
 display:flex;
 `
 const FooterContainer = styled.div `
+padding-left:20px;
+padding-right:20px;
 @media(min-width:1200px){
     width:1200px;
     margin:auto;
@@ -56,6 +59,10 @@ div:nth-child(1) {
 border-right:1px solid white;
 padding-right:10px;
 margin-right:10px;
+}
+a{
+    color:white;
+    text-decoration:none;  
 }
 `
 const FooterRight = styled.div `
