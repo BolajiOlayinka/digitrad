@@ -9,7 +9,7 @@ export default function Header() {
     if (window.pageYOffset > 0) {
       setBackground("rgba(0, 0, 0, 0.8)");
     } else {
-      setBackground("black");
+      setBackground("transparent");
     }
   };
   const fixedScroll = () => {
@@ -69,16 +69,16 @@ const Container = styled.div`
 `;
 
 const IconSection = styled.div`
-height:45px;
-img{
-    width:45px;
-    height:45px;
-}
+  height: 45px;
+  img {
+    width: 45px;
+    height: 45px;
+  }
 `;
 const LargeNav = styled.div`
   display: flex;
-  padding-top:25px;
-  padding-bottom:19px;
+  padding-top: 25px;
+  padding-bottom: 19px;
   @media (max-width: 768px) {
     display: none;
   }
@@ -86,7 +86,7 @@ const LargeNav = styled.div`
 const ItemsContainer = styled.div`
   margin-left: auto;
   display: flex;
-  align-items:center;
+  align-items: center;
 `;
 const NavItems = styled.div`
   display: flex;
@@ -97,7 +97,6 @@ const NavItems = styled.div`
     width: 113px;
     a {
       width: 72px;
-      
     }
   }
   :nth-child(2) {
@@ -119,9 +118,9 @@ const NavItems = styled.div`
     font-weight: 400;
     line-height: 24.52px;
     height: 25px;
-    text-decoration:none;
-    :hover{
-        text-decoration:none;
+    text-decoration: none;
+    :hover {
+      text-decoration: none;
     }
   }
 `;

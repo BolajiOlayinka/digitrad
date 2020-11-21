@@ -98,7 +98,6 @@ const DividerContainer = styled.div`
   width: 974px;
   margin: auto;
   text-align: center;
-  padding-bottom: 20px;
 `;
 const Line = styled.hr`
   border: 1px solid var(--mainGreen);
