@@ -60,8 +60,16 @@ margin-right:10px;
 `
 const FooterRight = styled.div `
 display:flex;
+margin-left:auto;
 `
 const IconContainer= styled.div `
 display:flex;
 width:192px;
+height:24px;
+justify-content:space-between;
+img{
+    width:24px;
+    height:24px;
+    
+}
 `
