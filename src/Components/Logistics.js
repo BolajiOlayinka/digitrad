@@ -5,6 +5,7 @@ import DT from "../assets/DT.png";
 export default function Logistics() {
   return (
     <React.Fragment>
+    <Container>
       <DTSection>
         <img src={DT} alt="Icon" />
       </DTSection>
@@ -26,11 +27,14 @@ export default function Logistics() {
         <ActionButton href="https://app.digitrad.world">LEARN MORE</ActionButton>
       <LineEnding />
       </Wrapper>
-      
+      </Container>
     </React.Fragment>
   );
 }
-
+const Container = styled.div `
+width:1200px;
+margin:auto;
+`
 const Wrapper = styled.div`
 @media(min-width:1200px){
     width: 1034px;
@@ -74,6 +78,7 @@ const RightSection = styled.div`
   font-weight: 300;
   font-size: 26px;
   line-height: 45px;
+  margin-left:auto;
 `;
 const ActionButton = styled.a`
   width: 244px;
