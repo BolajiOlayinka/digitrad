@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PaymentImage from "../assets/paymentimage.png";
+import Calculator from './Calc';
 
 export default function Payment() {
   return (
@@ -15,7 +16,11 @@ export default function Payment() {
           </TextBody>
         </LeftWrapper>
 
-        <RightWrapper></RightWrapper>
+        <RightWrapper>
+        <div>
+          <Calculator/>
+          </div>
+        </RightWrapper>
       </StyledWrapper>
       <ActionButton href="https://app.digitrad.world">LEARN MORE</ActionButton>
       <LineEnding />
@@ -33,6 +38,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   margin-top:40px;
   margin-bottom:100px;
+
 `;
 const LeftWrapper = styled.div`
   padding-left: 60px;
@@ -42,6 +48,9 @@ const RightWrapper = styled.div`
   background-color: var(--mainBlue);
   width: 650px;
   height: 550px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
 `;
 const Title = styled.div`
   font-weight: 300;
