@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-// import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faWallet } from "@fortawesome/free-solid-svg-icons";
+// import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
+// import { faCoins } from "@fortawesome/free-solid-svg-icons";
+// import { faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons";
+import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+// import { faWallet } from "@fortawesome/free-solid-svg-icons";
 import ngnflag from "../assets/flags/nigeria.svg";
 
 import jpyflag from "../assets/flags/japan.svg";
@@ -371,8 +376,10 @@ export default class Calc extends Component {
           isOpen={this.state.modalone}
           toggle={this.toggleModalOne}
         >
-          <ModalHeader toggle={this.toggleModalOne}></ModalHeader>
-          <ModalBody>
+          <StyledModalHeader toggle={this.toggleModalOne}>
+            Available Currencies
+          </StyledModalHeader>
+          <StyledModalBody>
             <ul>
               <li
                 onClick={() => {
@@ -420,7 +427,7 @@ export default class Calc extends Component {
                 USD United States Dollar
               </li>
             </ul>
-          </ModalBody>
+          </StyledModalBody>
         </CurrencyModal>
 
         <RatesSection>
@@ -429,18 +436,28 @@ export default class Calc extends Component {
           </LineSection>
 
           <FixedRates className="my-auto">
-            <div style={{ display: "flex" }}>
+            <RatesItemsWrapper>
+            <IconContainer>
+            <StyledLineIcons icon={faCheck} />
+            </IconContainer>
+            
               <Amount>780,000</Amount>
               <AmountDesc>Transfer rate (Fixed)</AmountDesc>
-            </div>
-            <div style={{ display: "flex" }}>
+            </RatesItemsWrapper>
+            <RatesItemsWrapper>
+            <IconContainer>
+            <StyledLineIcons icon={faWallet} />
+            </IconContainer>
               <Amount>980,000</Amount>
               <AmountDesc>Amount We will convert</AmountDesc>
-            </div>
-            <div style={{ display: "flex" }}>
+            </RatesItemsWrapper>
+            <RatesItemsWrapper>
+            <IconContainer>
+            <StyledLineIcons icon={faExchangeAlt} />
+            </IconContainer>
               <Amount>{this.state.realtimePrice}</Amount>
               <AmountDesc>Guaranteed Rates (10 mins)</AmountDesc>
-            </div>
+            </RatesItemsWrapper>
           </FixedRates>
         </RatesSection>
 
@@ -467,8 +484,10 @@ export default class Calc extends Component {
           isOpen={this.state.modaltwo}
           toggle={this.toggleModalTwo}
         >
-          <ModalHeader toggle={this.toggleModalTwo}></ModalHeader>
-          <ModalBody>
+          <StyledModalHeader toggle={this.toggleModalTwo}>
+            Available Currencies
+          </StyledModalHeader>
+          <StyledModalBody>
             <ul>
               <li
                 onClick={() => {
@@ -516,7 +535,7 @@ export default class Calc extends Component {
                 USD United States Dollar
               </li>
             </ul>
-          </ModalBody>
+          </StyledModalBody>
         </OutputCurrencyModal>
       </React.Fragment>
     );
@@ -654,7 +673,7 @@ const CurrencyModal = styled(Modal)`
     font-size: 0.9375rem;
     :hover {
       cursor: pointer;
-      background-color: #2e4369;
+      background-color: var(--mainBlue);
       outline: 0;
       color: white;
     }
@@ -692,7 +711,7 @@ const OutputCurrencyModal = styled(Modal)`
     font-size: 0.9375rem;
     :hover {
       cursor: pointer;
-      background-color: #2e4369;
+      background-color: var(--mainBlue);
       outline: 0;
       color: white;
     }
@@ -705,19 +724,66 @@ const OutputCurrencyModal = styled(Modal)`
     max-height: 592px;
   }
 `;
+const StyledModalHeader = styled(ModalHeader) `
+
+${'' /* padding-left:40px;
+padding-bottom:15px;
+padding-top:5px; */}
+height:30px;
+padding:13px 16px 11px;
+
+
+color:black;
+h5{
+  font-size:14px!important;
+}
+button{
+  font-size:14px!important;
+}
+`
+const StyledModalBody = styled(ModalBody) `
+
+padding-top:0px;
+h5{
+  font-size:14px!important;
+}
+button{
+  font-size:14px!important;
+}
+`
 const RatesSection = styled.div`
   display: flex;
   margin-top: -15px;
   ${"" /* align-items:center; */}
 `;
+const RatesItemsWrapper = styled.div `
+display:flex;
+margin-top:10px;
+margin-bottom:10px;
+`
+const IconContainer = styled.div `
+
+text-align:center;
+margin-right:20px;
+margin-left:-30px;
+z-index:10;
+
+`
+const StyledLineIcons = styled(FontAwesomeIcon) `
+font-size:20px;
+color:var(--mainGreen);
+background-color:black;
+padding:5px;
+border-radius:3px;
+`
 const LineSection = styled.div`
   width: 10%;
 `;
 const StyledLine = styled.hr`
-  background-color: #2e4369;
+  background-color: black;
   height: 170px;
-  border: 1px solid #2e4369;
-  width: 1px;
+  border: 0.5px solid black;
+  width: 0.5px;
 
   position: relative;
   z-index: 0;
