@@ -1,13 +1,20 @@
-import React from "react";
+import React,{useEffect} from "react";
 import styled from "styled-components";
 import Lock from "../assets/lock.png";
 import DT from "../assets/DT.png";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 export default function FinanceTools() {
+  useEffect(()=>{
+    Aos.init({
+      duration:1200
+    },[])
+  })
   return (
     <React.Fragment>
       <Container>
-        <DTSection>
+        <DTSection data-aos="fade-right">
           <img src={DT} alt="Icon" />
         </DTSection>
         <Wrapper>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import styled from "styled-components";
 import DT from "../assets/DT.png";
 import IconOne from "../assets/icon1.svg";
@@ -6,13 +6,21 @@ import IconTwo from "../assets/icon2.svg";
 import IconThree from "../assets/icon3.svg";
 import Desktop from "../assets/desktop.png";
 import Tick from "../assets/tick.png";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function CrossBorder() {
+  useEffect(()=>{
+    Aos.init({
+      duration:1200
+    },[])
+  })
   return (
     <React.Fragment>
       <Container>
         <HeaderSection>
-          <DTSection>
+          <DTSection data-aos="fade-right">
             <img src={DT} alt="Icon" />
           </DTSection>
           <div>
@@ -24,7 +32,7 @@ export default function CrossBorder() {
           <div className="row align-items-center">
             <div className="col-xl-4 col-lg-4 col-md-4">
               <Section>
-                <IconHead>
+                <IconHead data-aos="fade-up">
                   <img src={IconOne} alt="Digitrad Icon" />
                 </IconHead>
                 <IconText>製品には自信があるのに、海外展開ができない</IconText>
@@ -32,7 +40,7 @@ export default function CrossBorder() {
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4">
               <Section>
-                <IconHead>
+                <IconHead  data-aos="slide-up">
                   <img src={IconTwo} alt="Digitrad Icon" />
                 </IconHead>
                 <IconText>輸出には慣れてないので、不安である</IconText>
@@ -40,7 +48,7 @@ export default function CrossBorder() {
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4">
               <Section>
-                <IconHead>
+                <IconHead  data-aos="fade-up">
                   <img src={IconThree} alt="Digitrad Icon" />
                 </IconHead>
                 <IconText>インターネットでの販売方法がわからない</IconText>
@@ -54,19 +62,19 @@ export default function CrossBorder() {
         <TickSection>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-4 text-center">
-              <TickIcon>
+              <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>簡単掲載</TickText>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 text-center">
-              <TickIcon>
+              <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>安心サポート</TickText>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 text-center">
-              <TickIcon>
+              <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>今なら掲載無料</TickText>
