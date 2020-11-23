@@ -49,6 +49,20 @@ export default class Calc extends Component {
     // .catch((err)=>{
     //   console.log(err)
     // })
+    axios
+    .get(
+      `http://rest.coinapi.io/v1/exchangerate/BTC/NGN?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`
+    )
+
+    .then((res) => {
+     
+      console.log(res)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+
 
     axios
       .get(
@@ -184,34 +198,153 @@ export default class Calc extends Component {
     );
   };
   BTCButtonOneSelect = () => {
-    let RealTimeBTCPrice = this.state.BTCPrice;
+    
 
     this.setState({
       ButtonValueOne: "BTC",
       ButtonFlagOne: btcflag,
-      realtimePrice: RealTimeBTCPrice,
+      
     });
-    this.CalcBTC();
+    const waitTime = 1000;
+    setTimeout(
+      () =>
+        axios({
+          method: "get",
+          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.data.rate) {
+              return
+            }else{
+              let RealTimePrice = res.data.rate
+              let result = Number(
+                this.state.defaultValue * RealTimePrice
+              ).toFixed(2);
+              this.setState({
+                result: result,
+                realtimePrice: RealTimePrice,
+            }) 
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          }),
+      waitTime
+    );
+   
   };
   BTCButtonTwoSelect = () => {
-    let RealTimeBTCPrice = this.state.BTCPrice;
+   
     this.setState({
       ButtonValueTwo: "BTC",
       ButtonFlagTwo: btcflag,
-      realtimePrice: RealTimeBTCPrice,
+      
     });
+    const waitTime = 1000;
+    setTimeout(
+      () =>
+        axios({
+          method: "get",
+          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.data.rate) {
+              return
+            }else{
+              let RealTimePrice = res.data.rate
+              let result = Number(
+                this.state.defaultValue * RealTimePrice
+              ).toFixed(2);
+              this.setState({
+                result: result,
+                realtimePrice: RealTimePrice,
+            }) 
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          }),
+      waitTime
+    );
+   
   };
   USDCButtonOneSelect = () => {
     this.setState({
       ButtonValueOne: "USDC",
       ButtonFlagOne: usdcflag,
     });
+    const waitTime = 1000;
+    setTimeout(
+      () =>
+        axios({
+          method: "get",
+          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.data.rate) {
+              return
+            }else{
+              let RealTimePrice = res.data.rate
+              let result = Number(
+                this.state.defaultValue * RealTimePrice
+              ).toFixed(2);
+              this.setState({
+                result: result,
+                realtimePrice: RealTimePrice,
+            }) 
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          }),
+      waitTime
+    );
+   
   };
   USDCButtonTwoSelect = () => {
     this.setState({
       ButtonValueTwo: "USDC",
       ButtonFlagTwo: usdcflag,
     });
+    const waitTime = 1000;
+    setTimeout(
+      () =>
+        axios({
+          method: "get",
+          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.data.rate) {
+              return
+            }else{
+              let RealTimePrice = res.data.rate
+              let result = Number(
+                this.state.defaultValue * RealTimePrice
+              ).toFixed(2);
+              this.setState({
+                result: result,
+                realtimePrice: RealTimePrice,
+            }) 
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          }),
+      waitTime
+    );
+   
   };
   NGNButtonOneSelect = () => {
     this.setState({
