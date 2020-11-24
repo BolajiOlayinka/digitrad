@@ -71,12 +71,22 @@ export default class Calc extends Component {
 
       .then((res) => {
         let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-        let result = Number(this.state.defaultValue * RealTimePrice).toFixed(2);
+        if (this.state.defaultValue){
+          let result = Number(this.state.defaultValue * RealTimePrice).toFixed(2);
+          this.setState({
+            result: result,
+            realtimePrice: RealTimePrice,
+          });
+        }else{
+          let result = Number(0 * RealTimePrice).toFixed(2);
+          this.setState({
+            result: result,
+            realtimePrice: RealTimePrice,
+          });
+        }
+        
         // console.log(result)
-        this.setState({
-          result: result,
-          realtimePrice: RealTimePrice,
-        });
+        
         // console.log(res)
       })
       .catch((err) => {
@@ -127,7 +137,9 @@ export default class Calc extends Component {
   handleInput = (e) => {
     this.setState({
       defaultValue: e.target.value,
+      
     });
+    console.log(this.state.defaultValue)
     this.calculate();
   };
 

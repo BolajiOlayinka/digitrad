@@ -10,13 +10,13 @@ export default function BannerSection() {
         animateScrollTo(450);
       };
       const ScrolltoInternationalPayment = () => {
-        animateScrollTo(1970);
+        animateScrollTo(2090);
       };
       const ScrolltoLogistics = () => {
-        animateScrollTo(2830);
+        animateScrollTo(3630);
       };
       const ScrolltoFinance = () => {
-        animateScrollTo(3380);
+        animateScrollTo(4730);
       };
       
   return (

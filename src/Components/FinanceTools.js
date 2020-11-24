@@ -96,22 +96,25 @@ const BodyText = styled.div`
   line-height: 45px;
 `;
 const ActionButton = styled.a`
-  width: 244px;
-  height: 40px;
+  width: 470px;
+  height: 60px;
   display: flex;
   align-items: center;
   color: var(--mainWhite);
-  background-color: var(--mainBlack);
+  background-color: var(--mainGreen);
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
   justify-content: center;
   margin: auto;
-  margin-top: 90px;
+  margin-top: 50px;
+  :hover{
+    text-decoration:none;
+  }
 `;
 const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
-  margin-top: 45px;
+  margin-top: 70px;
 `;

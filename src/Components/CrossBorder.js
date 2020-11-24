@@ -89,6 +89,7 @@ export default function CrossBorder() {
 }
 const HeaderSection = styled.div`
   display: flex;
+  margin-top:76px;
 `;
 const DTSection = styled.div`
   background-color: var(--mainBlue);
@@ -184,7 +185,7 @@ const DesktopWrapper = styled.div`
 const TickSection = styled.div`
   width: 720px;
   margin: auto;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 `;
 const TickIcon = styled.div`
   text-align: center;
@@ -221,5 +222,5 @@ const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
-  margin-top: 73px;
+  margin-top: 70px;
 `;
