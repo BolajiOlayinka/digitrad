@@ -58,15 +58,20 @@ const NavWrapper = styled.div`
   background: ${(props) => props.background} !important;
   transition: 0.4s all;
   width: -webkit-fill-available;
+  
   @media (max-width: 576px) {
     background-color: rgba(0, 0, 0, 0.8);
   }
 `;
 const Container = styled.div`
+width: 100%;
+  ${(props) => (props.type === "default" ? "max-width: 1200px;" : "")}
+  margin: auto;
   @media (min-width: 1200px) {
     width: 1012px;
     margin: auto;
   }
+ 
 `;
 
 const IconSection = styled.div`

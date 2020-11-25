@@ -40,7 +40,7 @@ export default function Payment() {
       
       </StyledWrapper>
       <PaymentFunctionSection>
-        <div class="row align-items">
+        <div className="row align-items">
         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
             <FunctionIcon data-aos="flip-right">
             <img src={Timer} alt="Digitrad Fast Payment"/>
@@ -110,6 +110,8 @@ export default function Payment() {
   );
 }
 const Container = styled.div`
+ width: 1200px;
+    margin: auto;
   @media (min-width: 1200px) {
     width: 1200px;
     margin: auto;

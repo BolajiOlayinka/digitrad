@@ -18,109 +18,49 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import axios from "axios";
 
 export default class Calc extends Component {
-  state = {
-    ButtonValueOne: "JPY",
-    ButtonValueTwo: "NGN",
-    ButtonFlagOne: jpyflag,
-    ButtonFlagTwo: ngnflag,
-    defaultValue: 1000,
-    modalone: false,
-    modaltwo: false,
-    BTCPrice: "",
-    USDCPrice: "",
-    realtimePrice: "",
-    realTimePriceTwo: 350,
-    result: "",
-  };
-  componentDidMount() {
-    // axios.get("https://api.nomics.com/v1/currencies/ticker?key=faad65ad538a46ad1a3a66a3db9b6386&ids=BTC,USDC,USD,JPY")
-    // .then((res)=>{
-    //   let BTCPrice= (Number(res.data['0']['price'])).toFixed(3)
-    //   let USDCPrice=res.data['1']['price']
-    //   let RealTimePrice=(Number(res.data['1']['price'])).toFixed(3)
+  constructor() {
+    super();
+    this.state = {
+      ButtonValueOne: "USD",
+      ButtonValueTwo: "NGN",
+      ButtonFlagOne: jpyflag,
+      ButtonFlagTwo: ngnflag,
+      defaultValue: 1000,
+      modalone: false,
+      modaltwo: false,
+      BTCPrice: "",
+      USDCPrice: "",
+      realtimePrice: "",
+      realTimePriceTwo: 350,
+      result: "",
+    };
+    this.input = "";
+  }
 
-    //   this.setState({
-    //     BTCPrice:BTCPrice,
-    //     USDCPrice:USDCPrice,
-    //     realtimePrice:RealTimePrice
-    //   })
-
-    // })
-    // .catch((err)=>{
-    //   console.log(err)
-    // })
-    axios
-    .get(
-      `http://rest.coinapi.io/v1/exchangerate/BTC/NGN?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`
-    )
-
-    .then((res) => {
-     
-      console.log(res)
+  fetchApi = () => {
+    axios({
+      method: "get",
+      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-    .catch((err) => {
-      console.log(err);
-    });
-
-
-
-    axios
-      .get(
-        `https://free.currconv.com/api/v7/convert?q=${this.state.ButtonValueOne}_${this.state.ButtonValueTwo}&compact=ultra&apiKey=9509b95cfecfc65f9740`
-      )
-
       .then((res) => {
-        let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-        if (this.state.defaultValue){
-          let result = Number(this.state.defaultValue * RealTimePrice).toFixed(2);
-          this.setState({
-            result: result,
-            realtimePrice: RealTimePrice,
-          });
-        }else{
-          let result = Number(0 * RealTimePrice).toFixed(2);
-          this.setState({
-            result: result,
-            realtimePrice: RealTimePrice,
-          });
-        }
-        
-        // console.log(result)
-        
-        // console.log(res)
+        let RealTimePrice = res.data.rate.toFixed(8);
+        let result = Number(this.state.defaultValue * RealTimePrice).toFixed(5);
+        this.setState({
+          result: result,
+          realtimePrice: RealTimePrice,
+        });
       })
       .catch((err) => {
         console.log(err);
       });
-    console.log(this.state.realTimePrice);
-    this.calculate();
-  }
+  };
 
-  calculate = () => {
-    if (this.state.defaultValue === isNaN) {
-      return;
-    } else {
-      const result = this.state.defaultValue * this.state.realtimePrice;
-      //   axios.get(`https://api.nomics.com/v1/currencies/ticker?key=faad65ad538a46ad1a3a66a3db9b6386&ids=${this.state.ButtonValueOne}`)
-      //   .then((res)=>{
-      //     const result = (res.data['0']['price'] * this.state.defaultValue).toFixed(2)
-      //     console.log(result)
-      this.setState({
-        result: result,
-      });
-      //   })
-      // }
-      console.log(this.state.result);
-    }
-  };
-  CalcBTC = () => {
-    let realTimePrice = this.state.BTCPrice;
-    let result = Number(this.state.defaultValue * realTimePrice);
-    // console.log(result)
-    this.setState({
-      result: result,
-    });
-  };
+  componentDidMount() {
+    this.fetchApi();
+  }
 
   toggleModalOne = () => {
     this.setState({ modalone: !this.state.modalone });
@@ -135,12 +75,19 @@ export default class Calc extends Component {
     });
   };
   handleInput = (e) => {
-    this.setState({
-      defaultValue: e.target.value,
-      
-    });
-    console.log(this.state.defaultValue)
-    this.calculate();
+    this.setState(
+      {
+        defaultValue: e.target.value,
+      },
+      () => {
+        let result = (
+          this.state.defaultValue * this.state.realtimePrice
+        ).toFixed(5);
+        this.setState({
+          result: result,
+        });
+      }
+    );
   };
 
   JPYButtonOneSelect = () => {
@@ -148,249 +95,63 @@ export default class Calc extends Component {
       ButtonValueOne: "JPY",
       ButtonFlagOne: jpyflag,
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `https://free.currconv.com/api/v7/convert?q=${this.state.ButtonValueOne}_${this.state.ButtonValueTwo}&compact=ultra&apiKey=9509b95cfecfc65f9740`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-            let result = Number(
-              this.state.defaultValue * RealTimePrice
-            ).toFixed(2);
-
-            this.setState({
-              result: result,
-              realtimePrice: RealTimePrice,
-            });
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
   JPYButtonTwoSelect = () => {
     this.setState({
       ButtonValueTwo: "JPY",
       ButtonFlagTwo: jpyflag,
     });
-     const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `https://free.currconv.com/api/v7/convert?q=${this.state.ButtonValueOne}_${this.state.ButtonValueTwo}&compact=ultra&apiKey=9509b95cfecfc65f9740`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-            let result = Number(
-              this.state.defaultValue * RealTimePrice
-            ).toFixed(2);
-
-            this.setState({
-              result: result,
-              realtimePrice: RealTimePrice,
-            });
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
   BTCButtonOneSelect = () => {
-    
-
     this.setState({
       ButtonValueOne: "BTC",
       ButtonFlagOne: btcflag,
-      
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            if (!res.data.rate) {
-              return
-            }else{
-              let RealTimePrice = res.data.rate
-              let result = Number(
-                this.state.defaultValue * RealTimePrice
-              ).toFixed(2);
-              this.setState({
-                result: result,
-                realtimePrice: RealTimePrice,
-            }) 
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
-   
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
   BTCButtonTwoSelect = () => {
-   
     this.setState({
       ButtonValueTwo: "BTC",
       ButtonFlagTwo: btcflag,
-      
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            if (!res.data.rate) {
-              return
-            }else{
-              let RealTimePrice = res.data.rate
-              let result = Number(
-                this.state.defaultValue * RealTimePrice
-              ).toFixed(2);
-              this.setState({
-                result: result,
-                realtimePrice: RealTimePrice,
-            }) 
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
-   
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
   USDCButtonOneSelect = () => {
     this.setState({
       ButtonValueOne: "USDC",
       ButtonFlagOne: usdcflag,
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            if (!res.data.rate) {
-              return
-            }else{
-              let RealTimePrice = res.data.rate
-              let result = Number(
-                this.state.defaultValue * RealTimePrice
-              ).toFixed(2);
-              this.setState({
-                result: result,
-                realtimePrice: RealTimePrice,
-            }) 
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
-   
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
   USDCButtonTwoSelect = () => {
     this.setState({
       ButtonValueTwo: "USDC",
       ButtonFlagTwo: usdcflag,
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `http://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            if (!res.data.rate) {
-              return
-            }else{
-              let RealTimePrice = res.data.rate
-              let result = Number(
-                this.state.defaultValue * RealTimePrice
-              ).toFixed(2);
-              this.setState({
-                result: result,
-                realtimePrice: RealTimePrice,
-            }) 
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
-   
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
   NGNButtonOneSelect = () => {
     this.setState({
       ButtonValueOne: "NGN",
       ButtonFlagOne: ngnflag,
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `https://free.currconv.com/api/v7/convert?q=${this.state.ButtonValueOne}_${this.state.ButtonValueTwo}&compact=ultra&apiKey=9509b95cfecfc65f9740`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            console.log(this.state.ButtonValueOne);
-            let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-            let result = Number(
-              this.state.defaultValue * RealTimePrice
-            ).toFixed(2);
-            console.log(result);
-            this.setState({
-              result: result,
-              realtimePrice: RealTimePrice,
-            });
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
 
   NGNButtonTwoSelect = () => {
@@ -398,66 +159,15 @@ export default class Calc extends Component {
       ButtonValueTwo: "NGN",
       ButtonFlagTwo: ngnflag,
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `https://free.currconv.com/api/v7/convert?q=${this.state.ButtonValueOne}_${this.state.ButtonValueTwo}&compact=ultra&apiKey=9509b95cfecfc65f9740`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-            let result = Number(
-              this.state.defaultValue * RealTimePrice
-            ).toFixed(2);
-
-            this.setState({
-              result: result,
-              realtimePrice: RealTimePrice,
-            });
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
   };
   USDButtonOneSelect = () => {
     this.setState({
       ButtonValueOne: "USD",
       ButtonFlagOne: usdflag,
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `https://free.currconv.com/api/v7/convert?q=${this.state.ButtonValueOne}_${this.state.ButtonValueTwo}&compact=ultra&apiKey=9509b95cfecfc65f9740`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-            let result = Number(
-              this.state.defaultValue * RealTimePrice
-            ).toFixed(2);
-            console.log(result);
-            this.setState({
-              result: result,
-              realtimePrice: RealTimePrice,
-            });
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
 
   USDButtonTwoSelect = () => {
@@ -465,33 +175,9 @@ export default class Calc extends Component {
       ButtonValueTwo: "USD",
       ButtonFlagTwo: usdflag,
     });
-    const waitTime = 1000;
-    setTimeout(
-      () =>
-        axios({
-          method: "get",
-          url: `https://free.currconv.com/api/v7/convert?q=${this.state.ButtonValueOne}_${this.state.ButtonValueTwo}&compact=ultra&apiKey=9509b95cfecfc65f9740`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            let RealTimePrice = Number(Object.values(res.data)[0]).toFixed(4);
-            let result = Number(
-              this.state.defaultValue * RealTimePrice
-            ).toFixed(2);
-
-            this.setState({
-              result: result,
-              realtimePrice: RealTimePrice,
-            });
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          }),
-      waitTime
-    );
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
 
   render() {
@@ -582,24 +268,24 @@ export default class Calc extends Component {
 
           <FixedRates className="my-auto">
             <RatesItemsWrapper>
-            <IconContainer>
-            <StyledLineIcons icon={faCheck} />
-            </IconContainer>
-            
+              <IconContainer>
+                <StyledLineIcons icon={faCheck} />
+              </IconContainer>
+
               <Amount>780,000</Amount>
               <AmountDesc>Transfer rate (Fixed)</AmountDesc>
             </RatesItemsWrapper>
             <RatesItemsWrapper>
-            <IconContainer>
-            <StyledLineIcons icon={faWallet} />
-            </IconContainer>
+              <IconContainer>
+                <StyledLineIcons icon={faWallet} />
+              </IconContainer>
               <Amount>980,000</Amount>
               <AmountDesc>Amount We will convert</AmountDesc>
             </RatesItemsWrapper>
             <RatesItemsWrapper>
-            <IconContainer>
-            <StyledLineIcons icon={faExchangeAlt} />
-            </IconContainer>
+              <IconContainer>
+                <StyledLineIcons icon={faExchangeAlt} />
+              </IconContainer>
               <Amount>{this.state.realtimePrice}</Amount>
               <AmountDesc>Guaranteed Rates (10 mins)</AmountDesc>
             </RatesItemsWrapper>
@@ -869,58 +555,53 @@ const OutputCurrencyModal = styled(Modal)`
     max-height: 592px;
   }
 `;
-const StyledModalHeader = styled(ModalHeader) `
-
-${'' /* padding-left:40px;
+const StyledModalHeader = styled(ModalHeader)`
+  ${"" /* padding-left:40px;
 padding-bottom:15px;
 padding-top:5px; */}
-height:30px;
-padding:13px 16px 11px;
+  height:30px;
+  padding: 13px 16px 11px;
 
-
-color:black;
-h5{
-  font-size:14px!important;
-}
-button{
-  font-size:14px!important;
-}
-`
-const StyledModalBody = styled(ModalBody) `
-
-padding-top:0px;
-h5{
-  font-size:14px!important;
-}
-button{
-  font-size:14px!important;
-}
-`
+  color: black;
+  h5 {
+    font-size: 14px !important;
+  }
+  button {
+    font-size: 14px !important;
+  }
+`;
+const StyledModalBody = styled(ModalBody)`
+  padding-top: 0px;
+  h5 {
+    font-size: 14px !important;
+  }
+  button {
+    font-size: 14px !important;
+  }
+`;
 const RatesSection = styled.div`
   display: flex;
   margin-top: -15px;
   ${"" /* align-items:center; */}
 `;
-const RatesItemsWrapper = styled.div `
-display:flex;
-margin-top:10px;
-margin-bottom:10px;
-`
-const IconContainer = styled.div `
-
-text-align:center;
-margin-right:20px;
-margin-left:-30px;
-z-index:10;
-
-`
-const StyledLineIcons = styled(FontAwesomeIcon) `
-font-size:20px;
-color:var(--mainGreen);
-background-color:black;
-padding:5px;
-border-radius:3px;
-`
+const RatesItemsWrapper = styled.div`
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+const IconContainer = styled.div`
+  text-align: center;
+  margin-right: 20px;
+  margin-left: -30px;
+  z-index: 10;
+`;
+const StyledLineIcons = styled(FontAwesomeIcon)`
+  font-size: 20px;
+  color: var(--mainGreen);
+  background-color: black;
+  padding: 5px;
+  border-radius: 3px;
+`;
 const LineSection = styled.div`
   width: 10%;
 `;

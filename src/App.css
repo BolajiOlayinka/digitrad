@@ -1,7 +1,8 @@
 .App {
-  
+ 
   background-color:var(--mainWhite);
   font-family: 'Raleway', sans-serif;
+  
 }
 
 :root{

@@ -68,6 +68,8 @@ const DTSection = styled.div`
   }
 `;
 const Wrapper = styled.div`
+width:1034px;
+margin:auto;
   @media (min-width: 1200px) {
     width: 1034px;
     margin: auto;

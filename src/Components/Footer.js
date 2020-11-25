@@ -41,6 +41,8 @@ display:flex;
 const FooterContainer = styled.div `
 padding-left:20px;
 padding-right:20px;
+width:1200px;
+margin:auto;
 @media(min-width:1200px){
     width:1200px;
     margin:auto;

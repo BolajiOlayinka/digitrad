@@ -23,7 +23,7 @@ export default function BannerSection() {
     <React.Fragment>
       <Container>
         <div className="row align-items-center">
-          <div className="col-xl-7 col-lg-7 col-md-6">
+          <div className="col-xl-7 col-lg-7 col-md-7 col-sm-6">
             <LeftSection>
               <img src={Logo} alt="Digitrad Logo" />
               <JapaneseBannerText>新しい国際販売のご提案</JapaneseBannerText>
@@ -32,7 +32,7 @@ export default function BannerSection() {
               </EnglishBannerText>
             </LeftSection>
           </div>
-          <div className="col-xl-5 col-lg-5 col-md-6">
+          <div className="col-xl-5 col-lg-5 col-md-5 col-sm-6">
             <RightSection>
               <img src={FreightShip} alt="Digitrad Freight Ship" />
             </RightSection>
@@ -58,16 +58,33 @@ export default function BannerSection() {
 }
 
 const Container = styled.div`
+width:1012px;
+margin:auto;
   @media (min-width: 1200px) {
     width: 1012px;
     margin: auto;
   }
+  ${'' /* @media (min-width: 992px) and (max-width: 1999.9px) {
+    width:900px;
+    margin:auto;
+
+  }
+  @media (min-width: 768px) and (max-width: 991.9px) {
+    width:90%;
+    margin:auto;
+
+  } */}
+ 
 `;
 const LeftSection = styled.div``;
 const RightSection = styled.div`
   img {
     height: 380px;
     width: 333px;
+  }
+  @media (min-width: 992px) and (max-width: 1999.9px) {
+  text-align:center;
+
   }
 `;
 const JapaneseBannerText = styled.div`
@@ -78,6 +95,10 @@ const JapaneseBannerText = styled.div`
   line-height: 49px;
   color: var(--mainBlack);
   margin-top: 30.55px;
+  @media (min-width: 992px) and (max-width: 1999.9px) {
+   font-size:30px;
+
+  }
 `;
 const EnglishBannerText = styled.div`
   width: 486px;
