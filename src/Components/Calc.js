@@ -21,7 +21,7 @@ export default class Calc extends Component {
   constructor() {
     super();
     this.state = {
-      ButtonValueOne: "USD",
+      ButtonValueOne: "JPY",
       ButtonValueTwo: "NGN",
       ButtonFlagOne: jpyflag,
       ButtonFlagTwo: ngnflag,
