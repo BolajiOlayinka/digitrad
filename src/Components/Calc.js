@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faWallet } from "@fortawesome/free-solid-svg-icons";
-// import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
-// import { faCoins } from "@fortawesome/free-solid-svg-icons";
-// import { faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons";
 import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-// import { faWallet } from "@fortawesome/free-solid-svg-icons";
 import ngnflag from "../assets/flags/nigeria.svg";
-
+import DT from "../assets/DT.png";
 import jpyflag from "../assets/flags/japan.svg";
 import usdflag from "../assets/flags/usa.svg";
 import btcflag from "../assets/flags/btc.svg";
@@ -183,6 +179,10 @@ export default class Calc extends Component {
   render() {
     return (
       <React.Fragment>
+      <CalculatorHeader>
+      <img src={DT} alt = "Digitrad Icon"/>
+      <HeaderText>計算してみましょう</HeaderText>
+      </CalculatorHeader>
         <SendSection>
           <InputSection>
             <p>You send</p>
@@ -272,14 +272,14 @@ export default class Calc extends Component {
                 <StyledLineIcons icon={faCheck} />
               </IconContainer>
 
-              <Amount className="roboto">780,000</Amount>
+              <Amount className="roboto">000,000</Amount>
               <AmountDesc>Transfer rate (Fixed)</AmountDesc>
             </RatesItemsWrapper>
             <RatesItemsWrapper>
               <IconContainer>
                 <StyledLineIcons icon={faWallet} />
               </IconContainer>
-              <Amount className="roboto">980,000</Amount>
+              <Amount className="roboto">000,000</Amount>
               <AmountDesc>Amount We will convert</AmountDesc>
             </RatesItemsWrapper>
             <RatesItemsWrapper>
@@ -638,3 +638,14 @@ const AmountDesc = styled.p`
     color: #00b9ff;
   }
 `;
+const CalculatorHeader = styled.div `
+margin-bottom:20px;
+`
+const HeaderText = styled.div `
+font-style: normal;
+font-weight: bold;
+font-size: 45px;
+line-height: 65px;
+color:white;
+marggin-top:10px;
+`
