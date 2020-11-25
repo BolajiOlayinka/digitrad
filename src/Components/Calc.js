@@ -40,7 +40,7 @@ export default class Calc extends Component {
   fetchApi = () => {
     axios({
       method: "get",
-      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79092290-DA92-406B-BA02-E1D84B48AA18`,
+      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=79F91BDD-E04F-4EBE-97E2-BC69E155373A`,
       headers: {
         "Content-Type": "application/json",
       },
