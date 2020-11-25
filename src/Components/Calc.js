@@ -272,33 +272,33 @@ export default class Calc extends Component {
                 <StyledLineIcons icon={faCheck} />
               </IconContainer>
 
-              <Amount>780,000</Amount>
+              <Amount className="roboto">780,000</Amount>
               <AmountDesc>Transfer rate (Fixed)</AmountDesc>
             </RatesItemsWrapper>
             <RatesItemsWrapper>
               <IconContainer>
                 <StyledLineIcons icon={faWallet} />
               </IconContainer>
-              <Amount>980,000</Amount>
+              <Amount className="roboto">980,000</Amount>
               <AmountDesc>Amount We will convert</AmountDesc>
             </RatesItemsWrapper>
             <RatesItemsWrapper>
               <IconContainer>
                 <StyledLineIcons icon={faExchangeAlt} />
               </IconContainer>
-              <Amount>{this.state.realtimePrice}</Amount>
+              <Amount className="roboto">{this.state.realtimePrice}</Amount>
               <AmountDesc>Guaranteed Rates (10 mins)</AmountDesc>
             </RatesItemsWrapper>
           </FixedRates>
         </RatesSection>
 
         <ReceiveSection>
-          <OutputSection>
+          <OutputSection className="roboto">
             <p>You receive</p>
             <input
               type="number"
               autoComplete="off"
-              disable="true"
+              disabled
               defaultValue={this.state.result}
             />
           </OutputSection>
@@ -395,6 +395,7 @@ const InputSection = styled.div`
     line-height: 32px;
     outline: 0;
     border: none;
+    font-family: 'Roboto', sans-serif;
     -moz-outline-style: none;
     :active {
       outline: 0;
@@ -426,6 +427,7 @@ const OutputSection = styled.div`
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
     height: 36px;
+    font-family: 'Roboto', sans-serif;
     ${"" /* padding: 28px 12px 4px; */}
     font-size: 22px;
     line-height: 32px;
@@ -621,12 +623,14 @@ const FixedRates = styled.div`
 const Amount = styled.p`
   width: 30%;
   color: white;
+  letter-spacing:1px;
   :second-child {
     color: #d3d5d8;
   }
 `;
 const AmountDesc = styled.p`
   color: #eaeaea;
+  margin-left:20px;
   :second-child {
     color: #d3d5d8;
   }
