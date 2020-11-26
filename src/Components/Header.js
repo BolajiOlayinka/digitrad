@@ -3,9 +3,10 @@ import styled from "styled-components";
 import Icon from "../assets/icon.png";
 
 export default function Header() {
-  const [background, setBackground] = useState("transparent");
+  const [background, setBackground] = useState("black");
   const [fixed, setFixed] = useState("initial");
   const handleScroll = () => {
+    
     if (window.pageYOffset > 0) {
       setBackground("rgba(0, 0, 0, 0.8)");
     } else {
@@ -19,9 +20,11 @@ export default function Header() {
       setFixed("initial");
     }
   };
-
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("scroll", fixedScroll);
+
+
+  
   return (
     <React.Fragment>
       <NavWrapper background={background} fixed={fixed}>
@@ -54,7 +57,7 @@ const NavWrapper = styled.div`
   flex: auto;
   align-items: center;
   position: ${(props) => props.fixed} !important;
-
+ 
   background: ${(props) => props.background} !important;
   transition: 0.4s all;
   width: -webkit-fill-available;
@@ -64,9 +67,9 @@ const NavWrapper = styled.div`
   }
 `;
 const Container = styled.div`
-width: 100%;
-  ${(props) => (props.type === "default" ? "max-width: 1200px;" : "")}
-  margin: auto;
+${'' /* width: 100%; */}
+  ${'' /* ${(props) => (props.type === "default" ? "max-width: 1200px;" : "")}
+  margin: auto; */}
   @media (min-width: 1200px) {
     width: 1012px;
     margin: auto;

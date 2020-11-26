@@ -71,7 +71,7 @@ const Container = styled.div`
     width: 1012px;
     margin: auto;
   }
-  @media (min-width: 1024px) and (max-width: 1999.9px) {
+  @media (min-width: 1024px) and (max-width: 1199.9px) {
     width: 95%;
     margin: auto;
   }
@@ -97,7 +97,7 @@ const Container = styled.div`
     width: 100%;
     margin: auto;
   }
-  @media (min-width: 374.9px) {
+  @media (max-width: 374.9px) {
     padding-left: 15px;
     padding-right: 15px;
     width: 100%;

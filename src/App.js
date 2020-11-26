@@ -13,8 +13,9 @@ import "bootstrap/dist/css/bootstrap.css";
 function App() {
   return (
     <div className="App">
-    <Wrapper>
      <Header/>
+    {/* <Wrapper> */}
+    
      <Banner/>
      <CrossBorder/>
      <PaymentCalc/>
@@ -22,7 +23,7 @@ function App() {
      <Finance/>
      <SubFooter/>
      <Footer/>
-     </Wrapper>
+     {/* </Wrapper> */}
     </div>
     
   );
@@ -30,9 +31,9 @@ function App() {
 
 export default App;
 
-const Wrapper = styled.div `
-@media(min-width:1200px){
-  width:1200px;
-  margin:auto;
-}
-`
+// const Wrapper = styled.div `
+// @media(min-width:1200px){
+//   width:1px;
+//   margin:auto;
+// }
+// `
