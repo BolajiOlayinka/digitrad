@@ -647,5 +647,5 @@ font-weight: bold;
 font-size: 45px;
 line-height: 65px;
 color:white;
-marggin-top:10px;
+marggin-top:10px; 
 `
