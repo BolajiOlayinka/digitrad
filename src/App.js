@@ -7,14 +7,14 @@ import Logistics from './Components/Logistics';
 import Finance from './Components/FinanceTools';
 import SubFooter from './Components/SubFooter';
 import Footer from './Components/Footer';
-import styled from 'styled-components';
+
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   return (
     <div className="App">
      <Header/>
-    {/* <Wrapper> */}
+ 
     
      <Banner/>
      <CrossBorder/>
@@ -23,7 +23,7 @@ function App() {
      <Finance/>
      <SubFooter/>
      <Footer/>
-     {/* </Wrapper> */}
+     
     </div>
     
   );
@@ -31,9 +31,3 @@ function App() {
 
 export default App;
 
-// const Wrapper = styled.div `
-// @media(min-width:1200px){
-//   width:1px;
-//   margin:auto;
-// }
-// `

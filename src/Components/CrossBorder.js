@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import DT from "../assets/DT.png";
 import IconOne from "../assets/icon1.svg";
@@ -6,16 +6,18 @@ import IconTwo from "../assets/icon2.svg";
 import IconThree from "../assets/icon3.svg";
 import Desktop from "../assets/desktop.png";
 import Tick from "../assets/tick.png";
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function CrossBorder() {
-  useEffect(()=>{
-    Aos.init({
-      duration:1200
-    },[])
-  })
+  useEffect(() => {
+    Aos.init(
+      {
+        duration: 1200,
+      },
+      []
+    );
+  });
   return (
     <React.Fragment>
       <Container>
@@ -89,7 +91,7 @@ export default function CrossBorder() {
 }
 const HeaderSection = styled.div`
   display: flex;
-  margin-top:76px;
+  margin-top: 76px;
 `;
 const DTSection = styled.div`
   background-color: var(--mainBlue);
@@ -99,21 +101,30 @@ const DTSection = styled.div`
 
   display: flex;
   justify-content: flex-end;
-  ${"" /* @media (min-width: 1400px) {
-    width: 30vh;
-  } */}
+
   img {
     right: 0;
-    ${"" /* height:20.99px;
-    width:31.42px; */}
-    padding-top:12px;
+    padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 6px;
   }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    width: 200px;
+  }
+  @media (min-width: 426px) and (max-width: 575.9px) {
+    width: 200px;
+  }
+  @media (max-width: 575.9px) {
+    width: 100px;
+  }
 `;
 const Container = styled.div`
-  width: 1200px;
+  width: 100%;
   margin: auto;
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin: auto;
+  }
 `;
 
 const EnglishHeading = styled.div`
@@ -125,10 +136,39 @@ const EnglishHeading = styled.div`
   color: var(--mainBlack);
   display: flex;
   align-items: center;
+  margin-left: 67px;
   @media (min-width: 1200px) {
     ${"" /* margin-left: 262px; */}
     margin-left:67px;
   }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    margin-left: 67px;
+    width: -webkit-fill-available;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 300px;
+    font-size: 56px;
+    margin-left: 30px;
+  }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    width: 300px;
+    font-size: 56px;
+    margin-left: 30px;
+    height:200px;
+  }
+  @media (max-width: 575.9px) {
+    width: 200px;
+    font-size: 45px;
+    line-height: 54px;
+    margin-left: 30px;
+    height: 160px;
+  }
+  @media(max-width:426px){
+    font-size: 36px;
+line-height: 44px;
+margin-left:50px;
+  }
+  
 `;
 const JapaneseHeading = styled.div`
   width: 715px;
@@ -139,11 +179,44 @@ const JapaneseHeading = styled.div`
   color: var(--mainBlack);
   display: flex;
   align-items: center;
+  margin-left: 67px;
   @media (min-width: 1200px) {
-    ${"" /* margin-left: 262px; */}
-    margin-left:67px;
+    margin-left: 67px;
   }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    margin-left: 67px;
+    width: -webkit-fill-available;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    margin-left: 40px;
+    width: 100%;
+    font-size: 40px;
+    height: 80px;
+  }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    width: -webkit-fill-available;
+    font-size: 56px;
+    margin-left: 30px;
+    height: 50%;
+  }
+  @media (max-width: 575.9px) {
+    font-size: 40px;
+    line-height: 54px;
+    height: 80px;
+    margin-left: -140px;
+    width:400px;
+  }
+  @media (max-width: 426px) {
+  
+    font-size: 24px;
+line-height: 85px;
+
+    margin-left: -90px;
+    width:350px;
+  }
+
 `;
+
 const Section = styled.div`
   height: 240px;
   margin-top: 45px;
@@ -216,7 +289,6 @@ const ActionButton = styled.a`
   line-height: 24px;
   justify-content: center;
   margin: auto;
-
 `;
 const LineEnding = styled.hr`
   width: 974px;
