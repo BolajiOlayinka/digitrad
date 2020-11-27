@@ -5,6 +5,7 @@ import IconOne from "../assets/icon1.svg";
 import IconTwo from "../assets/icon2.svg";
 import IconThree from "../assets/icon3.svg";
 import Desktop from "../assets/desktop.png";
+import Logo from "../assets/logo.png";
 import Tick from "../assets/tick.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -32,7 +33,7 @@ export default function CrossBorder() {
         </HeaderSection>
         <IconsWrapper>
           <div className="row align-items-center">
-            <div className="col-xl-4 col-lg-4 col-md-4">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-12">
               <Section>
                 <IconHead data-aos="fade-up">
                   <img src={IconOne} alt="Digitrad Icon" />
@@ -40,7 +41,7 @@ export default function CrossBorder() {
                 <IconText>製品には自信があるのに、海外展開ができない</IconText>
               </Section>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-4">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-12">
               <Section>
                 <IconHead  data-aos="slide-up">
                   <img src={IconTwo} alt="Digitrad Icon" />
@@ -48,7 +49,7 @@ export default function CrossBorder() {
                 <IconText>輸出には慣れてないので、不安である</IconText>
               </Section>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-4">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-12">
               <Section>
                 <IconHead  data-aos="fade-up">
                   <img src={IconThree} alt="Digitrad Icon" />
@@ -58,24 +59,27 @@ export default function CrossBorder() {
             </div>
           </div>
         </IconsWrapper>
+        <SmallDigitrad>
+        <img src={Logo} alt="Digitrad Logo"/>
+        </SmallDigitrad>
         <DesktopWrapper>
           <img src={Desktop} alt="" />
         </DesktopWrapper>
         <TickSection>
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-4 text-center">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-12 text-center">
               <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>簡単掲載</TickText>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 text-center">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-12 text-center">
               <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>安心サポート</TickText>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 text-center">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-12 text-center">
               <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
@@ -116,6 +120,9 @@ const DTSection = styled.div`
   }
   @media (max-width: 575.9px) {
     width: 100px;
+  }
+  @media(max-width:426px){
+    margin-top:10px;
   }
 `;
 const Container = styled.div`
@@ -167,6 +174,7 @@ const EnglishHeading = styled.div`
     font-size: 36px;
 line-height: 44px;
 margin-left:50px;
+height:96px;
   }
   
 `;
@@ -207,9 +215,9 @@ const JapaneseHeading = styled.div`
     width:400px;
   }
   @media (max-width: 426px) {
-  
+  height:50px;
     font-size: 24px;
-line-height: 85px;
+line-height: 0px;
 
     margin-left: -90px;
     width:350px;
@@ -220,6 +228,9 @@ line-height: 85px;
 const Section = styled.div`
   height: 240px;
   margin-top: 45px;
+  @media(max-width:426px){
+    margin-top:30px;
+  }
 `;
 const IconsWrapper = styled.div`
   padding-left: 15px;
@@ -227,7 +238,25 @@ const IconsWrapper = styled.div`
 
   width: 1002px;
   margin: auto;
+  @media(max-width:768px){
+    width:100%;
+   
+  }
+  @media(max-width:426px){
+    width:100%;
+  }
 `;
+const SmallDigitrad = styled.div `
+text-align:center;
+margin-top:37px;
+margin-bottom:37px;
+img{
+  width:256px;
+}
+@media(min-width:576px){
+  display:none;
+}
+`
 const IconHead = styled.div`
   text-align: center;
   width: 150px;
@@ -247,18 +276,43 @@ const IconText = styled.div`
   font-weight: 300;
   font-style: normal;
   margin-top: 12.16px;
+  @media(max-width:768px){
+    margin:auto;
+  }
+
 `;
 
 const DesktopWrapper = styled.div`
   width: 1004px;
   margin: auto;
   margin-bottom: 80px;
+  @media(max-width:768px){
+    width:100%;
+    img{
+      width:100%;
+    }
+  }
+
+  @media(max-width:426px){
+    width:100%;
+    img{
+      width:100%;
+    }
+
+  }
 `;
 
 const TickSection = styled.div`
   width: 720px;
   margin: auto;
   margin-bottom: 60px;
+  @media(max-width:768px){
+    width:100%;
+   
+  }
+  @media(max-width:426px){
+    width:100%;
+  }
 `;
 const TickIcon = styled.div`
   text-align: center;
@@ -289,10 +343,30 @@ const ActionButton = styled.a`
   line-height: 24px;
   justify-content: center;
   margin: auto;
+  @media(max-width:768px){
+    width:65%;
+    margin:auto;
+  }
+  @media(max-width:426px){
+    width:239px;
+    margin:auto;
+  }
 `;
 const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
   margin-top: 70px;
+  @media(max-width:768px){
+    width:80%;
+    margin:auto;
+    margin-top:70px;
+   
+  }
+  @media(max-width:426px){
+    
+      width:157px;
+    
+
+  }
 `;
