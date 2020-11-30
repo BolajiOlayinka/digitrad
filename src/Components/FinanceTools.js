@@ -54,7 +54,7 @@ export default function FinanceTools() {
 }
 const Container = styled.div`
 @media (min-width:1200px){
-  width: 1030px;
+  width: 1080px;
   margin: auto;
 }
   

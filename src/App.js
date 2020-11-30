@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './Components/Header';
+// import Header from './Components/Header';
 import Banner from './Components/BannerSection';
 import CrossBorder from './Components/CrossBorder';
 import PaymentCalc from './Components/Payment';
@@ -31,10 +31,10 @@ function App() {
 }
 
 export default App;
-const Wrapper = styled.div `
-@media(min-width:1200){
-  width:1200px;
-  margin:auto;
-}
-`
+// const Wrapper = styled.div `
+// @media(min-width:1200){
+//   width:1200px;
+//   margin:auto;
+// }
+// `
 
