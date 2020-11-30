@@ -79,7 +79,7 @@ export default function Logistics() {
   );
 }
 const Container = styled.div`
-  width: 1200px;
+  width: 1000px;
   margin: auto;
 `;
 

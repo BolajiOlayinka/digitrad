@@ -179,6 +179,7 @@ export default class Calc extends Component {
   render() {
     return (
       <React.Fragment>
+     <Wrapper>
       <CalculatorHeader>
       <img src={DT} alt = "Digitrad Icon"/>
       <HeaderText>計算してみましょう</HeaderText>
@@ -368,6 +369,7 @@ export default class Calc extends Component {
             </ul>
           </StyledModalBody>
         </OutputCurrencyModal>
+        </Wrapper>
       </React.Fragment>
     );
   }
@@ -375,7 +377,16 @@ export default class Calc extends Component {
 
 const SendSection = styled.div`
   display: flex;
+  @media(max-width:425px){
+    width:100%;
+  }
 `;
+const Wrapper = styled.div `
+@media(max-width:426px){
+  width:100%;
+  margin:auto;
+}
+`
 const ReceiveSection = styled.div`
   display: flex;
   margin-top: -15px;
@@ -416,6 +427,10 @@ const InputSection = styled.div`
     height: 20px;
     color: var(--color-accent);
   }
+  @media(max-width:426px){
+    width:50%;
+    font-size:16px;
+  }
 `;
 const OutputSection = styled.div`
   background-color: white;
@@ -452,6 +467,9 @@ const OutputSection = styled.div`
     padding-left: 3px;
     height: 20px;
     color: var(--color-accent);
+  }
+  @media(max-width:426px){
+    width:50%;
   }
 `;
 const StyledSelect = styled.div`
@@ -558,9 +576,6 @@ const OutputCurrencyModal = styled(Modal)`
   }
 `;
 const StyledModalHeader = styled(ModalHeader)`
-  ${"" /* padding-left:40px;
-padding-bottom:15px;
-padding-top:5px; */}
   height:30px;
   padding: 13px 16px 11px;
 
@@ -619,6 +634,9 @@ const StyledLine = styled.hr`
 const FixedRates = styled.div`
   padding-top: 15px;
   width: 90%;
+  @media(max-width:425px){
+    width:50%;
+  }
 `;
 const Amount = styled.p`
   width: 30%;
@@ -626,6 +644,10 @@ const Amount = styled.p`
   letter-spacing:1px;
   :second-child {
     color: #d3d5d8;
+  }
+  @media(max-width:425px){
+    font-size:14px;
+    width:50%;
   }
 `;
 const AmountDesc = styled.p`
@@ -637,9 +659,16 @@ const AmountDesc = styled.p`
   :last-child() {
     color: #00b9ff;
   }
+  @media(max-width:425px){
+    font-size:14px;
+   
+  }
 `;
 const CalculatorHeader = styled.div `
 margin-bottom:20px;
+@media(max-width:426px){
+  width:100%;
+}
 `
 const HeaderText = styled.div `
 font-style: normal;
@@ -647,5 +676,9 @@ font-weight: bold;
 font-size: 45px;
 line-height: 65px;
 color:white;
-marggin-top:10px; 
+margin-top:10px; 
+@media(max-width:425px){
+  font-size:26px;
+  line-height:36px;
+}
 `

@@ -1,39 +1,48 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Lock from "../assets/lock.png";
 import DT from "../assets/DT.png";
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function FinanceTools() {
-  useEffect(()=>{
-    Aos.init({
-      duration:1200
-    },[])
-  })
+  useEffect(() => {
+    Aos.init(
+      {
+        duration: 1200,
+      },
+      []
+    );
+  });
   return (
     <React.Fragment>
       <Container>
-        <DTSection data-aos="fade-right">
-          <img src={DT} alt="Icon" />
-        </DTSection>
+        <HeaderSection>
+          <DTSection data-aos="fade-right">
+            <img src={DT} alt="Icon" />
+          </DTSection>
+          <SmallImageSection>
+            <img src={Lock} alt="padlock lock" />
+            </SmallImageSection>
+          <div>
+          
+          <SmallEnglishSection>Finance Tools</SmallEnglishSection>
+            <EnglishHeading>Trading Finance Service</EnglishHeading>
+                  
+            
+            <JapaneseHeading>
+              貿易ビジネスを開始した多くの企業が、【キャッシュフローが悪くなった】と言っています。
+              そのため、貿易企業の実に3割以上が貿易ファイナンスサービスを活用しています。
+            </JapaneseHeading>
+            </div>
+
+         
+          <ImageSection>
+            <img src={Lock} alt="padlock lock" />
+          </ImageSection>
+        </HeaderSection>
+
         <Wrapper>
-          <div className="row align-items-center">
-            <div className="col-xl-6 col-lg-6 col-md-6">
-              <LeftSection>
-                <Title>Finance Tools</Title>
-                <BodyText>
-                  館ヤウホ説金3就シ蘇田準とイろ家討ト事中テメコヘ送混や政利シヘハス断救けにむい変掲81皇テ都響
-                  そねぱ略客人ヲウミタ共5籍すせ。
-                </BodyText>
-              </LeftSection>
-            </div>
-            <div className="col-xl-6 col-lg-6 col-md-6">
-              <RightSection>
-                <img src={Lock} alt="Digitrad Secured" />
-              </RightSection>
-            </div>
-          </div>
           <ActionButton href="https://app.digitrad.world">
             LEARN MORE
           </ActionButton>
@@ -44,32 +53,218 @@ export default function FinanceTools() {
   );
 }
 const Container = styled.div`
-  width: 1200px;
+@media (min-width:1200px){
+  width: 1030px;
   margin: auto;
+}
+  
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    width: 100%;
+    margin: auto;
+  }
+  @media (max-width: 1023.9px) {
+    width: 100%;
+    margin: auto;
+  }
+ 
+ 
+`;
+const HeaderSection = styled.div`
+  display: flex;
+  margin-top: 76px;
+`;
+const EnglishHeading = styled.div`
+  width: 561px;
+  height: 174px;
+  font-size: 72px;
+  line-height: 85px;
+  font-weight: 300;
+  color: var(--mainBlack);
+  margin-left: 67px;
+  margin-bottom: 23px;
+  @media (min-width: 1200px) {
+    margin-left: 67px;
+  }
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    font-size: 65px;
+    width: 500px;
+    margin-left: 50px;
+  }
+  @media (min-width: 991px) and (max-width: 1023.9px) {
+    font-size: 60px;
+    margin-left: 40px;
+    width: 500px;
+  }
+ 
+  @media (min-width: 768px) and (max-width: 990.9px) {
+    margin-left: 60px;
+    width: 450px;
+    font-size: 60px;
+    line-height:70px;
+    height:150px;
+  }
+  @media (max-width: 768px) {
+   display:none;
+  }
+
+`;
+const SmallEnglishSection = styled.div `
+@media(min-width:768.1px){
+  display:none
+}
+
+@media (min-width: 576px) and (max-width: 768.1px) {
+    margin-left: 50px;
+    width: 230px;
+    font-size: 60px;
+    line-height:80px;
+
+
+  }
+  @media (max-width: 575.9px) {
+    margin-left: 26px;
+    width: 244px;
+    font-size: 50px;
+    line-height: 60px;
+  }
+  @media(max-width:375px){
+    font-size:36px;
+    line-height:44px;
+    width:200px;
+    margin-top:10px;
+  }
+`
+const JapaneseHeading = styled.div`
+  width: 451px;
+  height: 159px;
+  width: 451px;
+  height: 159px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 45px;
+  color: var(--mainBlack);
+  margin-left: 67px;
+  margin-bottom: 67px;
+  @media (min-width: 1200px) {
+    margin-left: 67px;
+  }
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    margin-left: 50px;
+  }
+
+  @media (min-width: 991px) and (max-width: 1023.9px) {
+    margin-left: 40px;
+    font-size: 23px;
+  }
+
+  @media (min-width: 768px) and (max-width: 990.9px) {
+    margin-left: 60px;
+    width: 330px;
+    font-size: 21px;
+  }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    margin-left: 50px;
+    width: 80%;
+    font-size: 18px;
+    margin-right:5px;
+  }
+  @media (max-width: 575.9px) {
+    margin-left: 26px;
+    line-height:40px;
+    width: 80%;
+    font-size: 15px;
+  }
+  @media(max-width:425px){
+width:250px;
+  }
+  @media(max-width:375px){
+    font-size:15px;
+   line-height:30px;
+    height:144px;
+    width:221px;
+    margin-top:10px;
+  }
 `;
 const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
-  margin-top: 80px;
-
+  margin-top: 15px;
   display: flex;
   justify-content: flex-end;
-  ${"" /* @media (min-width: 1400px) {
-    width: 30vh;
-  } */}
+
   img {
     right: 0;
-    ${"" /* height:20.99px;
-    width:31.42px; */}
-    padding-top:12px;
+
+    padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 6px;
   }
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    width: 180px;
+  }
+  @media (min-width: 991px) and (max-width: 1023.9px) {
+    width: 180px;
+  }
+  @media (min-width: 768px) and (max-width: 990.9px) {
+    width: 130px;
+  }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    width: 200px;
+  }
+  @media (min-width: 426px) and (max-width: 575.9px) {
+    width: 200px;
+  }
+  @media (max-width: 575.9px) {
+    width: 400px;
+  }
+  @media (max-width: 375px) {
+   
+   
+  }
 `;
+const ImageSection = styled.div`
+  margin-top: 110px;
+  img {
+    width: 234px;
+    height: 350px;
+    padding-right:10px;
+  }
+  @media(max-width:576px){
+    display:none;
+  }
+`;
+const SmallImageSection = styled.div `
+img{
+    width:130px;
+  margin-top:100px;
+  margin-left:-30px;
+  }
+@media(max-width:425px){
+  img{
+    width:130px;
+  margin-top:100px;
+  margin-left:-80px;
+}
+
+}
+@media(max-width:375px){
+  img{
+    width:100px;
+    height:142px;
+  margin-top:85px;
+  }
+ 
+} 
+
+
+@media(min-width:576px){
+  display:none;
+}
+`
 const Wrapper = styled.div`
-width:1034px;
-margin:auto;
+ width:100%;
+ margin:auto;
   @media (min-width: 1200px) {
     width: 1034px;
     margin: auto;
@@ -78,25 +273,7 @@ margin:auto;
     margin-top: 50px;
   }
 `;
-const LeftSection = styled.div``;
-const RightSection = styled.div`
-text-align:right;
-`;
 
-const Title = styled.div`
-  width: 315px;
-  height: 174px;
-  font-weight: 300;
-  font-size: 72px;
-  line-height: 85px;
-`;
-const BodyText = styled.div`
-  width: 416px;
-  height: 216px;
-  font-weight: 300;
-  font-size: 26px;
-  line-height: 45px;
-`;
 const ActionButton = styled.a`
   width: 470px;
   height: 60px;
@@ -110,13 +287,29 @@ const ActionButton = styled.a`
   justify-content: center;
   margin: auto;
   margin-top: 50px;
-  :hover{
-    text-decoration:none;
+  :hover {
+    text-decoration: none;
   }
+  @media(max-width:576px){
+    width:70%;
+    margin:auto;
+    margin-top:50px;
+  }
+
 `;
 const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
   margin-top: 70px;
+  @media (min-width: 991px) and (max-width: 1023.9px) {
+    width: 500px;
+    margin:auto;
+    margin-top:70px;
+  }
+  @media(max-width:990.9px){
+    width:30%;
+    margin:auto;
+    margin-top:70px;
+  }
 `;
