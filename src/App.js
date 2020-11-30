@@ -7,7 +7,7 @@ import Logistics from './Components/Logistics';
 import Finance from './Components/FinanceTools';
 import SubFooter from './Components/SubFooter';
 import Footer from './Components/Footer';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
