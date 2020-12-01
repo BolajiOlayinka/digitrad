@@ -49,6 +49,14 @@ margin:auto;
 display:flex;
 align-items:center;
 }
+@media(max-width:425px){
+    padding-left:21px;
+    padding-right:21px;
+    padding-top:12px;
+    padding-bottom:12px;
+    font-size:12px;
+    line-height:20px
+}
 `
 const FooterLeft =styled.div `
 display:flex;
@@ -57,6 +65,7 @@ color:white;
 font-weight:300;
 font-size:16px;
 line-height:24px;
+
 div:nth-child(1) {
 border-right:1px solid white;
 padding-right:10px;
@@ -66,10 +75,18 @@ a{
     color:white;
     text-decoration:none;  
 }
+@media(max-width:425px){
+    font-size:12px;
+    line-height:20px
+}
 `
 const FooterRight = styled.div `
 display:flex;
 margin-left:auto;
+@media(max-width:425px){
+    font-size:12px;
+    line-height:20px
+}
 `
 const IconContainer= styled.div `
 display:flex;

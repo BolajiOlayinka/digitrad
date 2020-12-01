@@ -128,9 +128,15 @@ const DTSection = styled.div`
   }
 `;
 const Container = styled.div`
+width:100%;
+margin:auto;
   @media (min-width: 1200px) {
     width: 1000px;
     margin: auto;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width:90%;
+    margin:auto;
   }
 `;
 
@@ -197,7 +203,7 @@ const JapaneseHeading = styled.div`
   @media (min-width: 768px) and (max-width: 991px) {
     margin-left: 40px;
     width: 100%;
-    font-size: 40px;
+    font-size: 30px;
     height: 80px;
   }
   @media (min-width: 576px) and (max-width: 767.9px) {
@@ -236,9 +242,14 @@ const IconsWrapper = styled.div`
 
   width: 1002px;
   margin: auto;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
   }
+  @media(min-width:768.1px) and (max-width:991px){
+    width:768px;
+    margin:auto;
+  }
+
   @media (max-width: 426px) {
     width: 100%;
   }
@@ -261,6 +272,7 @@ const IconHead = styled.div`
   display: flex;
   align-items: center;
   margin: auto;
+  
 `;
 const IconText = styled.div`
   font-size: 24px;
@@ -273,6 +285,11 @@ const IconText = styled.div`
   font-weight: 300;
   font-style: normal;
   margin-top: 12.16px;
+  @media(min-width:768px) and (max-width:991px){
+    font-size:20px;
+    height:40px;
+    width:200px;
+  }
   @media (max-width: 768px) {
     margin: auto;
   }
@@ -283,6 +300,7 @@ const DesktopWrapper = styled.div`
   margin: auto;
   margin-bottom: 80px;
   @media(max-width:1024px){
+    width:100%;
     img{
       width:90%;
     margin:auto;
@@ -330,6 +348,7 @@ const TickText = styled.div`
   font-weight: 300;
   font-size: 24px;
   line-height: 29px;
+  
 `;
 
 const ActionButton = styled.a`
@@ -359,7 +378,7 @@ const LineEnding = styled.hr`
   border: 1px solid var(--mainBlack);
   margin-top: 70px;
   @media(max-width:991px){
-    width:900px;
+    width:80%;
     margin:auto;
     margin-top:70px;
   }

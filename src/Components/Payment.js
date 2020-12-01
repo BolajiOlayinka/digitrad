@@ -274,7 +274,7 @@ const PaymentFunctionSection = styled.div`
   @media (max-width: 767.9px) {
     margin-bottom: 0px;
   }
-  @media(max-width:425px){
+  @media(max-width:576px){
     display:none;
   }
 `;

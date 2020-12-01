@@ -8,10 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown} from "@fortawesome/free-solid-svg-icons";
 export default function Logistics() {
   useEffect(() => {
-    Aos.init(
-      {
-        duration: 1200,
-      },
+    Aos.init({
+        duration: 1200,},
       []
     );
   });
@@ -30,10 +28,17 @@ export default function Logistics() {
             </JapaneseHeading>
           </div>
         </HeaderSection>
+        <SmallHeaderSection>
+        <SmallJapaneseHeading>
+              輸出業務は、本当に大変です。
+              輸出・輸入基準の確認、各種船積書類の作成、物流会社とのやり取り・・・
+            </SmallJapaneseHeading>
+        </SmallHeaderSection>
+
         <DigitradPhrase>
           その業務、DiGiTRADで半分に減らしませんか？
         </DigitradPhrase>
-        <BackgroundLine />
+        <BackgroundLine data-aos="fade-right"/>
         <CircleTickSection>
           
             <FunctionBody  data-aos="fade-right">
@@ -58,6 +63,29 @@ export default function Logistics() {
             </FunctionBody>
           
         </CircleTickSection>
+        <SmallCircleTick>
+        <SmallBackgroundLine data-aos="fade-right"/>
+        <TickSection>
+          <Section>
+          <img src={TickCircle} alt="tickcircle"  data-aos="fade-left" />
+          <SectionText>
+              輸出、輸入の可否を一緒にお調べ
+              </SectionText>
+          </Section>
+          <Section>
+          <img src={TickCircle} alt="tickcircle" data-aos="fade-left" />
+          <SectionText>
+          輸出書類は自動作成
+              </SectionText>
+          </Section>
+          <Section>
+          <img src={TickCircle} alt="tickcircle" data-aos="fade-left"/>
+          <SectionText>
+          物流会社とのやり取りはチャットで楽々
+              </SectionText>
+          </Section>
+        </TickSection>
+        </SmallCircleTick>
         <PriceConfidant>
         そして・・・価格にも自信あり！！
 
@@ -79,8 +107,16 @@ export default function Logistics() {
   );
 }
 const Container = styled.div`
-  width: 1000px;
-  margin: auto;
+ width:100%;
+ margin:auto;
+  @media(min-width:1200px){
+    width:1034px;
+    margin:auto;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+width:100%;
+margin:auto;
+  }
 `;
 
 const HeaderSection = styled.div`
@@ -102,6 +138,18 @@ const DTSection = styled.div`
     padding-bottom: 12px;
     padding-right: 6px;
   }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    width: 200px;
+  }
+  @media (min-width: 426px) and (max-width: 575.9px) {
+    width: 200px;
+  }
+  @media (max-width: 575.9px) {
+    width: 100px;
+  }
+  @media (max-width: 426px) {
+    margin-top: 10px;
+  }
 `;
 const EnglishHeading = styled.div`
   width: 435px;
@@ -114,6 +162,34 @@ const EnglishHeading = styled.div`
   @media (min-width: 1200px) {
     ${"" /* margin-left: 262px; */}
     margin-left:67px;
+  }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    margin-left: 67px;
+    width:400px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 300px;
+    font-size: 56px;
+    margin-left: 30px;
+  }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    width: 300px;
+    font-size: 56px;
+    margin-left: 30px;
+    height: 200px;
+  }
+  @media (max-width: 575.9px) {
+    width: 200px;
+    font-size: 36px;
+   
+    margin-left: 50px;
+    height: 160px;
+  }
+  @media (max-width: 426px) {
+    font-size: 36px;
+    line-height: 44px;
+    margin-left: 50px;
+    height: 96px;
   }
 `;
 const JapaneseHeading = styled.div`
@@ -130,8 +206,22 @@ const JapaneseHeading = styled.div`
     ${"" /* margin-left: 262px; */}
     margin-left:67px;
   }
+  @media(max-width:576px){
+    display:none;
+  }
 `;
-
+const SmallJapaneseHeading = styled.div `
+font-size: 15px;
+line-height: 20px;
+font-weight: 300;
+width:263px;
+margin:auto;
+@media(min-width:426px) and (max-width:576px){
+  width:400px;
+  font-size:24px;
+  line-height:36px;
+}
+`
 const DigitradPhrase = styled.div`
   font-weight: bold;
   font-size: 36px;
@@ -140,7 +230,26 @@ const DigitradPhrase = styled.div`
   height: 45px;
   margin: auto;
   color: var(--mainBlue);
-  Margin-bottom:100px;
+  margin-bottom:100px;
+  @media(min-width:768px) and (max-width:991px){
+    width:100%;
+    font-size:34px;
+    margin:auto;
+    margin-bottom:100px;
+  }
+  @media(min-width:426px) and (max-width:576px){
+    font-size:24px;
+    width:90%;
+    margin:auto;
+    margin-bottom:100px;
+  }
+  @media(max-width:425.9px){
+    font-size:20px;
+    width:90%;
+    margin:auto;
+  }
+ 
+
 `;
 const ActionButton = styled.a`
   width: 470px;
@@ -158,32 +267,149 @@ const ActionButton = styled.a`
   :hover{
     text-decoration:none;
   }
+  @media(max-width:425px){
+    width:239px;
+    margin:auto;
+    margin-top: 50px;
+  }
+  @media(max-width:576px){
+    margin-bottom:50px;
+  }
+  
 `;
 const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
   margin-top: 70px;
+  @media(max-width:991px){
+    width:40%;
+    margin:auto;
+  }
 `;
+const SmallBackgroundLine = styled.hr `
+color: var(--mainGreen);
+border: 2px solid var(--mainGreen);
+height:150px;
+position:absolute;
+margin-left:22%;
+background-color:var(--mainGreen);
+margin-top:63px;
+height:320px;
+@media(max-width:425px){
+  margin-left:75px;
+}
+@media(max-width:375px){
+  margin-left:55px;
+}
+`
 const BackgroundLine = styled.hr`
   color: var(--mainGreen);
   border: 2px solid var(--mainGreen);
   width: 800px;
   margin: auto;
-  
+  background-color:var(--mainGreen);
+  @media (min-width: 991px) and (max-width: 1024px) {
+width:80%;
+margin:auto;
+  }
+  @media (min-width: 768px) and (max-width: 990.9px) {
+    width:80%;
+  }
+  @media (max-width:767.9px) {
+display:none
+
+}
+
 `;
+const TickSection = styled.div `
+width:90%;
+
+`
+const Section = styled.div `
+display:flex;
+align-items:center;
+width:70%;
+padding-top:63px;
+margin:auto;
+
+@media(max-width:425px){
+  width:325px;
+  margin:auto;
+  
+}
+:nth-child(1) {
+padding-top:0px;
+}
+:nth-child(3) {
+padding-bottom:42px;
+}
+img{
+  width:100px;
+  x
+  z-index:2;
+  position:relative;
+}
+`
+const SectionText = styled.div `
+width:165px;
+font-weight: 300;
+font-size: 20px;
+line-height: 29px;
+text-align:center;
+margin-left:30px;
+
+@media(max-width:425px){
+width:165px;
+font-weight: 300;
+font-size: 20px;
+line-height: 29px;
+}
+
+`
+const SmallCircleTick = styled.div `
+display:flex;
+@media(max-width:425px){
+  margin-top:60px;
+}
+`
+
+const SmallHeaderSection =styled.div `
+@media(min-width:576.9px){
+  display:none;
+}
+`
 const CircleTickSection = styled.div`
 position:relative;
 z-index:2;
 ${'' /* text-align:center; */}
-width:1034px;
+width:1000px;
 margin:auto;
 margin-top:-60px;
 text-align:center;
 display:flex;
 justify-content:space-between;
+@media (min-width: 991px) and (max-width: 1024px) {
+  position:relative;
+  z-index:2;
+  margin-top:-60px;
+  width:990px;
+  margin:auto;
+  margin-top:-60px;
+}
+@media (min-width: 768px) and (max-width: 990.9px) {
+width:100%;
+margin:auto;
+margin-top:-60px;
 
+
+}
+@media (max-width:767.9px) {
+display:none
+
+}
 `;
+
 const FunctionBody = styled.div `
 text-align:center;
 `
@@ -228,6 +454,18 @@ font-weight: bold;
 font-size: 20px;
 line-height: 45px;
 color:var(--mainBlue);
+@media(max-width:767.9px){
+  width:90%;
+  margin:auto;
+  font-size:12px;
+}
+@media(max-width:375px){
+   width:349px;
+   margin:auto;
+   text-align:center;
+   font-size: 18px;
+line-height: 31px;
+ }
 `
 const FontAwesomeContainer = styled.div `
 text-align:center;
