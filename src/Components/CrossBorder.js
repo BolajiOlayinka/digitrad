@@ -31,6 +31,7 @@ export default function CrossBorder() {
             <JapaneseHeading>こんなお悩みございませんか？</JapaneseHeading>
           </div>
         </HeaderSection>
+        <SmallJapaneseHeading>こんなお悩みございませんか？</SmallJapaneseHeading>
         <IconsWrapper>
           <div className="row align-items-center">
             <div className="col-xl-4 col-lg-4 col-md-4 col-12">
@@ -67,19 +68,19 @@ export default function CrossBorder() {
         </DesktopWrapper>
         <TickSection>
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
               <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>簡単掲載</TickText>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
               <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>安心サポート</TickText>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-12 text-center">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
               <TickIcon data-aos="fade-up">
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
@@ -212,23 +213,22 @@ const JapaneseHeading = styled.div`
     margin-left: 30px;
     height: 50%;
   }
-  @media (max-width: 575.9px) {
-    font-size: 40px;
-    line-height: 54px;
-    height: 80px;
-    margin-left: -140px;
-    width: 400px;
+  @media (max-width: 576px) {
+    display:none;
   }
-  @media (max-width: 426px) {
-    height: 50px;
-    font-size: 24px;
-    line-height: 0px;
-
-    margin-left: -90px;
-    width: 350px;
-  }
+  
 `;
-
+const SmallJapaneseHeading = styled.div `
+height: 50px;
+font-size: 24px;
+line-height: 85px;
+font-weight:bold;
+    width: 350px;
+    margin:auto;
+@media(min-width:576px){
+  display:none;
+}
+`
 const Section = styled.div`
   height: 240px;
   margin-top: 45px;
@@ -250,8 +250,9 @@ const IconsWrapper = styled.div`
     margin:auto;
   }
 
-  @media (max-width: 426px) {
-    width: 100%;
+  @media (max-width: 576px) {
+    width: 301px;
+    margin:auto;
   }
 `;
 const SmallDigitrad = styled.div`
@@ -329,8 +330,10 @@ const TickSection = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-  @media (max-width: 426px) {
-    width: 100%;
+  @media (max-width: 576px) {
+    width: 277px;
+    margin:auto;
+    margin-bottom:27px;
   }
 `;
 const TickIcon = styled.div`
@@ -338,6 +341,15 @@ const TickIcon = styled.div`
   width: 105px;
   height: 105px;
   margin: auto;
+ 
+  @media(max-width:576px){
+    height:45px;
+    img{
+      width:45px;
+    }
+   
+  }
+ }
 `;
 const TickText = styled.div`
   width: 220px;
@@ -348,7 +360,12 @@ const TickText = styled.div`
   font-weight: 300;
   font-size: 24px;
   line-height: 29px;
-  
+  @media(max-width:576px){
+    font-weight: 300;
+font-size: 14px;
+line-height: 29px;
+width:89px;
+  }
 `;
 
 const ActionButton = styled.a`
@@ -388,7 +405,8 @@ const LineEnding = styled.hr`
     margin: auto;
     margin-top: 70px;
   }
-  @media (max-width: 426px) {
+  @media (max-width: 576px) {
+    margin-top:50px;
     width: 157px;
   }
 `;

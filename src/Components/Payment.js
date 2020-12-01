@@ -48,47 +48,47 @@ export default function Payment() {
             ✓外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
           </TextBodyTwo>
         </LeftWrapper>
-      <VisibleOnSmall> 
-      <SmallPaymentFunction>
-      <div className="row align-items">
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={Timer} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
-            <FunctionHeader>即時</FunctionHeader>
-            <FunctionText>最短1時間以内で着金</FunctionText>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={Secured} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
+        <VisibleOnSmall>
+          <SmallPaymentFunction>
+            <div className="row align-items">
+              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                <FunctionIcon data-aos="flip-right">
+                  <img src={Timer} alt="Digitrad Fast Payment" />
+                </FunctionIcon>
+                <FunctionHeader>即時</FunctionHeader>
+                <FunctionText>最短1時間以内で着金</FunctionText>
+              </div>
+              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                <FunctionIcon data-aos="flip-right">
+                  <img src={Secured} alt="Digitrad Fast Payment" />
+                </FunctionIcon>
 
-            <FunctionHeader>安全</FunctionHeader>
+                <FunctionHeader>安全</FunctionHeader>
 
-            <FunctionText>
-              独自のエスクロー機能による安全な送金を実現。
-            </FunctionText>
-          </div>
+                <FunctionText>
+                  独自のエスクロー機能による安全な送金を実現。
+                </FunctionText>
+              </div>
 
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={Percent} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
-            <FunctionHeader>安価</FunctionHeader>
+              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                <FunctionIcon data-aos="flip-right">
+                  <img src={Percent} alt="Digitrad Fast Payment" />
+                </FunctionIcon>
+                <FunctionHeader>安価</FunctionHeader>
 
-            <FunctionText>手数料0.7%～</FunctionText>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={TenMin} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
-            <FunctionHeader>簡単</FunctionHeader>
-            <FunctionText>
-              以下問い合わせより送金額を入力するだけ。10分程度で手続き完了。
-            </FunctionText>
-          </div>
-        </div>
-        </SmallPaymentFunction>
+                <FunctionText>手数料0.7%～</FunctionText>
+              </div>
+              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                <FunctionIcon data-aos="flip-right">
+                  <img src={TenMin} alt="Digitrad Fast Payment" />
+                </FunctionIcon>
+                <FunctionHeader>簡単</FunctionHeader>
+                <FunctionText>
+                  以下問い合わせより送金額を入力するだけ。10分程度で手続き完了。
+                </FunctionText>
+              </div>
+            </div>
+          </SmallPaymentFunction>
         </VisibleOnSmall>
         <RightWrapper>
           <div>
@@ -158,12 +158,12 @@ export default function Payment() {
         SEE IN ACTION
       </ActionButton>
       <LineEnding />
-    </Container> 
+    </Container>
   );
 }
 const Container = styled.div`
- width:100%;
- margin:auto;
+  width: 100%;
+  margin: auto;
   @media (min-width: 1200px) {
     width: 1000px;
     margin: auto;
@@ -193,7 +193,7 @@ const DTSection = styled.div`
     width: 180px;
   }
   @media (max-width: 576px) {
-    width:85px;
+    width: 85px;
   }
   @media (max-width: 425px) {
     width: 85px;
@@ -215,7 +215,7 @@ const LeftWrapper = styled.div`
   padding-left: 60px;
   margin-right: 55px;
   @media (min-width: 768px) and (max-width: 991px) {
-    width:95%;
+    width: 95%;
     img {
       display: none;
     }
@@ -229,11 +229,10 @@ const LeftWrapper = styled.div`
     img {
       display: none;
     }
-
   }
-  @media(max-width:425px){
-    img{
-      display:block;
+  @media (max-width: 425px) {
+    img {
+      display: block;
     }
   }
 `;
@@ -248,13 +247,13 @@ const RightWrapper = styled.div`
   align-items: center;
   justify-content: center;
   @media (min-width: 768px) and (max-width: 991px) {
-width:100%;
+    width: 100%;
   }
   @media (max-width: 767.9px) {
     width: 100%;
   }
-  @media(max-width:425px){
-    ${'' /* padding:30px; */}
+  @media (max-width: 425px) {
+    ${"" /* padding:30px; */}
   }
 `;
 
@@ -266,7 +265,7 @@ const PaymentFunctionSection = styled.div`
   margin-bottom: 51px;
   padding-left: 15px;
   padding-right: 15px;
-  
+
   @media (max-width: 1024px) {
     width: 100%;
     height: 100%;
@@ -274,15 +273,15 @@ const PaymentFunctionSection = styled.div`
   @media (max-width: 767.9px) {
     margin-bottom: 0px;
   }
-  @media(max-width:576px){
-    display:none;
+  @media (max-width: 576px) {
+    display: none;
   }
 `;
-const SmallPaymentFunction =styled.div `
-width:90%;
-margin:auto;
-margin-bottom:30px;
-`
+const SmallPaymentFunction = styled.div`
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+`;
 const VisibleOnSmall = styled.div`
   @media (min-width: 768px) {
     display: none;
@@ -297,9 +296,9 @@ const Highlight = styled.div`
     line-height: 48px;
     font-style: 300;
   }
-  @media(max-width:425px){
-    font-size:18px;
-    line-height:45px;
+  @media (max-width: 425px) {
+    font-size: 18px;
+    line-height: 45px;
   }
 `;
 const TopSmallVisibility = styled.div`
@@ -313,12 +312,12 @@ const TopSmallVisibility = styled.div`
     line-height: 48px;
     font-weight: bold;
   }
-  @media(max-width:425px){
-    width:275px;
-    height:50px;
-    font-size:15px;
-    line-height:20px;
-    margin:auto;
+  @media (max-width: 425px) {
+    width: 275px;
+    height: 50px;
+    font-size: 15px;
+    line-height: 20px;
+    margin: auto;
   }
 `;
 const FunctionHeader = styled.div`
@@ -336,10 +335,10 @@ const FunctionHeader = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-  @media(max-width:425px){
-    font-size:36px;
-    text-align:center;
-    margin-top:10px;
+  @media (max-width: 425px) {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 10px;
   }
 `;
 const FunctionIcon = styled.div`
@@ -352,13 +351,13 @@ const FunctionIcon = styled.div`
       margin: auto;
     }
   }
-  @media(max-width:425px){
-    height:60px;
-    text-align:center;
-    img{
-      width:50px;
-      height:55px;
-      margin:auto;
+  @media (max-width: 425px) {
+    height: 60px;
+    text-align: center;
+    img {
+      width: 50px;
+      height: 55px;
+      margin: auto;
     }
   }
 `;
@@ -370,15 +369,15 @@ const FunctionText = styled.div`
   line-height: 29px;
   margin: auto;
   @media (min-width: 768px) and (max-width: 991px) {
-    width:100%;
+    width: 100%;
     font-size: 20px;
   }
   @media (max-width: 767.9px) {
     width: 100%;
   }
-  @media(max-width:425px){
-    font-size:15px;
-    text-align:center;
+  @media (max-width: 425px) {
+    font-size: 15px;
+    text-align: center;
   }
 `;
 
@@ -390,7 +389,7 @@ const Title = styled.div`
   margin-left: 50px;
   margin-bottom: 127px;
   @media (min-width: 768px) and (max-width: 991px) {
-margin-bottom:40px;
+    margin-bottom: 40px;
   }
   @media (max-width: 767.9px) {
     width: 400px;
@@ -398,12 +397,10 @@ margin-bottom:40px;
   }
   @media (max-width: 576px) {
     font-size: 36px;
-    line-height:44px;
-    width:244px;
-    margin-left:52px;
-
+    line-height: 44px;
+    width: 244px;
+    margin-left: 52px;
   }
-  
 `;
 const TextBody = styled.div`
   width: 416px;
@@ -415,10 +412,10 @@ const TextBody = styled.div`
   font-size: 26px;
   line-height: 45px;
   @media (min-width: 768px) and (max-width: 991px) {
-    width:100%;
-    font-size:30px;
-    line-height:48px;
-    font-weight:bold;
+    width: 100%;
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: bold;
   }
   @media (max-width: 767.9px) {
     display: none;
@@ -432,7 +429,7 @@ const TextBodyTwo = styled.div`
   font-weight: 300;
   color: var(--mainGreen);
   @media (min-width: 768px) and (max-width: 991px) {
-    display:none;
+    display: none;
   }
   @media (max-width: 768px) {
     display: none;
@@ -463,27 +460,28 @@ const ActionButton = styled.a`
     padding-bottom: 18px;
     margin-top: 70px;
   }
-  @media(max-width:576px){
-    width:239px;
+  @media (max-width: 576px) {
+    width: 239px;
   }
 `;
 const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
-  background-color:var(--mainBlack);
+  background-color: var(--mainBlack);
   margin-top: 70px;
-  @media(max-width:990.9px){
-    width:80%;
-    margin:auto;
-    margin-top:70px;
+  @media (max-width: 990.9px) {
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
   }
   @media (max-width: 768px) {
     width: 80%;
     margin: auto;
     margin-top: 70px;
   }
-  @media (max-width: 426px) {
+  @media (max-width: 576px) {
+    margin-top: 50px;
     width: 157px;
   }
 `;

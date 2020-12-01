@@ -31,10 +31,4 @@ function App() {
 }
 
 export default App;
-// const Wrapper = styled.div `
-// @media(min-width:1200){
-//   width:1200px;
-//   margin:auto;
-// }
-// `
 

@@ -29,7 +29,7 @@ export default function Logistics() {
           </div>
         </HeaderSection>
         <SmallHeaderSection>
-        <SmallJapaneseHeading>
+        <SmallJapaneseHeading className="roboto">
               輸出業務は、本当に大変です。
               輸出・輸入基準の確認、各種船積書類の作成、物流会社とのやり取り・・・
             </SmallJapaneseHeading>
@@ -216,6 +216,8 @@ line-height: 20px;
 font-weight: 300;
 width:263px;
 margin:auto;
+margin-top:20px;
+margin-bottom:20px;
 @media(min-width:426px) and (max-width:576px){
   width:400px;
   font-size:24px;
@@ -237,16 +239,14 @@ const DigitradPhrase = styled.div`
     margin:auto;
     margin-bottom:100px;
   }
-  @media(min-width:426px) and (max-width:576px){
-    font-size:24px;
-    width:90%;
+  
+  @media(max-width:576px){
+    width:289px;
+    font-size:25px;
+    line-height:45px;
     margin:auto;
-    margin-bottom:100px;
-  }
-  @media(max-width:425.9px){
-    font-size:20px;
-    width:90%;
-    margin:auto;
+    margin-top:12px;
+   
   }
  
 
@@ -293,7 +293,8 @@ const LineEnding = styled.hr`
     margin: auto;
     margin-top: 70px;
   }
-  @media (max-width: 426px) {
+  @media (max-width: 576px) {
+    margin-top:50px;
     width: 157px;
   }
 `;
@@ -452,6 +453,13 @@ font-weight: bold;
 font-size: 20px;
 line-height: 45px;
 color:white;
+@media(max-width:576px){
+   width:349px;
+   margin:auto;
+   text-align:center;
+   font-size: 18px;
+line-height: 31px;
+ }
 `
 const SizeContainer = styled.div `
 display:flex;
@@ -472,7 +480,7 @@ color:var(--mainBlue);
   margin:auto;
   font-size:12px;
 }
-@media(max-width:375px){
+@media(max-width:576px){
    width:349px;
    margin:auto;
    text-align:center;

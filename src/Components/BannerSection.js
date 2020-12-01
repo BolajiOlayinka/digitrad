@@ -319,6 +319,7 @@ const StyledSectionButton = styled.button`
   @media (min-width: 375px) and (max-width: 425.9px) {
     width: 268px;
     height: 40px;
+    margin:auto;
     border-radius: 2px;
     padding: 8px 10px;
     font-size: 16px;

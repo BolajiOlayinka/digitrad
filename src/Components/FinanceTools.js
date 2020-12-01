@@ -318,7 +318,8 @@ const LineEnding = styled.hr`
     margin: auto;
     margin-top: 70px;
   }
-  @media (max-width: 426px) {
+  @media (max-width: 576px) {
+    margin-top:50px;
     width: 157px;
   }
 `;
