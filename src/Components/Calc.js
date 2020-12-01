@@ -179,196 +179,196 @@ export default class Calc extends Component {
   render() {
     return (
       <React.Fragment>
-     <Wrapper>
-      <CalculatorHeader>
-      <img src={DT} alt = "Digitrad Icon"/>
-      <HeaderText>計算してみましょう</HeaderText>
-      </CalculatorHeader>
-        <SendSection>
-          <InputSection>
-            <p>You send</p>
-            <input
-              type="number"
-              value={this.state.defaultValue}
-              onChange={this.handleInput}
-              autoComplete="off"
-              placeholder="1000"
-            />
-          </InputSection>
-          <StyledSelect>
-            <StyledButton onClick={this.toggleModalOne}>
-              <img src={this.state.ButtonFlagOne} alt="Currencies Flags" />{" "}
-              {this.state.ButtonValueOne}
-              <FontAwesomeIcon icon={faChevronDown} />
-            </StyledButton>
-          </StyledSelect>
-        </SendSection>
+        <Wrapper>
+          <CalculatorHeader>
+            <img src={DT} alt="Digitrad Icon" />
+            <HeaderText>計算してみましょう</HeaderText>
+          </CalculatorHeader>
+          <SendSection>
+            <InputSection>
+              <p>You send</p>
+              <input
+                type="number"
+                value={this.state.defaultValue}
+                onChange={this.handleInput}
+                autoComplete="off"
+                placeholder="1000"
+              />
+            </InputSection>
+            <StyledSelect>
+              <StyledButton onClick={this.toggleModalOne}>
+                <img src={this.state.ButtonFlagOne} alt="Currencies Flags" />{" "}
+                {this.state.ButtonValueOne}
+                <FontAwesomeIcon icon={faChevronDown} />
+              </StyledButton>
+            </StyledSelect>
+          </SendSection>
 
-        <CurrencyModal
-          isOpen={this.state.modalone}
-          toggle={this.toggleModalOne}
-        >
-          <StyledModalHeader toggle={this.toggleModalOne}>
-            Available Currencies
-          </StyledModalHeader>
-          <StyledModalBody>
-            <ul>
-              <li
-                onClick={() => {
-                  this.JPYButtonOneSelect();
-                  this.toggleModalOne();
-                }}
-              >
-                <img src={jpyflag} alt="Japanese Flag" />
-                Japanese Yen
-              </li>
-              <li
-                onClick={() => {
-                  this.BTCButtonOneSelect();
-                  this.toggleModalOne();
-                }}
-              >
-                <img src={btcflag} alt="British Flag" />
-                Bitcoin
-              </li>
-              <li
-                onClick={() => {
-                  this.USDCButtonOneSelect();
-                  this.toggleModalOne();
-                }}
-              >
-                <img src={usdcflag} alt="USDC Coin" />
-                USD Coin
-              </li>
-              <li
-                onClick={() => {
-                  this.NGNButtonOneSelect();
-                  this.toggleModalOne();
-                }}
-              >
-                <img src={ngnflag} alt="Nigerian Flag" />
-                Nigerian Naira
-              </li>
-              <li
-                onClick={() => {
-                  this.USDButtonOneSelect();
-                  this.toggleModalOne();
-                }}
-              >
-                <img src={usdflag} alt="America Flag" />
-                USD United States Dollar
-              </li>
-            </ul>
-          </StyledModalBody>
-        </CurrencyModal>
+          <CurrencyModal
+            isOpen={this.state.modalone}
+            toggle={this.toggleModalOne}
+          >
+            <StyledModalHeader toggle={this.toggleModalOne}>
+              Available Currencies
+            </StyledModalHeader>
+            <StyledModalBody>
+              <ul>
+                <li
+                  onClick={() => {
+                    this.JPYButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={jpyflag} alt="Japanese Flag" />
+                  Japanese Yen
+                </li>
+                <li
+                  onClick={() => {
+                    this.BTCButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={btcflag} alt="British Flag" />
+                  Bitcoin
+                </li>
+                <li
+                  onClick={() => {
+                    this.USDCButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={usdcflag} alt="USDC Coin" />
+                  USD Coin
+                </li>
+                <li
+                  onClick={() => {
+                    this.NGNButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={ngnflag} alt="Nigerian Flag" />
+                  Nigerian Naira
+                </li>
+                <li
+                  onClick={() => {
+                    this.USDButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={usdflag} alt="America Flag" />
+                  USD United States Dollar
+                </li>
+              </ul>
+            </StyledModalBody>
+          </CurrencyModal>
 
-        <RatesSection>
-          <LineSection>
-            <StyledLine />
-          </LineSection>
+          <RatesSection>
+            <LineSection>
+              <StyledLine />
+            </LineSection>
 
-          <FixedRates className="my-auto">
-            <RatesItemsWrapper>
-              <IconContainer>
-                <StyledLineIcons icon={faCheck} />
-              </IconContainer>
+            <FixedRates className="my-auto">
+              <RatesItemsWrapper>
+                <IconContainer>
+                  <StyledLineIcons icon={faCheck} />
+                </IconContainer>
 
-              <Amount className="roboto">000,000</Amount>
-              <AmountDesc>Transfer rate (Fixed)</AmountDesc>
-            </RatesItemsWrapper>
-            <RatesItemsWrapper>
-              <IconContainer>
-                <StyledLineIcons icon={faWallet} />
-              </IconContainer>
-              <Amount className="roboto">000,000</Amount>
-              <AmountDesc>Amount We will convert</AmountDesc>
-            </RatesItemsWrapper>
-            <RatesItemsWrapper>
-              <IconContainer>
-                <StyledLineIcons icon={faExchangeAlt} />
-              </IconContainer>
-              <Amount className="roboto">{this.state.realtimePrice}</Amount>
-              <AmountDesc>Guaranteed Rates (10 mins)</AmountDesc>
-            </RatesItemsWrapper>
-          </FixedRates>
-        </RatesSection>
+                <Amount className="roboto">000,000</Amount>
+                <AmountDesc>Transfer rate (Fixed)</AmountDesc>
+              </RatesItemsWrapper>
+              <RatesItemsWrapper>
+                <IconContainer>
+                  <StyledLineIcons icon={faWallet} />
+                </IconContainer>
+                <Amount className="roboto">000,000</Amount>
+                <AmountDesc>Amount We will convert</AmountDesc>
+              </RatesItemsWrapper>
+              <RatesItemsWrapper>
+                <IconContainer>
+                  <StyledLineIcons icon={faExchangeAlt} />
+                </IconContainer>
+                <Amount className="roboto">{this.state.realtimePrice}</Amount>
+                <AmountDesc>Guaranteed Rates (10 mins)</AmountDesc>
+              </RatesItemsWrapper>
+            </FixedRates>
+          </RatesSection>
 
-        <ReceiveSection>
-          <OutputSection className="roboto">
-            <p>You receive</p>
-            <input
-              type="number"
-              autoComplete="off"
-              disabled
-              defaultValue={this.state.result}
-            />
-          </OutputSection>
-          <StyledSelect>
-            <StyledButton onClick={this.toggleModalTwo}>
-              <img src={this.state.ButtonFlagTwo} alt="Currencies Flags" />{" "}
-              {this.state.ButtonValueTwo}
-              <FontAwesomeIcon icon={faChevronDown} />
-            </StyledButton>
-          </StyledSelect>
-        </ReceiveSection>
+          <ReceiveSection>
+            <OutputSection className="roboto">
+              <p>You receive</p>
+              <input
+                type="number"
+                autoComplete="off"
+                disabled
+                defaultValue={this.state.result}
+              />
+            </OutputSection>
+            <StyledSelect>
+              <StyledButton onClick={this.toggleModalTwo}>
+                <img src={this.state.ButtonFlagTwo} alt="Currencies Flags" />{" "}
+                {this.state.ButtonValueTwo}
+                <FontAwesomeIcon icon={faChevronDown} />
+              </StyledButton>
+            </StyledSelect>
+          </ReceiveSection>
 
-        <OutputCurrencyModal
-          isOpen={this.state.modaltwo}
-          toggle={this.toggleModalTwo}
-        >
-          <StyledModalHeader toggle={this.toggleModalTwo}>
-            Available Currencies
-          </StyledModalHeader>
-          <StyledModalBody>
-            <ul>
-              <li
-                onClick={() => {
-                  this.JPYButtonTwoSelect();
-                  this.toggleModalTwo();
-                }}
-              >
-                <img src={jpyflag} alt="Japanese Flag" />
-                Japanese Yen
-              </li>
-              <li
-                onClick={() => {
-                  this.BTCButtonTwoSelect();
-                  this.toggleModalTwo();
-                }}
-              >
-                <img src={btcflag} alt="Bitcoin Flag" />
-                Bitcoin
-              </li>
-              <li
-                onClick={() => {
-                  this.USDCButtonTwoSelect();
-                  this.toggleModalTwo();
-                }}
-              >
-                <img src={usdcflag} alt="USD Coin" />
-                USD Coin
-              </li>
-              <li
-                onClick={() => {
-                  this.NGNButtonTwoSelect();
-                  this.toggleModalTwo();
-                }}
-              >
-                <img src={ngnflag} alt="Nigerian Flag" />
-                Nigerian Naira
-              </li>
-              <li
-                onClick={() => {
-                  this.USDButtonTwoSelect();
-                  this.toggleModalTwo();
-                }}
-              >
-                <img src={usdflag} alt="America Flag" />
-                USD United States Dollar
-              </li>
-            </ul>
-          </StyledModalBody>
-        </OutputCurrencyModal>
+          <OutputCurrencyModal
+            isOpen={this.state.modaltwo}
+            toggle={this.toggleModalTwo}
+          >
+            <StyledModalHeader toggle={this.toggleModalTwo}>
+              Available Currencies
+            </StyledModalHeader>
+            <StyledModalBody>
+              <ul>
+                <li
+                  onClick={() => {
+                    this.JPYButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={jpyflag} alt="Japanese Flag" />
+                  Japanese Yen
+                </li>
+                <li
+                  onClick={() => {
+                    this.BTCButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={btcflag} alt="Bitcoin Flag" />
+                  Bitcoin
+                </li>
+                <li
+                  onClick={() => {
+                    this.USDCButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={usdcflag} alt="USD Coin" />
+                  USD Coin
+                </li>
+                <li
+                  onClick={() => {
+                    this.NGNButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={ngnflag} alt="Nigerian Flag" />
+                  Nigerian Naira
+                </li>
+                <li
+                  onClick={() => {
+                    this.USDButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={usdflag} alt="America Flag" />
+                  USD United States Dollar
+                </li>
+              </ul>
+            </StyledModalBody>
+          </OutputCurrencyModal>
         </Wrapper>
       </React.Fragment>
     );
@@ -377,19 +377,25 @@ export default class Calc extends Component {
 
 const SendSection = styled.div`
   display: flex;
-  @media(max-width:425px){
-    width:100%;
+  @media (max-width: 425px) {
+    width: 100%;
+    margin:auto;
   }
 `;
-const Wrapper = styled.div `
-@media(max-width:426px){
-  width:100%;
-  margin:auto;
-}
-`
+const Wrapper = styled.div`
+  @media (max-width: 426px) {
+    ${'' /* width: 100%;
+    margin: auto; */}
+  }
+`;
 const ReceiveSection = styled.div`
   display: flex;
   margin-top: -15px;
+  @media (max-width: 425px) {
+    width: 100%;
+    margin:auto;
+    margin-top:-15px;
+  }
 `;
 const InputSection = styled.div`
   background-color: white;
@@ -406,7 +412,7 @@ const InputSection = styled.div`
     line-height: 32px;
     outline: 0;
     border: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     -moz-outline-style: none;
     :active {
       outline: 0;
@@ -418,7 +424,9 @@ const InputSection = styled.div`
       border: none;
       -moz-outline-style: none;
     }
-  }
+    @media(max-width:425px){
+      width:150px;
+    }  }
   p {
     margin-bottom: 5px;
 
@@ -427,9 +435,9 @@ const InputSection = styled.div`
     height: 20px;
     color: var(--color-accent);
   }
-  @media(max-width:426px){
-    width:50%;
-    font-size:16px;
+  @media (max-width: 426px) {
+    width: 200px;
+    font-size: 16px;
   }
 `;
 const OutputSection = styled.div`
@@ -442,7 +450,7 @@ const OutputSection = styled.div`
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
     height: 36px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     ${"" /* padding: 28px 12px 4px; */}
     font-size: 22px;
     line-height: 32px;
@@ -459,7 +467,9 @@ const OutputSection = styled.div`
       border: none;
       -moz-outline-style: none;
     }
-  }
+    @media(max-width:425px){
+      width:150px;
+    }  }
   p {
     margin-bottom: 5px;
 
@@ -468,8 +478,9 @@ const OutputSection = styled.div`
     height: 20px;
     color: var(--color-accent);
   }
-  @media(max-width:426px){
-    width:50%;
+  @media (max-width: 426px) {
+    width: 200px;
+    font-size: 16px;
   }
 `;
 const StyledSelect = styled.div`
@@ -497,6 +508,12 @@ const StyledButton = styled.button`
   :focus {
     outline: 0;
     border: 0.5px solid white;
+  }
+  @media(max-width:425px){
+    width:100px;
+    img{
+      width:20px;
+    }
   }
 `;
 const CurrencyModal = styled(Modal)`
@@ -576,7 +593,7 @@ const OutputCurrencyModal = styled(Modal)`
   }
 `;
 const StyledModalHeader = styled(ModalHeader)`
-  height:30px;
+  height: 30px;
   padding: 13px 16px 11px;
 
   color: black;
@@ -611,6 +628,9 @@ const IconContainer = styled.div`
   margin-right: 20px;
   margin-left: -30px;
   z-index: 10;
+  @media(max-width:425px){
+    margin-left:-25px;
+  }
 `;
 const StyledLineIcons = styled(FontAwesomeIcon)`
   font-size: 20px;
@@ -630,55 +650,58 @@ const StyledLine = styled.hr`
 
   position: relative;
   z-index: 0;
+  @media(max-width:425px){
+    height:180px;
+  }
 `;
 const FixedRates = styled.div`
   padding-top: 15px;
   width: 90%;
-  @media(max-width:425px){
-    width:50%;
+  @media (max-width: 425px) {
+    width: 90%;
   }
 `;
 const Amount = styled.p`
   width: 30%;
   color: white;
-  letter-spacing:1px;
+  letter-spacing: 1px;
   :second-child {
     color: #d3d5d8;
   }
-  @media(max-width:425px){
-    font-size:14px;
-    width:50%;
+  @media (max-width: 425px) {
+    font-size: 14px;
+    
   }
 `;
 const AmountDesc = styled.p`
   color: #eaeaea;
-  margin-left:20px;
+  margin-left: 20px;
   :second-child {
     color: #d3d5d8;
   }
   :last-child() {
     color: #00b9ff;
   }
-  @media(max-width:425px){
-    font-size:14px;
-   
+  @media (max-width: 425px) {
+    
+    font-size: 14px;
   }
 `;
-const CalculatorHeader = styled.div `
-margin-bottom:20px;
-@media(max-width:426px){
-  width:100%;
-}
-`
-const HeaderText = styled.div `
-font-style: normal;
-font-weight: bold;
-font-size: 45px;
-line-height: 65px;
-color:white;
-margin-top:10px; 
-@media(max-width:425px){
-  font-size:26px;
-  line-height:36px;
-}
-`
+const CalculatorHeader = styled.div`
+  margin-bottom: 20px;
+  @media (max-width: 426px) {
+    width: 100%;
+  }
+`;
+const HeaderText = styled.div`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 65px;
+  color: white;
+  margin-top: 10px;
+  @media (max-width: 425px) {
+    font-size: 26px;
+    line-height: 36px;
+  }
+`;

@@ -253,7 +253,7 @@ const RightWrapper = styled.div`
     width: 100%;
   }
   @media (max-width: 425px) {
-    ${"" /* padding:30px; */}
+ width:100%;
   }
 `;
 
@@ -281,6 +281,7 @@ const SmallPaymentFunction = styled.div`
   width: 90%;
   margin: auto;
   margin-bottom: 30px;
+  text-align:center;
 `;
 const VisibleOnSmall = styled.div`
   @media (min-width: 768px) {
