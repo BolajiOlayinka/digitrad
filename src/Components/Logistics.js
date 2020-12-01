@@ -281,10 +281,20 @@ const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
+  background-color:var(--mainBlack);
   margin-top: 70px;
-  @media(max-width:991px){
-    width:40%;
+  @media(max-width:990.9px){
+    width:80%;
     margin:auto;
+    margin-top:70px;
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+  }
+  @media (max-width: 426px) {
+    width: 157px;
   }
 `;
 const SmallBackgroundLine = styled.hr `
@@ -369,6 +379,9 @@ line-height: 29px;
 `
 const SmallCircleTick = styled.div `
 display:flex;
+@media(min-width:576px){
+  display:none;
+}
 @media(max-width:425px){
   margin-top:60px;
 }

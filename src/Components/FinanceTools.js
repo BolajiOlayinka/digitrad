@@ -301,6 +301,7 @@ const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
+  background-color:var(--mainBlack);
   margin-top: 70px;
   @media (min-width: 991px) and (max-width: 1023.9px) {
     width: 500px;
@@ -308,8 +309,16 @@ const LineEnding = styled.hr`
     margin-top:70px;
   }
   @media(max-width:990.9px){
-    width:30%;
+    width:80%;
     margin:auto;
     margin-top:70px;
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+  }
+  @media (max-width: 426px) {
+    width: 157px;
   }
 `;

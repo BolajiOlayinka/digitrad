@@ -376,6 +376,7 @@ const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
+  background-color:var(--mainBlack);
   margin-top: 70px;
   @media(max-width:991px){
     width:80%;

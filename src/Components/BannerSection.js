@@ -402,6 +402,7 @@ const DividerContainer = styled.div`
 `;
 const Line = styled.hr`
   border: 1px solid var(--mainGreen);
+  background-color:var(--mainGreen);
   width: 33.3%;
   @media (min-width: 375px) and (max-width: 425.9px) {
     display: none;

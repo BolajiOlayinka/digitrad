@@ -471,14 +471,19 @@ const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
+  background-color:var(--mainBlack);
   margin-top: 70px;
-  @media (min-width: 768px) and (max-width: 1199px) {
-    width: 20%;
-    margin: auto;
+  @media(max-width:990.9px){
+    width:80%;
+    margin:auto;
+    margin-top:70px;
   }
-  @media (max-width: 767.9px) {
-    margin-top: 40px;
-    width: 20%;
+  @media (max-width: 768px) {
+    width: 80%;
     margin: auto;
+    margin-top: 70px;
+  }
+  @media (max-width: 426px) {
+    width: 157px;
   }
 `;
