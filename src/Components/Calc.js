@@ -29,6 +29,8 @@ export default class Calc extends Component {
       realtimePrice: "",
       realTimePriceTwo: 350,
       result: "",
+      fixedRates: 0,
+      amountConvert: 0,
     };
     this.input = "";
   }
@@ -42,11 +44,40 @@ export default class Calc extends Component {
       },
     })
       .then((res) => {
+        if (
+          this.state.ButtonValueOne === "NGN" &&
+          this.state.ButtonValueTwo === "NGN"
+        ) {
+          this.setState({
+            fixedRates: 150,
+          });
+          if (this.state.defaultValue < this.state.fixedRates) {
+            alert(`You cannot send less than ${this.state.defaultValue}`);
+          }
+        } else if (
+          this.state.ButtonValueOne === "NGN" &&
+          this.state.ButtonValueTwo === "JPY"
+        ) {
+          this.setState({
+            fixedRates: 20,
+          });
+        } else if (
+          this.state.ButtonValueOne === "BTC" &&
+          this.state.ButtonValueTwo === "NGN"
+        ) {
+          let PercentagefixedRate = Number(0.007 * this.state.defaultValue);
+          this.setState({
+            fixedRates: PercentagefixedRate,
+          });
+        }
         let RealTimePrice = res.data.rate.toFixed(8);
-        let result = Number(this.state.defaultValue * RealTimePrice).toFixed(5);
+        let Amount = Number(this.state.defaultValue - this.state.fixedRates);
+        let result = Number(Amount * RealTimePrice).toFixed(5);
+
         this.setState({
           result: result,
           realtimePrice: RealTimePrice,
+          amountConvert: Amount,
         });
       })
       .catch((err) => {
@@ -76,12 +107,20 @@ export default class Calc extends Component {
         defaultValue: e.target.value,
       },
       () => {
+        let amountConvert = this.state.defaultValue - this.state.fixedRates;
         let result = (
-          this.state.defaultValue * this.state.realtimePrice
+          this.state.defaultValue * this.state.realtimePrice -
+          this.state.fixedRates
         ).toFixed(5);
         this.setState({
           result: result,
+          amountConvert: amountConvert,
         });
+        if (this.state.defaultValue < this.state.fixedRates) {
+          alert(
+            `You cannot send less than ${this.state.fixedRates} ${this.state.ButtonValueOne}`
+          );
+        }
       }
     );
   };
@@ -155,6 +194,9 @@ export default class Calc extends Component {
       ButtonValueTwo: "NGN",
       ButtonFlagTwo: ngnflag,
     });
+    setTimeout(() => {
+      this.fetchApi();
+    }, 1000);
   };
   USDButtonOneSelect = () => {
     this.setState({
@@ -273,14 +315,14 @@ export default class Calc extends Component {
                   <StyledLineIcons icon={faCheck} />
                 </IconContainer>
 
-                <Amount className="roboto">000,000</Amount>
+                <Amount className="roboto">{this.state.fixedRates} {this.state.ButtonValueOne}</Amount>
                 <AmountDesc>Transfer rate (Fixed)</AmountDesc>
               </RatesItemsWrapper>
               <RatesItemsWrapper>
                 <IconContainer>
                   <StyledLineIcons icon={faWallet} />
                 </IconContainer>
-                <Amount className="roboto">000,000</Amount>
+                <Amount className="roboto">{this.state.amountConvert} {this.state.ButtonValueOne}</Amount>
                 <AmountDesc>Amount We will convert</AmountDesc>
               </RatesItemsWrapper>
               <RatesItemsWrapper>
@@ -379,12 +421,12 @@ const SendSection = styled.div`
   display: flex;
   @media (max-width: 425px) {
     width: 100%;
-    margin:auto;
+    margin: auto;
   }
 `;
 const Wrapper = styled.div`
   @media (max-width: 426px) {
-    ${'' /* width: 100%;
+    ${"" /* width: 100%;
     margin: auto; */}
   }
 `;
@@ -393,8 +435,8 @@ const ReceiveSection = styled.div`
   margin-top: -15px;
   @media (max-width: 425px) {
     width: 100%;
-    margin:auto;
-    margin-top:-15px;
+    margin: auto;
+    margin-top: -15px;
   }
 `;
 const InputSection = styled.div`
@@ -424,9 +466,10 @@ const InputSection = styled.div`
       border: none;
       -moz-outline-style: none;
     }
-    @media(max-width:425px){
-      width:150px;
-    }  }
+    @media (max-width: 425px) {
+      width: 150px;
+    }
+  }
   p {
     margin-bottom: 5px;
 
@@ -467,9 +510,10 @@ const OutputSection = styled.div`
       border: none;
       -moz-outline-style: none;
     }
-    @media(max-width:425px){
-      width:150px;
-    }  }
+    @media (max-width: 425px) {
+      width: 150px;
+    }
+  }
   p {
     margin-bottom: 5px;
 
@@ -509,10 +553,10 @@ const StyledButton = styled.button`
     outline: 0;
     border: 0.5px solid white;
   }
-  @media(max-width:425px){
-    width:100px;
-    img{
-      width:20px;
+  @media (max-width: 425px) {
+    width: 100px;
+    img {
+      width: 20px;
     }
   }
 `;
@@ -628,8 +672,8 @@ const IconContainer = styled.div`
   margin-right: 20px;
   margin-left: -30px;
   z-index: 10;
-  @media(max-width:425px){
-    margin-left:-25px;
+  @media (max-width: 425px) {
+    margin-left: -25px;
   }
 `;
 const StyledLineIcons = styled(FontAwesomeIcon)`
@@ -650,8 +694,8 @@ const StyledLine = styled.hr`
 
   position: relative;
   z-index: 0;
-  @media(max-width:425px){
-    height:180px;
+  @media (max-width: 425px) {
+    height: 180px;
   }
 `;
 const FixedRates = styled.div`
@@ -670,7 +714,6 @@ const Amount = styled.p`
   }
   @media (max-width: 425px) {
     font-size: 14px;
-    
   }
 `;
 const AmountDesc = styled.p`
@@ -683,7 +726,6 @@ const AmountDesc = styled.p`
     color: #00b9ff;
   }
   @media (max-width: 425px) {
-    
     font-size: 14px;
   }
 `;

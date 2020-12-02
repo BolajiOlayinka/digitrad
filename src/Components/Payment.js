@@ -40,7 +40,7 @@ export default function Payment() {
         <LeftWrapper>
           <img src={PaymentImage} alt="Digitrad Payment Service" />
           <TextBody>
-          貿易代金決済・国際送金で、以下のような悩みを抱えていらっしゃる企業様へ
+            貿易代金決済・国際送金で、以下のような悩みを抱えていらっしゃる企業様へ
           </TextBody>
           <TextBodyTwo>
             ✓少額の送金なのに、手数料が高い ✓毎度手続きが煩雑
@@ -252,7 +252,7 @@ const RightWrapper = styled.div`
     width: 100%;
   }
   @media (max-width: 425px) {
- width:100%;
+    width: 100%;
   }
 `;
 
@@ -280,7 +280,7 @@ const SmallPaymentFunction = styled.div`
   width: 90%;
   margin: auto;
   margin-bottom: 30px;
-  text-align:center;
+  text-align: center;
 `;
 const VisibleOnSmall = styled.div`
   @media (min-width: 768px) {
@@ -407,9 +407,9 @@ const TextBody = styled.div`
   height: 118px;
   font-weight: 300;
   font-size: 26px;
-line-height: 45px;
-margin-top:38px;
-margin-bottom:38px;
+  line-height: 45px;
+  margin-top: 38px;
+  margin-bottom: 38px;
   @media (min-width: 768px) and (max-width: 991px) {
     width: 100%;
     font-size: 30px;
