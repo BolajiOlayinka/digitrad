@@ -21,7 +21,7 @@ export default function CrossBorder() {
   });
   return (
     <React.Fragment>
-      <Container>
+      <Container className="crossborder">
         <HeaderSection>
           <DTSection data-aos="fade-right">
             <img src={DT} alt="Icon" />

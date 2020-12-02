@@ -15,7 +15,7 @@ export default function Logistics() {
   });
   return (
     <React.Fragment>
-      <Container>
+      <Container className="logistics">
         <HeaderSection>
           <DTSection data-aos="fade-right">
             <img src={DT} alt="Icon" />

@@ -22,7 +22,7 @@ export default function Payment() {
     );
   });
   return (
-    <Container>
+    <Container className="payment">
       <HeaderSection>
         <DTSection data-aos="fade-right">
           <img src={DT} alt="Icon" />

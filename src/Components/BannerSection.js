@@ -7,16 +7,19 @@ import animateScrollTo from "animated-scroll-to";
 
 export default function BannerSection() {
   const ScrolltoMarketPlace = () => {
-    animateScrollTo(450);
+    animateScrollTo(document.querySelector('.crossborder'));
   };
   const ScrolltoInternationalPayment = () => {
-    animateScrollTo(2090);
+    animateScrollTo(document.querySelector('.payment'));
   };
   const ScrolltoLogistics = () => {
-    animateScrollTo(3630);
+    animateScrollTo(document.querySelector('.logistics'));
   };
+  // const ScrolltoLogistics = () => {
+  //   animateScrollTo(3630);
+  // };
   const ScrolltoFinance = () => {
-    animateScrollTo(4730);
+    animateScrollTo(document.querySelector('.finance'));
   };
 
   return (

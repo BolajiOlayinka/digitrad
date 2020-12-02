@@ -16,7 +16,7 @@ export default function FinanceTools() {
   });
   return (
     <React.Fragment>
-      <Container>
+      <Container className="finance">
         <HeaderSection>
           <DTSection data-aos="fade-right">
             <img src={DT} alt="Icon" />
