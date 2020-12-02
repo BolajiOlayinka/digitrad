@@ -74,6 +74,11 @@ ${'' /* width: 100%; */}
     width: 1012px;
     margin: auto;
   }
+  @media (min-width: 1024px) and (max-width:1199px) {
+    width: 1012px;
+    margin: auto;
+  }
+
  
 `;
 
