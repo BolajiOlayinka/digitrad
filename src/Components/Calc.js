@@ -38,7 +38,7 @@ export default class Calc extends Component {
   fetchApi = () => {
     axios({
       method: "get",
-      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=${process.env.REACT_APP_KEY_TWO}`,
+      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apiKey=${process.env.REACT_APP_KEY_ONE}`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -66,8 +66,10 @@ export default class Calc extends Component {
           this.state.ButtonValueTwo === "NGN"
         ) {
           let PercentagefixedRate = Number(0.007 * this.state.defaultValue);
+
           this.setState({
             fixedRates: PercentagefixedRate,
+            
           });
         }
         let RealTimePrice = res.data.rate.toFixed(8);
@@ -105,6 +107,7 @@ export default class Calc extends Component {
     this.setState(
       {
         defaultValue: e.target.value,
+
       },
       () => {
         let amountConvert = this.state.defaultValue - this.state.fixedRates;
