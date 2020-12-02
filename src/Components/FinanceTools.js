@@ -53,6 +53,7 @@ export default function FinanceTools() {
   );
 }
 const Container = styled.div`
+width:100%;
 @media (min-width:1200px){
   width: 1080px;
   margin: auto;
@@ -72,6 +73,7 @@ const Container = styled.div`
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
+ 
 `;
 const EnglishHeading = styled.div`
   width: 561px;
@@ -86,8 +88,8 @@ const EnglishHeading = styled.div`
     margin-left: 67px;
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
-    font-size: 65px;
-    width: 500px;
+    font-size: 60px;
+    width: 450px;
     margin-left: 50px;
   }
   @media (min-width: 991px) and (max-width: 1023.9px) {
@@ -160,7 +162,8 @@ const JapaneseHeading = styled.div`
   @media (min-width: 768px) and (max-width: 990.9px) {
     margin-left: 60px;
     width: 330px;
-    font-size: 21px;
+    font-size: 19px;
+    margin-right:10px;
   }
   @media (min-width: 576px) and (max-width: 767.9px) {
     margin-left: 50px;
@@ -230,6 +233,14 @@ const ImageSection = styled.div`
     height: 350px;
     padding-right:10px;
   }
+  @media(min-width:768px) and (max-width:991px){
+    width:50%;
+    img{
+   width:50%;
+   height:70%; 
+  }
+  }
+  
   @media(max-width:576px){
     display:none;
   }

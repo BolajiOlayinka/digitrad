@@ -52,7 +52,7 @@ export default class Calc extends Component {
             fixedRates: 150,
           });
           if (this.state.defaultValue < this.state.fixedRates) {
-            alert(`You cannot send less than ${this.state.defaultValue}`);
+            alert(`You cannot send less than ${this.state.fixedRates}`);
           }
         } else if (
           this.state.ButtonValueOne === "NGN" &&

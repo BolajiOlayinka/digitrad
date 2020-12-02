@@ -116,6 +116,7 @@ const Container = styled.div`
   @media (min-width: 768px) and (max-width: 991px) {
 width:100%;
 margin:auto;
+
   }
 `;
 
@@ -206,6 +207,10 @@ const JapaneseHeading = styled.div`
     ${"" /* margin-left: 262px; */}
     margin-left:67px;
   }
+  @media (min-width: 768px) and (max-width:991px) {
+    width:60%;
+    margin-left:67px;
+  }
   @media(max-width:576px){
     display:none;
   }
@@ -234,8 +239,8 @@ const DigitradPhrase = styled.div`
   color: var(--mainBlue);
   margin-bottom:100px;
   @media(min-width:768px) and (max-width:991px){
-    width:100%;
-    font-size:34px;
+    width:700px;
+    font-size:28px;
     margin:auto;
     margin-bottom:100px;
   }
@@ -321,11 +326,11 @@ const BackgroundLine = styled.hr`
   margin: auto;
   background-color:var(--mainGreen);
   @media (min-width: 991px) and (max-width: 1024px) {
-width:80%;
+width:800px;
 margin:auto;
   }
   @media (min-width: 768px) and (max-width: 990.9px) {
-    width:80%;
+    width:600px;
   }
   @media (max-width:767.9px) {
 display:none
@@ -407,12 +412,12 @@ justify-content:space-between;
   position:relative;
   z-index:2;
   margin-top:-60px;
-  width:990px;
+  width:900px;
   margin:auto;
   margin-top:-60px;
 }
 @media (min-width: 768px) and (max-width: 990.9px) {
-width:100%;
+width:700px;
 margin:auto;
 margin-top:-60px;
 

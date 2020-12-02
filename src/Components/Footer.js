@@ -43,19 +43,23 @@ padding-left:20px;
 padding-right:20px;
 width:1200px;
 margin:auto;
+display:flex;
+align-items:center;
 @media(min-width:1200px){
     width:1200px;
     margin:auto;
 display:flex;
 align-items:center;
 }
+
 @media(max-width:425px){
     padding-left:21px;
     padding-right:21px;
     padding-top:12px;
     padding-bottom:12px;
     font-size:12px;
-    line-height:20px
+    line-height:20px;
+    flex-direction:column;
 }
 `
 const FooterLeft =styled.div `
@@ -75,17 +79,29 @@ a{
     color:white;
     text-decoration:none;  
 }
+@media(min-width:768px) and (max-width:991px){
+    font-size:12px;
+    line-height:22px;
+    width:70%;
+}
 @media(max-width:425px){
     font-size:12px;
-    line-height:20px
+    line-height:20px;
+    width:100%;
 }
 `
 const FooterRight = styled.div `
 display:flex;
 margin-left:auto;
 @media(max-width:425px){
+    flex-direction:column;
     font-size:12px;
-    line-height:20px
+    line-height:20px;
+    margin-left:5px;
+    width:100%;
+}
+@media(min-width:768px) and (max-width:991px){
+    width:30%;
 }
 `
 const IconContainer= styled.div `
@@ -98,4 +114,19 @@ img{
     height:24px;
     
 }
+@media(min-width:768px) and (max-width:991px){
+    width:130px;
+    img{
+        width:20px;
+        height:20px;
+    }
+    
+}
+@media(max-width:425px){
+    width:100px;
+        img{
+            width:10px;
+            height:10px;
+        }
+    }
 `
