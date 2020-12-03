@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Icon from "../assets/icon.png";
+import Icon from "../assets/icon.svg";
 
 export default function Header() {
   const [background, setBackground] = useState("black");

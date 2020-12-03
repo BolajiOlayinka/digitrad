@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Lock from "../assets/lock.png";
-import DT from "../assets/DT.png";
+import Lock from "../assets/lock.svg";
+import DT from "../assets/DT.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -43,7 +43,7 @@ export default function FinanceTools() {
         </HeaderSection>
 
         <Wrapper>
-          <ActionButton href="https://app.digitrad.world">
+          <ActionButton href="https://app.digitrad.world/auth/signin" rel="noreferrer" target="_blank">
             LEARN MORE
           </ActionButton>
           <LineEnding />

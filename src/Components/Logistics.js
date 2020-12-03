@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import DT from "../assets/DT.png";
+import DT from "../assets/DT.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import TickCircle from "../assets/tickcircle.png";
+import TickCircle from "../assets/tickcircle.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown} from "@fortawesome/free-solid-svg-icons";
 export default function Logistics() {
@@ -38,24 +38,24 @@ export default function Logistics() {
         <DigitradPhrase>
           その業務、DiGiTRADで半分に減らしませんか？
         </DigitradPhrase>
-        <BackgroundLine data-aos="fade-right"/>
+        <BackgroundLine data-aos="fade-right" style={{transitionDuration: "3.6s"}}/>
         <CircleTickSection>
           
-            <FunctionBody  data-aos="fade-right">
+            <FunctionBody  data-aos="fade-right" style={{transitionDuration: "0.6s"}}>
               <img src={TickCircle} alt="tickcircle" />
               <TickText>
               輸出、輸入の可否を一緒にお調べ
               </TickText>
             </FunctionBody>
 
-            <FunctionBody  data-aos="slide-up">
+            <FunctionBody  data-aos="fade-right" style={{transitionDuration: "1.2s"}}>
               <img src={TickCircle} alt="tickcircle" />
               <TickText>
               輸出書類は自動作成
               </TickText>
             </FunctionBody>
 
-            <FunctionBody  data-aos="fade-left">
+            <FunctionBody  data-aos="fade-right" style={{transitionDuration: "2.4s"}}>
               <img src={TickCircle} alt="tickcircle" />
               <TickText>
               物流会社とのやり取りはチャットで楽々
@@ -64,22 +64,22 @@ export default function Logistics() {
           
         </CircleTickSection>
         <SmallCircleTick>
-        <SmallBackgroundLine data-aos="fade-right"/>
+        <SmallBackgroundLine data-aos="fade-down" style={{transitionDuration: "3.4s"}}/>
         <TickSection>
           <Section>
-          <img src={TickCircle} alt="tickcircle"  data-aos="fade-left" />
+          <img src={TickCircle} alt="tickcircle"  data-aos="fade-up" style={{transitionDuration: "0.6s"}}/>
           <SectionText>
               輸出、輸入の可否を一緒にお調べ
               </SectionText>
           </Section>
           <Section>
-          <img src={TickCircle} alt="tickcircle" data-aos="fade-left" />
+          <img src={TickCircle} alt="tickcircle" data-aos="fade-up" style={{transitionDuration: "1.2s"}} />
           <SectionText>
           輸出書類は自動作成
               </SectionText>
           </Section>
           <Section>
-          <img src={TickCircle} alt="tickcircle" data-aos="fade-left"/>
+          <img src={TickCircle} alt="tickcircle" data-aos="fade-up" style={{transitionDuration: "2.4s"}} />
           <SectionText>
           物流会社とのやり取りはチャットで楽々
               </SectionText>
@@ -98,7 +98,7 @@ export default function Logistics() {
         出荷製品のサイズ、重量を入力すると即時で概算物流費が分かります
         </SizeContainer>
 
-        <ActionButton href="https://app.digitrad.world">
+        <ActionButton href="https://app.digitrad.world/auth/signin" rel="noreferrer" target="_blank">
           LEARN MORE
         </ActionButton>
         <LineEnding />

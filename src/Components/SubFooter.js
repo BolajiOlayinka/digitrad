@@ -1,5 +1,5 @@
 import React,{useEffect} from "react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
 import styled from "styled-components";
 import animateScrollTo from "animated-scroll-to";
 import Aos from 'aos';

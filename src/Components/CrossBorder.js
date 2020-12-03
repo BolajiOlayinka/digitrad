@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import DT from "../assets/DT.png";
+import DT from "../assets/DT.svg";
 import IconOne from "../assets/icon1.svg";
 import IconTwo from "../assets/icon2.svg";
 import IconThree from "../assets/icon3.svg";
-import Desktop from "../assets/desktop.png";
-import Logo from "../assets/logo.png";
-import Tick from "../assets/tick.png";
+import Desktop from "../assets/desktop.svg";
+import Logo from "../assets/logo.svg";
+import Tick from "../assets/tick.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -69,26 +69,26 @@ export default function CrossBorder() {
         <TickSection>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon data-aos="fade-up">
+              <TickIcon data-aos="fade-up" style={{transitionDuration: "0.6s"}}>
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>簡単掲載</TickText>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon data-aos="fade-up">
+              <TickIcon data-aos="fade-up" style={{transitionDuration: "1.2s"}}>
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>安心サポート</TickText>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon data-aos="fade-up">
+              <TickIcon data-aos="fade-up" style={{transitionDuration: "2.4s"}}>
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>今なら掲載無料</TickText>
             </div>
           </div>
         </TickSection>
-        <ActionButton href="https://app.digitrad.world">
+        <ActionButton href="https://app.digitrad.world/auth/signin" rel="noreferrer" target="_blank">
           SEE IN ACTION
         </ActionButton>
         <LineEnding />
@@ -273,7 +273,8 @@ const IconHead = styled.div`
   display: flex;
   align-items: center;
   margin: auto;
-  
+  z-index:1;
+  position:relative;
 `;
 const IconText = styled.div`
   font-size: 24px;
@@ -286,6 +287,8 @@ const IconText = styled.div`
   font-weight: 300;
   font-style: normal;
   margin-top: 12.16px;
+  z-index:3;
+  position:relative;
   @media(min-width:768px) and (max-width:991px){
     font-size:20px;
     height:40px;

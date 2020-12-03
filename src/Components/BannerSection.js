@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../assets/logo.png";
-import FreightShip from "../assets/ship.png";
+import Logo from "../assets/logo.svg";
+import FreightShip from "../assets/ship.svg";
 import animateScrollTo from "animated-scroll-to";
 // import { HashLink as Link } from "react-router-hash-link";
 
@@ -60,7 +60,7 @@ export default function BannerSection() {
         </ButtonSection>
         <DividerContainer>
           <Line />
-          <DividerButton href="">新しい国際販売のご提案</DividerButton>
+          <DividerButton href="https://app.digitrad.world" rel="noreferrer" target="_blank">新しい国際販売のご提案</DividerButton>
           <Line />
         </DividerContainer>
       </Container>

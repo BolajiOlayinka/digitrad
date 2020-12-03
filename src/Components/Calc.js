@@ -5,7 +5,7 @@ import { faChevronDown, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import ngnflag from "../assets/flags/nigeria.svg";
-import DT from "../assets/DT.png";
+import DT from "../assets/DT.svg";
 import jpyflag from "../assets/flags/japan.svg";
 import usdflag from "../assets/flags/usa.svg";
 import btcflag from "../assets/flags/btc.svg";

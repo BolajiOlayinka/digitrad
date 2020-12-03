@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Whatsapp from "../assets/whatsapp.png";
-import Facebook from "../assets/facebook.png";
-import Instagram from "../assets/instagram.png";
-import Linkedin from "../assets/linkedin.png";
-import Twitter from "../assets/twitter.png";
+import Whatsapp from "../assets/whatsapp.svg";
+import Facebook from "../assets/facebook.svg";
+import Instagram from "../assets/instagram.svg";
+import Linkedin from "../assets/linkedin.svg";
+import Twitter from "../assets/twitter.svg";
 import {Link} from 'react-router-dom';
 
 export default function Footer() {
