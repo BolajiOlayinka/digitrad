@@ -43,19 +43,17 @@ export default function Payment() {
             貿易代金決済・国際送金で、以下のような悩みを抱えていらっしゃる企業様へ
           </TextBody>
           <TextBodyTwo>
-          <div>
-        
-        
-        <strong style={{fontWeight:"bold"}}>✓</strong>  少額の送金なのに、手数料が高い
-      </div>
-      <div>
-        
-      <strong style={{fontWeight:"bold"}}>✓</strong>    毎度手続きが煩雑{" "}
-      </div>
-      <div>
-        
-      <strong style={{fontWeight:"bold"}}>✓</strong>    外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
-      </div>
+            <div>
+              <strong style={{ fontWeight: "bold" }}>✓</strong>{" "}
+              少額の送金なのに、手数料が高い
+            </div>
+            <div>
+              <strong style={{ fontWeight: "bold" }}>✓</strong> 毎度手続きが煩雑{" "}
+            </div>
+            <div>
+              <strong style={{ fontWeight: "bold" }}>✓</strong>{" "}
+              外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
+            </div>
           </TextBodyTwo>
         </LeftWrapper>
         <VisibleOnSmall>
@@ -150,7 +148,6 @@ export default function Payment() {
       <VisibleOnSmall>
         <Highlight>
           <div>
-        
             <StyledFontAwesomeIcon icon={faCheck} />
             少額の送金なのに、手数料が高い
           </div>
@@ -160,11 +157,15 @@ export default function Payment() {
           </div>
           <div>
             <StyledFontAwesomeIcon icon={faCheck} />
-           外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
+            外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
           </div>
         </Highlight>
       </VisibleOnSmall>
-      <ActionButton href="https://app.digitrad.world/auth/signin" rel="noreferrer" target="_blank">
+      <ActionButton
+        href="https://app.digitrad.world/auth/signin"
+        rel="noreferrer"
+        target="_blank"
+      >
         SEE IN ACTION
       </ActionButton>
       <LineEnding />
@@ -249,10 +250,7 @@ const LeftWrapper = styled.div`
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   margin-right: 20px;
 `;
-const StyledFontAwesome = styled(FontAwesomeIcon)`
-font-weight:300;
-  margin-right: 20px;
-`;
+
 const RightWrapper = styled.div`
   background-color: var(--mainBlue);
   width: 650px;

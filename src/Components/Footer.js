@@ -19,11 +19,11 @@ export default function Footer() {
             </FooterLeft>
             <FooterRight>
                <IconContainer>
-                   <a href="http://app.digitrad.world/"><img src={Whatsapp} alt="Whatsapp Icon"/></a>
-                   <a href="http://app.digitrad.world/"><img src={Facebook} alt="Facebook Icon"/></a>
-                   <a href="http://app.digitrad.world/"><img src={Instagram} alt="Instagram Icon"/></a>
-                   <a href="http://app.digitrad.world/"><img src={Linkedin} alt="Linkedin Icon"/></a>
-                   <a href="http://app.digitrad.world/"><img src={Twitter} alt="Twitter Icon"/></a>
+                   <a href="https://wa.me/message/JRO5UQOD3LB3D1"><img src={Whatsapp} alt="Whatsapp Icon"/></a>
+                   <a href="https://www.facebook.com/digitrad.ng/"><img src={Facebook} alt="Facebook Icon"/></a>
+                   <a href="https://www.instagram.com/digitrad.world/"><img src={Instagram} alt="Instagram Icon"/></a>
+                   <a href="https://www.linkedin.com/showcase/digitrad-world/"><img src={Linkedin} alt="Linkedin Icon"/></a>
+                   <a href="https://mobile.twitter.com/digitrad_world"><img src={Twitter} alt="Twitter Icon"/></a>
                </IconContainer>
             </FooterRight>
             </FooterContainer>
