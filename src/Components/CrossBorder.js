@@ -21,6 +21,7 @@ export default function CrossBorder() {
   });
   return (
     <React.Fragment>
+    <ExtendDT data-aos="fade-right"></ExtendDT>
       <Container className="crossborder">
         <HeaderSection>
           <DTSection data-aos="fade-right">
@@ -100,12 +101,37 @@ const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
 `;
+const ExtendDT = styled.div `
+background-color:var(--mainBlue);
+height:45px;
+width:25%;
+position:absolute;
+z-index:1;
+margin-top:112px;
+
+@media(min-width:1024.5px) and (max-width:1199px){
+  width:15%;
+}
+@media(min-width:1800px){
+  width:31%;
+}
+@media(min-width:2600px){
+  width:35%;
+}
+@media(min-width:3000px){
+  width:40%;
+}
+@media(max-width:1024px){
+display:none;
+}
+`
 const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
   margin-top: 36px;
-
+position:relative;
+z-index:2;
   display: flex;
   justify-content: flex-end;
 

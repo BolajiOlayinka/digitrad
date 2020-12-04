@@ -22,6 +22,9 @@ export default function Payment() {
     );
   });
   return (
+    <React.Fragment>
+      <ExtendDT data-aos="fade-right"></ExtendDT>
+    
     <Container className="payment">
       <HeaderSection>
         <DTSection data-aos="fade-right">
@@ -170,6 +173,7 @@ export default function Payment() {
       </ActionButton>
       <LineEnding />
     </Container>
+    </React.Fragment>
   );
 }
 const Container = styled.div`
@@ -180,6 +184,30 @@ const Container = styled.div`
     margin: auto;
   }
 `;
+const ExtendDT = styled.div `
+background-color:var(--mainBlue);
+height:45px;
+width:25%;
+position:absolute;
+z-index:1;
+margin-top:91px;
+
+@media(min-width:1024.5px) and (max-width:1199px){
+  width:15%;
+}
+@media(min-width:1800px){
+  width:31%;
+}
+@media(min-width:2600px){
+  width:35%;
+}
+@media(min-width:3000px){
+  width:40%;
+}
+@media(max-width:1024px){
+display:none;
+}
+`
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
@@ -191,7 +219,8 @@ const DTSection = styled.div`
   margin-top: 15px;
   display: flex;
   justify-content: flex-end;
-
+  position:relative;
+  z-index:2;
   img {
     right: 0;
     ${"" /* height:20.99px;

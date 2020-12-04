@@ -15,6 +15,7 @@ export default function Logistics() {
   });
   return (
     <React.Fragment>
+    <ExtendDT data-aos="fade-right"></ExtendDT>
       <Container className="logistics">
         <HeaderSection>
           <DTSection data-aos="fade-right">
@@ -119,6 +120,30 @@ margin:auto;
 
   }
 `;
+const ExtendDT = styled.div `
+background-color:var(--mainBlue);
+height:45px;
+width:25%;
+position:absolute;
+z-index:1;
+margin-top:91px;
+
+@media(min-width:1024.5px) and (max-width:1199px){
+  width:15%;
+}
+@media(min-width:1800px){
+  width:31%;
+}
+@media(min-width:2600px){
+  width:35%;
+}
+@media(min-width:3000px){
+  width:40%;
+}
+@media(max-width:1024px){
+display:none;
+}
+`
 
 const HeaderSection = styled.div`
   display: flex;
@@ -128,8 +153,9 @@ const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
-  margin-top: 36px;
-
+  margin-top: 15px;
+position:relative;
+z-index:2;
   display: flex;
   justify-content: flex-end;
 
