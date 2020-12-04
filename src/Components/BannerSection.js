@@ -70,6 +70,7 @@ export default function BannerSection() {
 
 const Container = styled.div`
   margin: auto;
+  padding-top:20px;
   @media (min-width: 1200px) {
     width: 1012px;
     margin: auto;

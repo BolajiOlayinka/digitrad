@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Icon from "../assets/icon.svg";
+import { Navbar, Nav, NavItem } from "reactstrap";
+import Logo from "../assets/DT-white.svg";
+import { HashLink as Link } from "react-router-hash-link";
+// import translate from "../Providers/i18n/translate";
+// import LanguageSwitcher from "./LanguageSwitcher";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+
+
 
 export default function Header() {
   const [background, setBackground] = useState("black");
   const [fixed, setFixed] = useState("initial");
+  const [showIcon, setShowIcon] = useState(true);
+  const [showItem, setShowItem] = useState(false);
+  // const [SmallBackground, setSmallBackground]=useState("black")
+
   const handleScroll = () => {
     
     if (window.pageYOffset > 0) {
       setBackground("rgba(0, 0, 0, 0.8)");
     } else {
-      setBackground("transparent");
+      setBackground("black");
     }
   };
   const fixedScroll = () => {
@@ -23,31 +36,117 @@ export default function Header() {
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("scroll", fixedScroll);
 
-
+  const toggle = (e) => {
+    setShowItem(!showItem, e);
+    setShowIcon(!showIcon, e);
+  };
   
+
   return (
-    <React.Fragment>
-      <NavWrapper background={background} fixed={fixed}>
-        <Container>
-          <LargeNav>
-            <IconSection>
-              <img src={Icon} alt="Digitrad Icon" />
-            </IconSection>
-            <ItemsContainer>
-              <NavItems>
-                <a href="https://app.digitrad.world/">ニュース</a>
-              </NavItems>
-              <NavItems>
-                <a href="https://app.digitrad.world/">お問い合わせ</a>
-              </NavItems>
-              <NavItems>
-                <a href="https://app.digitrad.world/">ABOUT</a>
-              </NavItems>
-            </ItemsContainer>
-          </LargeNav>
-        </Container>
-      </NavWrapper>
-    </React.Fragment>
+    <NavWrapper background={background} fixed={fixed}>
+      <StyledNavbar expand="md">
+        <div onClick={toggle}>
+          {showIcon ? (
+            <StyledFontAwesome icon={faBars} />
+          ) : (
+            <StyledFontCancel icon={faTimesCircle} />
+          )}
+        </div>
+        <LogoContainer>
+          <Link to="/">
+            <img src={Logo} alt="Digitrad Logo" />
+          </Link>
+        </LogoContainer>
+        {showItem && (
+          <StyledNav navbar>
+            <NavItem>
+              <StyledLink
+                activestyle={{
+                  fontWeight: "bold",
+                  color: "#f8951d",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  borderBottom: "7px solid #f8951d",
+                }}
+                to="/"
+                onClick={toggle}
+              >
+               ニュース
+              </StyledLink>
+            </NavItem>
+            <NavItem>
+              <StyledLink
+                activestyle={{
+                  fontWeight: "bold",
+                  color: "#f8951d",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  borderBottom: "7px solid #f8951d",
+                }}
+                to="/"
+                onClick={toggle}
+              >
+              お問い合わせ
+              </StyledLink>
+            </NavItem>
+            <NavItem>
+              <StyledLink
+                activestyle={{
+                  fontWeight: "bold",
+                  color: "#f8951d",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  borderBottom: "7px solid #f8951d",
+                }}
+                to="/"
+                onClick={toggle}
+              >
+                ABOUT                
+              </StyledLink>
+            </NavItem>
+          </StyledNav>
+        )}
+        <LargeNav className="ml-auto">
+          <StyledNav navbar>
+            <NavItem>
+              <StyledLink to="/">ニュース</StyledLink>
+            </NavItem>
+            <NavItem>
+              <StyledLink
+                activeclassname="selected"
+                activestyle={{
+                  fontWeight: "bold",
+                  color: "#f8951d",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  borderBottom: "7px solid #f8951d",
+                }}
+                to="/"
+              >
+                お問い合わせ
+              </StyledLink>
+            </NavItem>
+            <NavItem>
+              <StyledLink
+                activeclassname="selected"
+                activestyle={{
+                  fontWeight: "bold",
+                  color: "#f8951d",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  borderBottom: "7px solid #f8951d",
+                }}
+                to="/"
+              >
+                ABOUT
+              </StyledLink>
+            </NavItem>
+             
+          </StyledNav>
+        </LargeNav>
+
+      </StyledNavbar>
+    </NavWrapper>
   );
 }
 
@@ -57,84 +156,123 @@ const NavWrapper = styled.div`
   flex: auto;
   align-items: center;
   position: ${(props) => props.fixed} !important;
- 
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #373737;
   background: ${(props) => props.background} !important;
   transition: 0.4s all;
   width: -webkit-fill-available;
-  
-  @media (max-width: 576px) {
+  @media (max-width: 767.9px) {
     background-color: rgba(0, 0, 0, 0.8);
   }
 `;
-const Container = styled.div`
-${'' /* width: 100%; */}
-  ${'' /* ${(props) => (props.type === "default" ? "max-width: 1200px;" : "")}
-  margin: auto; */}
-  @media (min-width: 1200px) {
-    width: 1012px;
-    margin: auto;
-  }
-  @media (min-width: 1024px) and (max-width:1199px) {
-    width: 1012px;
-    margin: auto;
-  }
-
- 
-`;
-
-const IconSection = styled.div`
-  height: 45px;
+const LogoContainer = styled.div`
   img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 38px;
   }
 `;
+const StyledNav = styled(Nav)`
+  margin: auto;
+  @media (max-width: 767.9px) {
+    position: fixed;
+    padding-top: 60px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0, 0, 0, 0.9);
+    z-index: 1;
+    width: 100%;
+    li {
+      padding: 10px;
+      a {
+        font-size: 20px !important;
+      }
+    }
+  }
+`;
+const StyledNavbar = styled(Navbar)`
+  flex: auto;
+  @media (min-width: 1201px) {
+    flex: none;
+    width: 1000px;
+    margin: auto;
+    padding-left:0px;
+  }
+  @media(min-width:1024px) and (max-width:1199px){
+    padding-left:30px;
+    padding-right:30px;
+  }
+  @media(min-width:768px) and (max-width:1023.9px){
+    padding-left:50px;
+    padding-right:30px;
+  }
+  @media(max-width:767.9px){
+    padding-left:30px;
+    padding-right:30px;
+  }
+`;
+const StyledLink = styled(Link)`
+  color: var(--mainGreen);
+  line-height: 24px;
+  margin-right: 33px;
+  padding-bottom: 8px;
+  font-weight: 300;
+  font-size: 16px;
+
+  :hover {
+    color: var(--mainWhite);
+    cursor: pointer;
+    text-decoration: none;
+
+    border-bottom: 7px solid var(--mainWhite);
+  }
+  :active {
+    color: var(--mainGreen);
+    border-bottom: 7px solid var(--mainiGreen);
+    transition: border-bottom 0.5s ease-in;
+  }
+
+  @media (max-width: 735px) {
+    font-size: 12px;
+    margin-right: 40px;
+  }
+  @media (max-width: 767.9px) {
+    font-size: 13px;
+    line-height: 32px;
+    padding-left: 0.5em;
+    :hover {
+      border-bottom: 0px;
+    }
+    :active {
+      border-bottom-color: transparent !important;
+      border-bottom-style: none !important;
+      border-bottom-width: 0 !important;
+    }
+  }
+`;
+
 const LargeNav = styled.div`
-  display: flex;
-  padding-top: 25px;
-  padding-bottom: 19px;
-  @media (max-width: 768px) {
+  
+  @media (max-width: 767.9px) {
     display: none;
   }
 `;
-const ItemsContainer = styled.div`
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-`;
-const NavItems = styled.div`
-  display: flex;
+const StyledFontAwesome = styled(FontAwesomeIcon)`
+  color: white;
+  font-size: 20px;
 
-  height: 30px;
-  margin-right: 40px;
-  :nth-child(1) {
-    width: 113px;
-    a {
-      width: 72px;
-    }
+  @media (min-width: 767.9px) {
+    display: none;
   }
-  :nth-child(2) {
-    width: 158px;
-    a {
-      width: 108px;
-    }
-  }
-  :nth-child(3) {
-    width: 108px;
-    margin-right: 0px;
-    a {
-      width: 58px;
-    }
-  }
-  a {
-    color: var(--mainGreen);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24.52px;
-    height: 25px;
-    text-decoration: none;
-    :hover {
-      text-decoration: none;
-    }
-  }
+`;
+const StyledFontCancel = styled(FontAwesomeIcon)`
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  color: white;
+  margin-top: 9px;
+  margin-left: -2px;
+  font-size: 24px;
 `;
