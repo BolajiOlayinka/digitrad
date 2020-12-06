@@ -66,7 +66,7 @@ export default function Header() {
                   color: "#f8951d",
                   cursor: "pointer",
                   textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
+                  borderBottom: "7px solid white",
                 }}
                 to="/"
                 onClick={toggle}
@@ -81,7 +81,7 @@ export default function Header() {
                   color: "#f8951d",
                   cursor: "pointer",
                   textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
+                  borderBottom: "7px solid white",
                 }}
                 to="/"
                 onClick={toggle}
@@ -96,7 +96,7 @@ export default function Header() {
                   color: "#f8951d",
                   cursor: "pointer",
                   textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
+                  borderBottom: "7px solid white",
                 }}
                 to="/"
                 onClick={toggle}
@@ -119,7 +119,7 @@ export default function Header() {
                   color: "#f8951d",
                   cursor: "pointer",
                   textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
+                  borderBottom: "7px solid white",
                 }}
                 to="/"
               >
@@ -134,7 +134,7 @@ export default function Header() {
                   color: "#f8951d",
                   cursor: "pointer",
                   textDecoration: "none",
-                  borderBottom: "7px solid #f8951d",
+                  borderBottom: "7px solid white",
                 }}
                 to="/"
               >
@@ -165,6 +165,7 @@ const NavWrapper = styled.div`
   @media (max-width: 767.9px) {
     background-color: rgba(0, 0, 0, 0.8);
   }
+ 
 `;
 const LogoContainer = styled.div`
   img {

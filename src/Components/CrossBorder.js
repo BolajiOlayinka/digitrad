@@ -359,6 +359,11 @@ const TickSection = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
+  @media (min-width:576.9px) and (max-width: 767.9px) {
+    width: 70%;
+    margin:auto;
+    text-align:center;
+  }
   @media (max-width: 576px) {
     width: 277px;
     margin:auto;
@@ -370,7 +375,14 @@ const TickIcon = styled.div`
   width: 105px;
   height: 105px;
   margin: auto;
- 
+  @media (min-width:576.9px) and (max-width: 767.9px) {
+    height:80px;
+    text-align:center;
+    
+    img{
+      width:80px
+    }
+  }
   @media(max-width:576px){
     height:45px;
     img{
@@ -389,6 +401,12 @@ const TickText = styled.div`
   font-weight: 300;
   font-size: 24px;
   line-height: 29px;
+  @media (min-width:576.9px) and (max-width: 767.9px) {
+    font-weight: 300;
+font-size: 16px;
+line-height: 32px;
+width:150px;
+  }
   @media(max-width:576px){
     font-weight: 300;
 font-size: 14px;

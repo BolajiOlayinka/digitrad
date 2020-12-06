@@ -732,7 +732,7 @@ export default class Calc extends Component {
             </StyledModalHeader>
             <StyledModalBody>
               <ul>
-                {this.state.ButtonValueTwo !== "JPY" ? (
+          
                   <li
                     onClick={() => {
                       this.JPYButtonOneSelect();
@@ -742,8 +742,8 @@ export default class Calc extends Component {
                     <img src={jpyflag} alt="Japanese Flag" />
                     Japanese Yen
                   </li>
-                ) : null}
-                {this.state.ButtonValueTwo !== "BTC" ? (
+                
+                
                   <li
                     onClick={() => {
                       this.BTCButtonOneSelect();
@@ -753,8 +753,8 @@ export default class Calc extends Component {
                     <img src={btcflag} alt="Btc flag" />
                     Bitcoin
                   </li>
-                ) : null}
-                {this.state.ButtonValueTwo !== "USDC" ? (
+                
+                
                   <li
                     onClick={() => {
                       this.USDCButtonOneSelect();
@@ -764,8 +764,8 @@ export default class Calc extends Component {
                     <img src={usdcflag} alt="USDC Coin" />
                     USD Coin
                   </li>
-                ) : null}
-                {this.state.ButtonValueTwo !== "NGN" ? (
+                
+               
                   <li
                     onClick={() => {
                       this.NGNButtonOneSelect();
@@ -775,8 +775,8 @@ export default class Calc extends Component {
                     <img src={ngnflag} alt="Nigerian Flag" />
                     Nigerian Naira
                   </li>
-                ) : null}
-                {this.state.ButtonValueTwo !== "USD" ? (
+                
+                
                   <li
                     onClick={() => {
                       this.USDButtonOneSelect();
@@ -786,7 +786,7 @@ export default class Calc extends Component {
                     <img src={usdflag} alt="America Flag" />
                     USD United States Dollar
                   </li>
-                ) : null}
+                
               </ul>
             </StyledModalBody>
           </CurrencyModal>
@@ -854,7 +854,7 @@ export default class Calc extends Component {
             </StyledModalHeader>
             <StyledModalBody>
               <ul>
-                {this.state.ButtonValueOne !== "JPY" ? (
+                
                   <li
                     onClick={() => {
                       this.JPYButtonTwoSelect();
@@ -864,8 +864,7 @@ export default class Calc extends Component {
                     <img src={jpyflag} alt="Japanese Flag" />
                     Japanese Yen
                   </li>
-                ) : null}
-                {this.state.ButtonValueOne !== "BTC" ? (
+      
                   <li
                     onClick={() => {
                       this.BTCButtonTwoSelect();
@@ -875,8 +874,7 @@ export default class Calc extends Component {
                     <img src={btcflag} alt="Bitcoin Flag" />
                     Bitcoin
                   </li>
-                ) : null}
-                {this.state.ButtonValueOne !== "USDC" ? (
+               
                   <li
                     onClick={() => {
                       this.USDCButtonTwoSelect();
@@ -886,8 +884,7 @@ export default class Calc extends Component {
                     <img src={usdcflag} alt="USD Coin" />
                     USD Coin
                   </li>
-                ) : null}
-                {this.state.ButtonValueOne !== "NGN" ? (
+               
                   <li
                     onClick={() => {
                       this.NGNButtonTwoSelect();
@@ -897,8 +894,7 @@ export default class Calc extends Component {
                     <img src={ngnflag} alt="Nigerian Flag" />
                     Nigerian Naira
                   </li>
-                ) : null}
-                {this.state.ButtonValueOne !== "USD" ? (
+               
                   <li
                     onClick={() => {
                       this.USDButtonTwoSelect();
@@ -908,7 +904,7 @@ export default class Calc extends Component {
                     <img src={usdflag} alt="America Flag" />
                     USD United States Dollar
                   </li>
-                ) : null}
+               
               </ul>
             </StyledModalBody>
           </OutputCurrencyModal>

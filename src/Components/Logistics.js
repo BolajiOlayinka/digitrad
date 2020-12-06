@@ -208,9 +208,9 @@ const EnglishHeading = styled.div`
   @media (max-width: 575.9px) {
     width: 200px;
     font-size: 36px;
-   
+    line-height: 44px;
     margin-left: 50px;
-    height: 160px;
+    height:90px;
   }
   @media (max-width: 426px) {
     font-size: 36px;
@@ -270,6 +270,16 @@ const DigitradPhrase = styled.div`
     margin:auto;
     margin-bottom:100px;
   }
+  @media(min-width:576.9px) and (max-width:767.9px){
+    width:90%;
+    margin:auto;
+
+    font-size:28px;
+    line-height:45px;
+    margin-bottom:100px;
+    margin-top:12px;
+   
+  }
   
   @media(max-width:576px){
     width:289px;
@@ -297,6 +307,11 @@ const ActionButton = styled.a`
   margin-top: 50px;
   :hover{
     text-decoration:none;
+  }
+  @media(max-width:576px){
+    width:60%;
+    margin:auto;
+    margin-top:50px;
   }
   @media(max-width:425px){
     width:239px;
@@ -340,6 +355,7 @@ margin-top:63px;
 height:320px;
 @media(max-width:425px){
   margin-left:75px;
+  height:250px;
 }
 @media(max-width:375px){
   margin-left:55px;
