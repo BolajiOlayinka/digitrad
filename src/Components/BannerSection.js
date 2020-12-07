@@ -7,19 +7,19 @@ import animateScrollTo from "animated-scroll-to";
 
 export default function BannerSection() {
   const ScrolltoMarketPlace = () => {
-    animateScrollTo(document.querySelector('.crossborder'));
+    animateScrollTo(document.querySelector(".crossborder"));
   };
   const ScrolltoInternationalPayment = () => {
-    animateScrollTo(document.querySelector('.payment'));
+    animateScrollTo(document.querySelector(".payment"));
   };
   const ScrolltoLogistics = () => {
-    animateScrollTo(document.querySelector('.logistics'));
+    animateScrollTo(document.querySelector(".logistics"));
   };
   // const ScrolltoLogistics = () => {
   //   animateScrollTo(3630);
   // };
   const ScrolltoFinance = () => {
-    animateScrollTo(document.querySelector('.finance'));
+    animateScrollTo(document.querySelector(".finance"));
   };
 
   return (
@@ -60,7 +60,13 @@ export default function BannerSection() {
         </ButtonSection>
         <DividerContainer>
           <Line />
-          <DividerButton href="https://app.digitrad.world" rel="noreferrer" target="_blank">新しい国際販売のご提案</DividerButton>
+          <DividerButton
+            href="https://app.digitrad.world"
+            rel="noreferrer"
+            target="_blank"
+          >
+            新しい国際販売のご提案
+          </DividerButton>
           <Line />
         </DividerContainer>
       </Container>
@@ -70,7 +76,7 @@ export default function BannerSection() {
 
 const Container = styled.div`
   margin: auto;
-  padding-top:20px;
+  padding-top: 20px;
   @media (min-width: 1200px) {
     width: 1012px;
     margin: auto;
@@ -116,7 +122,7 @@ const BannerWrapper = styled.div`
     padding-left: 25px;
     padding-right: 25px;
   }
-  @media (max-width: 374.9px){
+  @media (max-width: 374.9px) {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -269,7 +275,6 @@ const EnglishBannerText = styled.div`
     height: 59px;
     line-height: 28px;
     margin-top: 6px;
-    
   }
 `;
 
@@ -323,14 +328,13 @@ const StyledSectionButton = styled.button`
   @media (min-width: 375px) and (max-width: 425.9px) {
     width: 268px;
     height: 40px;
-    margin:auto;
+    margin: auto;
     border-radius: 2px;
     padding: 8px 10px;
     font-size: 16px;
     margin-top: 7px;
     margin-bottom: 7px;
     justify-content: center;
-    
   }
   @media (max-width: 374.9px) {
     width: 268px;
@@ -341,7 +345,6 @@ const StyledSectionButton = styled.button`
     margin-top: 7px;
     margin-bottom: 7px;
     justify-content: center;
-    
   }
 `;
 
@@ -373,7 +376,7 @@ const ButtonSection = styled.div`
     padding-top: 25px;
     padding-top: 25px;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
   }
 `;
 const DividerContainer = styled.div`
@@ -399,20 +402,18 @@ const DividerContainer = styled.div`
     margin: auto;
   }
   @media (max-width: 375px) {
-    text-align:center;
+    text-align: center;
     width: 100%;
-   
   }
-  
 `;
 const Line = styled.hr`
   border: 1px solid var(--mainGreen);
-  background-color:var(--mainGreen);
+  background-color: var(--mainGreen);
   width: 33.3%;
   @media (min-width: 375px) and (max-width: 425.9px) {
     display: none;
   }
-  @media (max-width: 375px){
+  @media (max-width: 375px) {
     display: none;
   }
 `;
@@ -431,8 +432,8 @@ const DividerButton = styled.a`
     background-color: var(--mainGreen);
     color: black;
   }
-  @media (max-width: 375px){
-    width:325px;
-    margin:auto;
+  @media (max-width: 375px) {
+    width: 325px;
+    margin: auto;
   }
 `;

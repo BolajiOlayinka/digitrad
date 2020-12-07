@@ -16,8 +16,8 @@ export default function FinanceTools() {
   });
   return (
     <React.Fragment>
-    {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
-    <LargeDT data-aos="fade-right">
+      {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
+      <LargeDT data-aos="fade-right">
         <img src={DT} alt="Icon" />
       </LargeDT>
       <Container className="finance">
@@ -27,27 +27,28 @@ export default function FinanceTools() {
           </DTSection>
           <SmallImageSection>
             <img src={Lock} alt="padlock lock" />
-            </SmallImageSection>
+          </SmallImageSection>
           <div>
-          
-          <SmallEnglishSection>Finance Tools</SmallEnglishSection>
+            <SmallEnglishSection>Finance Tools</SmallEnglishSection>
             <EnglishHeading>Trading Finance Service</EnglishHeading>
-                  
-            
+
             <JapaneseHeading>
               貿易ビジネスを開始した多くの企業が、【キャッシュフローが悪くなった】と言っています。
               そのため、貿易企業の実に3割以上が貿易ファイナンスサービスを活用しています。
             </JapaneseHeading>
-            </div>
+          </div>
 
-         
           <ImageSection>
             <img src={Lock} alt="padlock lock" />
           </ImageSection>
         </HeaderSection>
 
         <Wrapper>
-          <ActionButton href="https://app.digitrad.world/auth/signin" rel="noreferrer" target="_blank">
+          <ActionButton
+            href="https://app.digitrad.world/auth/signin"
+            rel="noreferrer"
+            target="_blank"
+          >
             LEARN MORE
           </ActionButton>
           <LineEnding />
@@ -57,12 +58,12 @@ export default function FinanceTools() {
   );
 }
 const Container = styled.div`
-width:100%;
-@media (min-width:1200px){
-  width: 1080px;
-  margin: auto;
-}
-  
+  width: 100%;
+  @media (min-width: 1200px) {
+    width: 1080px;
+    margin: auto;
+  }
+
   @media (min-width: 1024px) and (max-width: 1199px) {
     width: 100%;
     margin: auto;
@@ -71,8 +72,6 @@ width:100%;
     width: 100%;
     margin: auto;
   }
- 
- 
 `;
 // const ExtendDT = styled.div `
 // background-color:var(--mainBlue);
@@ -131,11 +130,11 @@ const EnglishHeading = styled.div`
   @media (min-width: 1200px) {
     margin-left: 200px;
   }
-  @media(min-width:1500px){
-    margin-left:100px
+  @media (min-width: 1500px) {
+    margin-left: 100px;
   }
-  @media(min-width:2000px){
-    margin-left:30px
+  @media (min-width: 2000px) {
+    margin-left: 30px;
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
     font-size: 60px;
@@ -147,31 +146,28 @@ const EnglishHeading = styled.div`
     margin-left: 40px;
     width: 500px;
   }
- 
+
   @media (min-width: 768px) and (max-width: 990.9px) {
     margin-left: 60px;
     width: 450px;
     font-size: 60px;
-    line-height:70px;
-    height:150px;
+    line-height: 70px;
+    height: 150px;
   }
   @media (max-width: 768px) {
-   display:none;
+    display: none;
+  }
+`;
+const SmallEnglishSection = styled.div`
+  @media (min-width: 768.1px) {
+    display: none;
   }
 
-`;
-const SmallEnglishSection = styled.div `
-@media(min-width:768.1px){
-  display:none
-}
-
-@media (min-width: 576px) and (max-width: 768.1px) {
+  @media (min-width: 576px) and (max-width: 768.1px) {
     margin-left: 50px;
     width: 230px;
     font-size: 60px;
-    line-height:80px;
-
-
+    line-height: 80px;
   }
   @media (max-width: 575.9px) {
     margin-left: 26px;
@@ -179,13 +175,13 @@ const SmallEnglishSection = styled.div `
     font-size: 50px;
     line-height: 60px;
   }
-  @media(max-width:375px){
-    font-size:36px;
-    line-height:44px;
-    width:200px;
-    margin-top:10px;
+  @media (max-width: 375px) {
+    font-size: 36px;
+    line-height: 44px;
+    width: 200px;
+    margin-top: 10px;
   }
-`
+`;
 const JapaneseHeading = styled.div`
   width: 451px;
   height: 159px;
@@ -200,11 +196,11 @@ const JapaneseHeading = styled.div`
   @media (min-width: 1200px) {
     margin-left: 200px;
   }
-  @media(min-width:1500px){
-    margin-left:100px
+  @media (min-width: 1500px) {
+    margin-left: 100px;
   }
-  @media(min-width:2000px){
-    margin-left:30px
+  @media (min-width: 2000px) {
+    margin-left: 30px;
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
     margin-left: 262px;
@@ -219,29 +215,29 @@ const JapaneseHeading = styled.div`
     margin-left: 60px;
     width: 330px;
     font-size: 19px;
-    margin-right:10px;
+    margin-right: 10px;
   }
   @media (min-width: 576px) and (max-width: 767.9px) {
     margin-left: 50px;
     width: 80%;
     font-size: 18px;
-    margin-right:5px;
+    margin-right: 5px;
   }
   @media (max-width: 575.9px) {
     margin-left: 26px;
-    line-height:40px;
+    line-height: 40px;
     width: 80%;
     font-size: 15px;
   }
-  @media(max-width:425px){
-width:250px;
+  @media (max-width: 425px) {
+    width: 250px;
   }
-  @media(max-width:375px){
-    font-size:15px;
-   line-height:30px;
-    height:144px;
-    width:221px;
-    margin-top:10px;
+  @media (max-width: 375px) {
+    font-size: 15px;
+    line-height: 30px;
+    height: 144px;
+    width: 221px;
+    margin-top: 10px;
   }
 `;
 const LargeDT = styled.div`
@@ -292,8 +288,8 @@ const DTSection = styled.div`
   margin-top: 15px;
   display: flex;
   justify-content: flex-end;
-  position:relative;
-  z-index:2;
+  position: relative;
+  z-index: 2;
   img {
     right: 0;
 
@@ -323,8 +319,6 @@ const DTSection = styled.div`
     width: 400px;
   }
   @media (max-width: 375px) {
-   
-   
   }
 `;
 const ImageSection = styled.div`
@@ -332,51 +326,48 @@ const ImageSection = styled.div`
   img {
     width: 234px;
     height: 350px;
-    padding-right:10px;
+    padding-right: 10px;
   }
-  @media(min-width:768px) and (max-width:991px){
-    width:50%;
-    img{
-   width:50%;
-   height:70%; 
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 50%;
+    img {
+      width: 50%;
+      height: 70%;
+    }
   }
-  }
-  
-  @media(max-width:576px){
-    display:none;
+
+  @media (max-width: 576px) {
+    display: none;
   }
 `;
-const SmallImageSection = styled.div `
-img{
-    width:130px;
-  margin-top:100px;
-  margin-left:-30px;
+const SmallImageSection = styled.div`
+  img {
+    width: 130px;
+    margin-top: 100px;
+    margin-left: -30px;
   }
-@media(max-width:425px){
-  img{
-    width:130px;
-  margin-top:100px;
-  margin-left:-80px;
-}
-
-}
-@media(max-width:375px){
-  img{
-    width:100px;
-    height:142px;
-  margin-top:85px;
+  @media (max-width: 425px) {
+    img {
+      width: 130px;
+      margin-top: 100px;
+      margin-left: -80px;
+    }
   }
- 
-} 
+  @media (max-width: 375px) {
+    img {
+      width: 100px;
+      height: 142px;
+      margin-top: 85px;
+    }
+  }
 
-
-@media(min-width:576px){
-  display:none;
-}
-`
+  @media (min-width: 576px) {
+    display: none;
+  }
+`;
 const Wrapper = styled.div`
- width:100%;
- margin:auto;
+  width: 100%;
+  margin: auto;
   @media (min-width: 1200px) {
     width: 1034px;
     margin: auto;
@@ -402,28 +393,27 @@ const ActionButton = styled.a`
   :hover {
     text-decoration: none;
   }
-  @media(max-width:576px){
-    width:70%;
-    margin:auto;
-    margin-top:50px;
+  @media (max-width: 576px) {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
   }
-
 `;
 const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
-  background-color:var(--mainBlack);
+  background-color: var(--mainBlack);
   margin-top: 70px;
   @media (min-width: 991px) and (max-width: 1023.9px) {
     width: 500px;
-    margin:auto;
-    margin-top:70px;
+    margin: auto;
+    margin-top: 70px;
   }
-  @media(max-width:990.9px){
-    width:80%;
-    margin:auto;
-    margin-top:70px;
+  @media (max-width: 990.9px) {
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
   }
   @media (max-width: 768px) {
     width: 80%;
@@ -431,7 +421,7 @@ const LineEnding = styled.hr`
     margin-top: 70px;
   }
   @media (max-width: 576px) {
-    margin-top:50px;
+    margin-top: 50px;
     width: 157px;
   }
 `;
