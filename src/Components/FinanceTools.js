@@ -16,7 +16,10 @@ export default function FinanceTools() {
   });
   return (
     <React.Fragment>
-    <ExtendDT data-aos="fade-right"></ExtendDT>
+    {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
+    <LargeDT data-aos="fade-right">
+        <img src={DT} alt="Icon" />
+      </LargeDT>
       <Container className="finance">
         <HeaderSection>
           <DTSection data-aos="fade-right">
@@ -71,34 +74,50 @@ width:100%;
  
  
 `;
-const ExtendDT = styled.div `
-background-color:var(--mainBlue);
-height:45px;
-width:25%;
-position:absolute;
-z-index:1;
-margin-top:91px;
+// const ExtendDT = styled.div `
+// background-color:var(--mainBlue);
+// height:45px;
+// width:25%;
+// position:absolute;
+// z-index:1;
+// margin-top:91px;
 
-@media(min-width:1024.5px) and (max-width:1199px){
-  width:15%;
-}
-@media(min-width:1800px){
-  width:31%;
-}
-@media(min-width:2600px){
-  width:35%;
-}
-@media(min-width:3000px){
-  width:40%;
-}
-@media(max-width:1024px){
-display:none;
-}
-`
+// @media(min-width:1024.5px) and (max-width:1199px){
+//   width:15%;
+// }
+// @media(min-width:1800px){
+//   width:31%;
+// }
+// @media(min-width:2600px){
+//   width:35%;
+// }
+// @media(min-width:3000px){
+//   width:40%;
+// }
+// @media(max-width:1024px){
+// display:none;
+// }
+// `
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
- 
+  @media (min-width: 767px) and (max-width: 991px) {
+    margin-left: 0px;
+  }
+  @media (min-width: 1200px) and (max-width: 1440px) {
+    margin-left: 67px;
+  }
+  @media (min-width: 1441px) and (max-width: 1800px) {
+    ${"" /* margin-left:25%; */}
+    margin-left:220px;
+  }
+  @media (min-width: 1801px) and (max-width: 2600px) {
+    ${"" /* margin-left:35%; */}
+    margin-left:220px;
+  }
+  @media (min-width: 2601px) {
+    margin-left: 220px;
+  }
 `;
 const EnglishHeading = styled.div`
   width: 561px;
@@ -110,12 +129,18 @@ const EnglishHeading = styled.div`
   margin-left: 67px;
   margin-bottom: 23px;
   @media (min-width: 1200px) {
-    margin-left: 67px;
+    margin-left: 200px;
+  }
+  @media(min-width:1500px){
+    margin-left:100px
+  }
+  @media(min-width:2000px){
+    margin-left:30px
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
     font-size: 60px;
     width: 450px;
-    margin-left: 50px;
+    margin-left: 262px;
   }
   @media (min-width: 991px) and (max-width: 1023.9px) {
     font-size: 60px;
@@ -173,10 +198,16 @@ const JapaneseHeading = styled.div`
   margin-left: 67px;
   margin-bottom: 67px;
   @media (min-width: 1200px) {
-    margin-left: 67px;
+    margin-left: 200px;
+  }
+  @media(min-width:1500px){
+    margin-left:100px
+  }
+  @media(min-width:2000px){
+    margin-left:30px
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
-    margin-left: 50px;
+    margin-left: 262px;
   }
 
   @media (min-width: 991px) and (max-width: 1023.9px) {
@@ -213,6 +244,47 @@ width:250px;
     margin-top:10px;
   }
 `;
+const LargeDT = styled.div`
+  background-color: var(--mainBlue);
+  width: 222px;
+  height: 45px;
+  margin-top: 93px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+
+  img {
+    right: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 6px;
+  }
+  @media (max-width: 1023.9px) {
+    display: none;
+  }
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    width: 222px;
+  }
+  @media (min-width: 1200px) and (max-width: 1440px) {
+    width: 22%;
+  }
+  @media (min-width: 1441px) and (max-width: 1800px) {
+    width: 35%;
+  }
+  @media (min-width: 1801px) and (max-width: 2300px) {
+    width: 38%;
+  }
+  @media (min-width: 2301px) and (max-width: 2600px) {
+    width: 35%;
+  }
+  @media (min-width: 2652px) and (max-width: 4000px) {
+    width: 40%;
+  }
+  @media (min-width: 4000px) {
+    display: none;
+  }
+`;
 const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
@@ -228,6 +300,9 @@ const DTSection = styled.div`
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 6px;
+  }
+  @media (min-width: 1024px) {
+    display: none;
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
     width: 180px;
