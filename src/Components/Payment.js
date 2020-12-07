@@ -23,12 +23,14 @@ export default function Payment() {
   });
   return (
     <React.Fragment>
-      <ExtendDT data-aos="fade-right"></ExtendDT>
-    
+      {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
+      <LargeDT data-aos="fade-right">
+          <img src={DT} alt="Icon" />
+        </LargeDT>
     <Container className="payment">
       <HeaderSection>
         <DTSection data-aos="fade-right">
-          <img src={DT} alt="Icon" />
+          <img src={DT} alt="Icon"/>
         </DTSection>
         <div>
           <Title>International Payment</Title>
@@ -184,34 +186,92 @@ const Container = styled.div`
     margin: auto;
   }
 `;
-const ExtendDT = styled.div `
-background-color:var(--mainBlue);
-height:45px;
-width:25%;
-position:absolute;
-z-index:1;
-margin-top:91px;
+// const ExtendDT = styled.div `
+// background-color:var(--mainBlue);
+// height:45px;
+// width:25%;
+// position:absolute;
+// z-index:1;
+// margin-top:91px;
 
-@media(min-width:1024.5px) and (max-width:1199px){
-  width:15%;
-}
-@media(min-width:1800px){
-  width:31%;
-}
-@media(min-width:2600px){
-  width:35%;
-}
-@media(min-width:3000px){
-  width:40%;
-}
-@media(max-width:1024px){
-display:none;
-}
-`
+// @media(min-width:1024.5px) and (max-width:1199px){
+//   width:15%;
+// }
+// @media(min-width:1800px){
+//   width:31%;
+// }
+// @media(min-width:2600px){
+//   width:35%;
+// }
+// @media(min-width:3000px){
+//   width:40%;
+// }
+// @media(max-width:1024px){
+// display:none;
+// }
+// `
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
+  @media(min-width:767px) and (max-width:991px){
+margin-left:0px;
+  }
+  @media(min-width:1200px) and (max-width:1440px){
+margin-left:67px;
+  }
+  @media(min-width:1441px) and (max-width:1800px){
+${'' /* margin-left:25%; */}
+margin-left:220px;
+  }
+  @media(min-width:1801px) and (max-width:2600px){
+${'' /* margin-left:35%; */}
+margin-left:220px;
+  }
+ @media(min-width:2601px){
+   margin-left:220px;
+ }
 `;
+const LargeDT = styled.div `
+background-color: var(--mainBlue);
+  width: 222px;
+  height: 45px;
+  margin-top: 93px;
+position:absolute;
+z-index:2;
+  display: flex;
+  justify-content: flex-end;
+
+  img {
+    right: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 6px;
+  }
+@media(max-width:1023.9px){
+display:none;
+}
+@media(min-width:1024px) and (max-width:1200px){
+    width:222px;
+  }
+  @media(min-width:1200px) and (max-width:1440px){
+    width:28%;
+  }
+  @media(min-width:1441px) and (max-width:1800px){
+width:35%;
+  }
+  @media(min-width:1801px) and (max-width:2300px){
+width:38%;
+  }
+  @media(min-width:2301px) and (max-width:2600px){
+width:40%;
+  }
+  @media(min-width:2652px) and (max-width:4000px){
+width:40%;
+  }
+  @media(min-width:4000px){
+    display:none;
+  }
+`
 const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
@@ -228,6 +288,9 @@ const DTSection = styled.div`
     padding-top:12px;
     padding-bottom: 12px;
     padding-right: 6px;
+  }
+  @media(min-width:1024px){
+    display:none;
   }
   @media (max-width: 768px) {
     width: 180px;
@@ -442,6 +505,12 @@ const Title = styled.div`
     line-height: 44px;
     width: 244px;
     margin-left: 52px;
+  }
+  @media(min-width:1024px) and (max-width:1199px){
+    margin-left:282px;
+  }
+  @media(min-width:1200px){
+    margin-left:222px;
   }
 `;
 const TextBody = styled.div`
