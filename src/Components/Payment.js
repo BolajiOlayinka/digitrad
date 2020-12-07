@@ -25,156 +25,157 @@ export default function Payment() {
     <React.Fragment>
       {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
       <LargeDT data-aos="fade-right">
-          <img src={DT} alt="Icon" />
-        </LargeDT>
-    <Container className="payment">
-      <HeaderSection>
-        <DTSection data-aos="fade-right">
-          <img src={DT} alt="Icon"/>
-        </DTSection>
-        <div>
-          <Title>International Payment</Title>
-        </div>
-      </HeaderSection>
-      <VisibleOnSmall>
-        <TopSmallVisibility>
-          貿易代金決済・国際送金で、以下のような悩みを抱えていらっしゃる企業様へ
-        </TopSmallVisibility>
-      </VisibleOnSmall>
-      <StyledWrapper>
-        <LeftWrapper>
-          <img src={PaymentImage} alt="Digitrad Payment Service" />
-          <TextBody>
+        <img src={DT} alt="Icon" />
+      </LargeDT>
+      <Container className="payment">
+        <HeaderSection>
+          <DTSection data-aos="fade-right">
+            <img src={DT} alt="Icon" />
+          </DTSection>
+          <div>
+            <Title>International Payment</Title>
+          </div>
+        </HeaderSection>
+        <VisibleOnSmall>
+          <TopSmallVisibility>
             貿易代金決済・国際送金で、以下のような悩みを抱えていらっしゃる企業様へ
-          </TextBody>
-          <TextBodyTwo>
+          </TopSmallVisibility>
+        </VisibleOnSmall>
+        <StyledWrapper>
+          <LeftWrapper>
+            <img src={PaymentImage} alt="Digitrad Payment Service" />
+            <TextBody>
+              貿易代金決済・国際送金で、以下のような悩みを抱えていらっしゃる企業様へ
+            </TextBody>
+            <TextBodyTwo>
+              <div>
+                <strong style={{ fontWeight: "bold" }}>✓</strong>{" "}
+                少額の送金なのに、手数料が高い
+              </div>
+              <div>
+                <strong style={{ fontWeight: "bold" }}>✓</strong>{" "}
+                毎度手続きが煩雑{" "}
+              </div>
+              <div>
+                <strong style={{ fontWeight: "bold" }}>✓</strong>{" "}
+                外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
+              </div>
+            </TextBodyTwo>
+          </LeftWrapper>
+          <VisibleOnSmall>
+            <SmallPaymentFunction>
+              <div className="row align-items">
+                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                  <FunctionIcon data-aos="flip-right">
+                    <img src={Timer} alt="Digitrad Fast Payment" />
+                  </FunctionIcon>
+                  <FunctionHeader>即時</FunctionHeader>
+                  <FunctionText>最短1時間以内で着金</FunctionText>
+                </div>
+                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                  <FunctionIcon data-aos="flip-right">
+                    <img src={Secured} alt="Digitrad Fast Payment" />
+                  </FunctionIcon>
+
+                  <FunctionHeader>安全</FunctionHeader>
+
+                  <FunctionText>
+                    独自のエスクロー機能による安全な送金を実現。
+                  </FunctionText>
+                </div>
+
+                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                  <FunctionIcon data-aos="flip-right">
+                    <img src={Percent} alt="Digitrad Fast Payment" />
+                  </FunctionIcon>
+                  <FunctionHeader>安価</FunctionHeader>
+
+                  <FunctionText>手数料0.7%～</FunctionText>
+                </div>
+                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                  <FunctionIcon data-aos="flip-right">
+                    <img src={TenMin} alt="Digitrad Fast Payment" />
+                  </FunctionIcon>
+                  <FunctionHeader>簡単</FunctionHeader>
+                  <FunctionText>
+                    以下問い合わせより送金額を入力するだけ。10分程度で手続き完了。
+                  </FunctionText>
+                </div>
+              </div>
+            </SmallPaymentFunction>
+          </VisibleOnSmall>
+          <RightWrapper>
             <div>
-              <strong style={{ fontWeight: "bold" }}>✓</strong>{" "}
+              <Calculator />
+            </div>
+          </RightWrapper>
+        </StyledWrapper>
+        <VisibleOnSmall></VisibleOnSmall>
+        <PaymentFunctionSection>
+          <div className="row align-items">
+            <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+              <FunctionIcon data-aos="flip-right">
+                <img src={Timer} alt="Digitrad Fast Payment" />
+              </FunctionIcon>
+              <FunctionHeader>即時</FunctionHeader>
+              <FunctionText>最短1時間以内で着金</FunctionText>
+            </div>
+            <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+              <FunctionIcon data-aos="flip-right">
+                <img src={Secured} alt="Digitrad Fast Payment" />
+              </FunctionIcon>
+
+              <FunctionHeader>安全</FunctionHeader>
+
+              <FunctionText>
+                独自のエスクロー機能による安全な送金を実現。
+              </FunctionText>
+            </div>
+
+            <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+              <FunctionIcon data-aos="flip-right">
+                <img src={Percent} alt="Digitrad Fast Payment" />
+              </FunctionIcon>
+              <FunctionHeader>安価</FunctionHeader>
+
+              <FunctionText>手数料0.7%～</FunctionText>
+            </div>
+            <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+              <FunctionIcon data-aos="flip-right">
+                <img src={TenMin} alt="Digitrad Fast Payment" />
+              </FunctionIcon>
+              <FunctionHeader>簡単</FunctionHeader>
+              <FunctionText>
+                以下問い合わせより送金額を入力するだけ。10分程度で手続き完了。
+              </FunctionText>
+            </div>
+          </div>
+        </PaymentFunctionSection>
+        <VisibleOnSmall>
+          <Highlight>
+            <div>
+              <StyledFontAwesomeIcon icon={faCheck} />
               少額の送金なのに、手数料が高い
             </div>
             <div>
-              <strong style={{ fontWeight: "bold" }}>✓</strong> 毎度手続きが煩雑{" "}
+              <StyledFontAwesomeIcon icon={faCheck} />
+              毎度手続きが煩雑{" "}
             </div>
             <div>
-              <strong style={{ fontWeight: "bold" }}>✓</strong>{" "}
+              <StyledFontAwesomeIcon icon={faCheck} />
               外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
             </div>
-          </TextBodyTwo>
-        </LeftWrapper>
-        <VisibleOnSmall>
-          <SmallPaymentFunction>
-            <div className="row align-items">
-              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-                <FunctionIcon data-aos="flip-right">
-                  <img src={Timer} alt="Digitrad Fast Payment" />
-                </FunctionIcon>
-                <FunctionHeader>即時</FunctionHeader>
-                <FunctionText>最短1時間以内で着金</FunctionText>
-              </div>
-              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-                <FunctionIcon data-aos="flip-right">
-                  <img src={Secured} alt="Digitrad Fast Payment" />
-                </FunctionIcon>
-
-                <FunctionHeader>安全</FunctionHeader>
-
-                <FunctionText>
-                  独自のエスクロー機能による安全な送金を実現。
-                </FunctionText>
-              </div>
-
-              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-                <FunctionIcon data-aos="flip-right">
-                  <img src={Percent} alt="Digitrad Fast Payment" />
-                </FunctionIcon>
-                <FunctionHeader>安価</FunctionHeader>
-
-                <FunctionText>手数料0.7%～</FunctionText>
-              </div>
-              <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-                <FunctionIcon data-aos="flip-right">
-                  <img src={TenMin} alt="Digitrad Fast Payment" />
-                </FunctionIcon>
-                <FunctionHeader>簡単</FunctionHeader>
-                <FunctionText>
-                  以下問い合わせより送金額を入力するだけ。10分程度で手続き完了。
-                </FunctionText>
-              </div>
-            </div>
-          </SmallPaymentFunction>
+          </Highlight>
         </VisibleOnSmall>
-        <RightWrapper>
-          <div>
-            <Calculator />
-          </div>
-        </RightWrapper>
-      </StyledWrapper>
-      <VisibleOnSmall></VisibleOnSmall>
-      <PaymentFunctionSection>
-        <div className="row align-items">
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={Timer} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
-            <FunctionHeader>即時</FunctionHeader>
-            <FunctionText>最短1時間以内で着金</FunctionText>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={Secured} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
-
-            <FunctionHeader>安全</FunctionHeader>
-
-            <FunctionText>
-              独自のエスクロー機能による安全な送金を実現。
-            </FunctionText>
-          </div>
-
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={Percent} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
-            <FunctionHeader>安価</FunctionHeader>
-
-            <FunctionText>手数料0.7%～</FunctionText>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-            <FunctionIcon data-aos="flip-right">
-              <img src={TenMin} alt="Digitrad Fast Payment" />
-            </FunctionIcon>
-            <FunctionHeader>簡単</FunctionHeader>
-            <FunctionText>
-              以下問い合わせより送金額を入力するだけ。10分程度で手続き完了。
-            </FunctionText>
-          </div>
-        </div>
-      </PaymentFunctionSection>
-      <VisibleOnSmall>
-        <Highlight>
-          <div>
-            <StyledFontAwesomeIcon icon={faCheck} />
-            少額の送金なのに、手数料が高い
-          </div>
-          <div>
-            <StyledFontAwesomeIcon icon={faCheck} />
-            毎度手続きが煩雑{" "}
-          </div>
-          <div>
-            <StyledFontAwesomeIcon icon={faCheck} />
-            外貨規制が頻繁に起こり、いつ送金、 着金できるかわからない
-          </div>
-        </Highlight>
-      </VisibleOnSmall>
-      <ActionButton
-        href="https://app.digitrad.world/auth/signin"
-        rel="noreferrer"
-        target="_blank"
-      >
-        SEE IN ACTION
-      </ActionButton>
-      <LineEnding />
-    </Container>
+        <ActionButton
+          href="https://app.digitrad.world/auth/signin"
+          rel="noreferrer"
+          target="_blank"
+        >
+          SEE IN ACTION
+        </ActionButton>
+        <LineEnding />
+      </Container>
     </React.Fragment>
   );
 }
@@ -213,31 +214,31 @@ const Container = styled.div`
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
-  @media(min-width:767px) and (max-width:991px){
-margin-left:0px;
+  @media (min-width: 767px) and (max-width: 991px) {
+    margin-left: 0px;
   }
-  @media(min-width:1200px) and (max-width:1440px){
-margin-left:67px;
+  @media (min-width: 1200px) and (max-width: 1440px) {
+    margin-left: 67px;
   }
-  @media(min-width:1441px) and (max-width:1800px){
-${'' /* margin-left:25%; */}
-margin-left:220px;
+  @media (min-width: 1441px) and (max-width: 1800px) {
+    ${"" /* margin-left:25%; */}
+    margin-left:220px;
   }
-  @media(min-width:1801px) and (max-width:2600px){
-${'' /* margin-left:35%; */}
-margin-left:220px;
+  @media (min-width: 1801px) and (max-width: 2600px) {
+    ${"" /* margin-left:35%; */}
+    margin-left:220px;
   }
- @media(min-width:2601px){
-   margin-left:220px;
- }
+  @media (min-width: 2601px) {
+    margin-left: 220px;
+  }
 `;
-const LargeDT = styled.div `
-background-color: var(--mainBlue);
+const LargeDT = styled.div`
+  background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
   margin-top: 93px;
-position:absolute;
-z-index:2;
+  position: absolute;
+  z-index: 2;
   display: flex;
   justify-content: flex-end;
 
@@ -247,31 +248,31 @@ z-index:2;
     padding-bottom: 12px;
     padding-right: 6px;
   }
-@media(max-width:1023.9px){
-display:none;
-}
-@media(min-width:1024px) and (max-width:1200px){
-    width:222px;
+  @media (max-width: 1023.9px) {
+    display: none;
   }
-  @media(min-width:1200px) and (max-width:1440px){
-    width:28%;
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    width: 222px;
   }
-  @media(min-width:1441px) and (max-width:1800px){
-width:35%;
+  @media (min-width: 1200px) and (max-width: 1440px) {
+    width: 28%;
   }
-  @media(min-width:1801px) and (max-width:2300px){
-width:38%;
+  @media (min-width: 1441px) and (max-width: 1800px) {
+    width: 35%;
   }
-  @media(min-width:2301px) and (max-width:2600px){
-width:40%;
+  @media (min-width: 1801px) and (max-width: 2300px) {
+    width: 38%;
   }
-  @media(min-width:2652px) and (max-width:4000px){
-width:40%;
+  @media (min-width: 2301px) and (max-width: 2600px) {
+    width: 40%;
   }
-  @media(min-width:4000px){
-    display:none;
+  @media (min-width: 2652px) and (max-width: 4000px) {
+    width: 40%;
   }
-`
+  @media (min-width: 4000px) {
+    display: none;
+  }
+`;
 const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
@@ -279,8 +280,8 @@ const DTSection = styled.div`
   margin-top: 15px;
   display: flex;
   justify-content: flex-end;
-  position:relative;
-  z-index:2;
+  position: relative;
+  z-index: 2;
   img {
     right: 0;
     ${"" /* height:20.99px;
@@ -289,8 +290,8 @@ const DTSection = styled.div`
     padding-bottom: 12px;
     padding-right: 6px;
   }
-  @media(min-width:1024px){
-    display:none;
+  @media (min-width: 1024px) {
+    display: none;
   }
   @media (max-width: 768px) {
     width: 180px;
@@ -305,7 +306,7 @@ const DTSection = styled.div`
 
 const StyledWrapper = styled.div`
   display: flex;
-  ${'' /* align-items: center; */}
+  ${"" /* align-items: center; */}
   margin-bottom: 100px;
   @media (min-width: 768px) and (max-width: 991px) {
     flex-wrap: wrap;
@@ -494,6 +495,7 @@ const Title = styled.div`
   margin-left: 50px;
   margin-bottom: 127px;
   @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 60px;
     margin-bottom: 40px;
   }
   @media (max-width: 767.9px) {
@@ -506,11 +508,11 @@ const Title = styled.div`
     width: 244px;
     margin-left: 52px;
   }
-  @media(min-width:1024px) and (max-width:1199px){
-    margin-left:282px;
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    margin-left: 282px;
   }
-  @media(min-width:1200px){
-    margin-left:222px;
+  @media (min-width: 1200px) {
+    margin-left: 222px;
   }
 `;
 const TextBody = styled.div`

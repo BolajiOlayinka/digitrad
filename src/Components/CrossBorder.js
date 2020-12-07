@@ -204,7 +204,7 @@ const EnglishHeading = styled.div`
   }
   @media (min-width: 768px) and (max-width: 991px) {
     width: 300px;
-    font-size: 56px;
+    font-size: 60px;
     margin-left: 108px;
   }
   @media (min-width: 576px) and (max-width: 767.9px) {
