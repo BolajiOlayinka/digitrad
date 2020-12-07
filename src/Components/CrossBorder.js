@@ -21,12 +21,13 @@ export default function CrossBorder() {
   });
   return (
     <React.Fragment>
-    <ExtendDT data-aos="fade-right"></ExtendDT>
-      <Container className="crossborder">
-        <HeaderSection>
-          <DTSection data-aos="fade-right">
+    {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
+    <DTSection data-aos="fade-right">
             <img src={DT} alt="Icon" />
           </DTSection>
+      <Container >
+        <HeaderSection className="crossborder">
+          
           <div>
             <EnglishHeading>Crossborder Marketplace</EnglishHeading>
             <JapaneseHeading>こんなお悩みございませんか？</JapaneseHeading>
@@ -45,7 +46,7 @@ export default function CrossBorder() {
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 col-12">
               <Section>
-                <IconHead data-aos="slide-up">
+                <IconHead data-aos="fade-up">
                   <img src={IconTwo} alt="Digitrad Icon" />
                 </IconHead>
                 <IconText>輸出には慣れてないので、不安である</IconText>
@@ -100,37 +101,31 @@ export default function CrossBorder() {
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
+  @media(min-width:767px) and (max-width:991px){
+margin-left:107px;
+  }
+  @media(min-width:1200px) and (max-width:1440px){
+margin-left:67px;
+  }
+  @media(min-width:1441px) and (max-width:1800px){
+${'' /* margin-left:25%; */}
+margin-left:220px;
+  }
+  @media(min-width:1801px) and (max-width:2600px){
+${'' /* margin-left:35%; */}
+margin-left:220px;
+  }
+ @media(min-width:2601px){
+   margin-left:220px;
+ }
 `;
-const ExtendDT = styled.div `
-background-color:var(--mainBlue);
-height:45px;
-width:25%;
-position:absolute;
-z-index:1;
-margin-top:112px;
 
-@media(min-width:1024.5px) and (max-width:1199px){
-  width:15%;
-}
-@media(min-width:1800px){
-  width:31%;
-}
-@media(min-width:2600px){
-  width:35%;
-}
-@media(min-width:3000px){
-  width:40%;
-}
-@media(max-width:1024px){
-display:none;
-}
-`
 const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
-  margin-top: 36px;
-position:relative;
+  margin-top: 116px;
+position:absolute;
 z-index:2;
   display: flex;
   justify-content: flex-end;
@@ -141,6 +136,7 @@ z-index:2;
     padding-bottom: 12px;
     padding-right: 6px;
   }
+  
   @media (min-width: 576px) and (max-width: 767.9px) {
     width: 200px;
   }
@@ -151,7 +147,28 @@ z-index:2;
     width: 100px;
   }
   @media (max-width: 426px) {
-    margin-top: 10px;
+    margin-top: 100px;
+  }
+  @media(min-width:1024px) and (max-width:1200px){
+    width:222px;
+  }
+  @media(min-width:1200px) and (max-width:1440px){
+    width:28%;
+  }
+  @media(min-width:1441px) and (max-width:1800px){
+width:35%;
+  }
+  @media(min-width:1801px) and (max-width:2300px){
+width:38%;
+  }
+  @media(min-width:2301px) and (max-width:2600px){
+width:40%;
+  }
+  @media(min-width:2652px) and (max-width:4000px){
+width:40%;
+  }
+  @media(min-width:4000px){
+    display:none;
   }
 `;
 const Container = styled.div`
@@ -178,36 +195,41 @@ const EnglishHeading = styled.div`
   align-items: center;
   margin-left: 67px;
   @media (min-width: 1200px) {
-    ${"" /* margin-left: 262px; */}
-    margin-left:67px;
+   margin-left: 262px; 
+    ${'' /* margin-left:67px; */}
   }
   @media (min-width: 991px) and (max-width: 1199px) {
-    margin-left: 67px;
-    width: -webkit-fill-available;
+    margin-left: 262px;
+    width: 300px;
   }
   @media (min-width: 768px) and (max-width: 991px) {
     width: 300px;
     font-size: 56px;
-    margin-left: 30px;
+    margin-left: 108px;
   }
   @media (min-width: 576px) and (max-width: 767.9px) {
     width: 300px;
     font-size: 56px;
-    margin-left: 30px;
+    margin-left: 230px;
     height: 200px;
   }
   @media (max-width: 575.9px) {
     width: 200px;
     font-size: 45px;
     line-height: 54px;
-    margin-left: 30px;
+    margin-left: 130px;
     height: 160px;
   }
   @media (max-width: 426px) {
     font-size: 36px;
     line-height: 44px;
-    margin-left: 50px;
+    margin-left: 130px;
     height: 96px;
+  }
+  @media (max-width: 375px) {
+    font-size: 30px;
+    margin-left: 120px;
+   
   }
 `;
 const JapaneseHeading = styled.div`
@@ -259,6 +281,11 @@ const Section = styled.div`
   height: 240px;
   margin-top: 45px;
   @media (max-width: 426px) {
+    margin-top: 30px;
+  }
+  @media (max-width: 375px) {
+    width:90%;
+    margin:auto;
     margin-top: 30px;
   }
 `;

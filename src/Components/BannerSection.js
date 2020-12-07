@@ -433,5 +433,6 @@ const DividerButton = styled.a`
   }
   @media (max-width: 375px){
     width:325px;
+    margin:auto;
   }
 `;

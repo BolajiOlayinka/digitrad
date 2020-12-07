@@ -242,7 +242,7 @@ const DTSection = styled.div`
 
 const StyledWrapper = styled.div`
   display: flex;
-  align-items: center;
+  ${'' /* align-items: center; */}
   margin-bottom: 100px;
   @media (min-width: 768px) and (max-width: 991px) {
     flex-wrap: wrap;

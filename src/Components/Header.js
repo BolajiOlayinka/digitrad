@@ -3,13 +3,12 @@ import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import Logo from "../assets/DT-white.svg";
 import { HashLink as Link } from "react-router-hash-link";
+import animateScrollTo from "animated-scroll-to";
 // import translate from "../Providers/i18n/translate";
 // import LanguageSwitcher from "./LanguageSwitcher";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-
-
+// import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const [background, setBackground] = useState("black");
@@ -19,7 +18,6 @@ export default function Header() {
   // const [SmallBackground, setSmallBackground]=useState("black")
 
   const handleScroll = () => {
-    
     if (window.pageYOffset > 0) {
       setBackground("rgba(0, 0, 0, 0.8)");
     } else {
@@ -40,8 +38,22 @@ export default function Header() {
     setShowItem(!showItem, e);
     setShowIcon(!showIcon, e);
   };
-  
 
+  const ScrolltoMarketPlace = () => {
+    animateScrollTo(document.querySelector(".crossborder"));
+  };
+  const ScrolltoInternationalPayment = () => {
+    animateScrollTo(document.querySelector(".payment"));
+  };
+  const ScrolltoLogistics = () => {
+    animateScrollTo(document.querySelector(".logistics"));
+  };
+  // const ScrolltoLogistics = () => {
+  //   animateScrollTo(3630);
+  // };
+  const ScrolltoFinance = () => {
+    animateScrollTo(document.querySelector(".finance"));
+  };
   return (
     <NavWrapper background={background} fixed={fixed}>
       <StyledNavbar expand="md">
@@ -49,7 +61,7 @@ export default function Header() {
           {showIcon ? (
             <StyledFontAwesome icon={faBars} />
           ) : (
-            <StyledFontCancel icon={faTimesCircle} />
+            <StyledFontCancel icon={faBars} />
           )}
         </div>
         <LogoContainer>
@@ -69,9 +81,12 @@ export default function Header() {
                   borderBottom: "7px solid white",
                 }}
                 to="/"
-                onClick={toggle}
+                onClick={() => {
+                  ScrolltoMarketPlace();
+                  toggle();
+                }}
               >
-               ニュース
+                CROSSBORDER MARKETPLACE
               </StyledLink>
             </NavItem>
             <NavItem>
@@ -84,9 +99,12 @@ export default function Header() {
                   borderBottom: "7px solid white",
                 }}
                 to="/"
-                onClick={toggle}
+                onClick={() => {
+                  ScrolltoInternationalPayment();
+                  toggle();
+                }}
               >
-              お問い合わせ
+                INTERNATIONAL PAYMENT
               </StyledLink>
             </NavItem>
             <NavItem>
@@ -99,9 +117,30 @@ export default function Header() {
                   borderBottom: "7px solid white",
                 }}
                 to="/"
-                onClick={toggle}
+                onClick={() => {
+                  ScrolltoLogistics();
+                  toggle();
+                }}
               >
-                ABOUT                
+                OVERSEAS LOGISTICS
+              </StyledLink>
+            </NavItem>
+            <NavItem>
+              <StyledLink
+                activestyle={{
+                  fontWeight: "bold",
+                  color: "#f8951d",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  borderBottom: "7px solid white",
+                }}
+                to="/"
+                onClick={() => {
+                  ScrolltoFinance();
+                  toggle();
+                }}
+              >
+                FINANCIAL TOOLS
               </StyledLink>
             </NavItem>
           </StyledNav>
@@ -141,10 +180,8 @@ export default function Header() {
                 ABOUT
               </StyledLink>
             </NavItem>
-             
           </StyledNav>
         </LargeNav>
-
       </StyledNavbar>
     </NavWrapper>
   );
@@ -165,12 +202,14 @@ const NavWrapper = styled.div`
   @media (max-width: 767.9px) {
     background-color: rgba(0, 0, 0, 0.8);
   }
- 
 `;
 const LogoContainer = styled.div`
   img {
     width: 50px;
     height: 38px;
+  }
+  @media (max-width: 576px) {
+    z-index: 2;
   }
 `;
 const StyledNav = styled(Nav)`
@@ -185,10 +224,12 @@ const StyledNav = styled(Nav)`
     background: rgb(0, 0, 0, 0.9);
     z-index: 1;
     width: 100%;
+    margin-top: 20px;
     li {
-      padding: 10px;
+      padding: 4px;
+      padding-left: 20px;
       a {
-        font-size: 20px !important;
+        font-size: 14px !important;
       }
     }
   }
@@ -199,19 +240,19 @@ const StyledNavbar = styled(Navbar)`
     flex: none;
     width: 1000px;
     margin: auto;
-    padding-left:0px;
+    padding-left: 0px;
   }
-  @media(min-width:1024px) and (max-width:1199px){
-    padding-left:30px;
-    padding-right:30px;
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  @media(min-width:768px) and (max-width:1023.9px){
-    padding-left:50px;
-    padding-right:30px;
+  @media (min-width: 768px) and (max-width: 1023.9px) {
+    padding-left: 50px;
+    padding-right: 30px;
   }
-  @media(max-width:767.9px){
-    padding-left:30px;
-    padding-right:30px;
+  @media (max-width: 767.9px) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
 const StyledLink = styled(Link)`
@@ -255,7 +296,6 @@ const StyledLink = styled(Link)`
 `;
 
 const LargeNav = styled.div`
-  
   @media (max-width: 767.9px) {
     display: none;
   }
@@ -273,7 +313,7 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
   position: absolute;
   top: 0;
   color: white;
-  margin-top: 9px;
-  margin-left: -2px;
-  font-size: 24px;
+  margin-top: 14px;
+  ${"" /* margin-left: -2px; */}
+  font-size: 20px;
 `;

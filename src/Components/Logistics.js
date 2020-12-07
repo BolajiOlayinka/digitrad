@@ -39,17 +39,17 @@ export default function Logistics() {
         <DigitradPhrase>
           その業務、DiGiTRADで半分に減らしませんか？
         </DigitradPhrase>
-        <BackgroundLine data-aos="fade-right" style={{transitionDuration: "3.6s"}}/>
+        <BackgroundLine data-aos="fade-right"/>
         <CircleTickSection>
           
-            <FunctionBody  data-aos="fade-right" style={{transitionDuration: "0.6s"}}>
+            <FunctionBody  data-aos="fade-right">
               <img src={TickCircle} alt="tickcircle" />
               <TickText>
               輸出、輸入の可否を一緒にお調べ
               </TickText>
             </FunctionBody>
 
-            <FunctionBody  data-aos="fade-right" style={{transitionDuration: "1.2s"}}>
+            <FunctionBody  data-aos="fade-right">
               <img src={TickCircle} alt="tickcircle" />
               <TickText>
               輸出書類は自動作成
@@ -287,7 +287,7 @@ const DigitradPhrase = styled.div`
     line-height:45px;
     margin:auto;
     margin-top:12px;
-   
+   margin-bottom:100px;
   }
  
 
@@ -353,13 +353,17 @@ margin-left:22%;
 background-color:var(--mainGreen);
 margin-top:63px;
 height:320px;
+@media(min-width:426px) and (max-width:767.9px){
+  margin-left:105px;
+  height:270px;
+}
 @media(max-width:425px){
-  margin-left:75px;
+  margin-left:48px;
   height:250px;
 }
-@media(max-width:375px){
+${'' /* @media(max-width:375px){
   margin-left:55px;
-}
+} */}
 `
 const BackgroundLine = styled.hr`
   color: var(--mainGreen);
@@ -427,11 +431,19 @@ line-height: 29px;
 `
 const SmallCircleTick = styled.div `
 display:flex;
-@media(min-width:576px){
+@media(min-width:426px) and (max-width:767.9px){
+  width:425px;
+  margin:auto;
+  margin-bottom:50px;
+}
+@media(min-width:767.9px){
   display:none;
 }
 @media(max-width:425px){
+  width:325px;
+  margin:auto;
   margin-top:60px;
+  margin-bottom:30px;
 }
 `
 
