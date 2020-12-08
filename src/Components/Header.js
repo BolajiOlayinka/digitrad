@@ -129,7 +129,7 @@ export default function Header() {
         <LargeNav className="ml-auto">
           <StyledNav navbar>
             <NavItem>
-              <StyledLink to="/">ニュース</StyledLink>
+              <StyledLink href="https://standage.co.jp/blog/"  rel="noreferrer" target="_blank">ニュース</StyledLink>
             </NavItem>
             <NavItem>
               <StyledLink
@@ -141,13 +141,13 @@ export default function Header() {
                   textDecoration: "none",
                   borderBottom: "7px solid white",
                 }}
-                to="/"
+                href="https://standage.co.jp/#top-contact"  rel="noreferrer" target="_blank"
               >
                 お問い合わせ
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink to="/">ABOUT</StyledLink>
+              <StyledLink href="https://standage.co.jp/"  rel="noreferrer" target="_blank">ABOUT</StyledLink>
             </NavItem>
           </StyledNav>
         </LargeNav>
@@ -227,7 +227,7 @@ const StyledNavbar = styled(Navbar)`
     padding-right: 30px;
   }
 `;
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   color: var(--mainGreen);
   line-height: 24px;
   margin-right: 33px;

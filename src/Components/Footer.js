@@ -5,7 +5,7 @@ import Facebook from "../assets/facebook.svg";
 import Instagram from "../assets/instagram.svg";
 import Linkedin from "../assets/linkedin.svg";
 import Twitter from "../assets/twitter.svg";
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -15,15 +15,15 @@ export default function Footer() {
             
             <FooterLeft>
             <div>DiGiTRAD is a registered trademark and product by STANDAGE, Inc</div>
-            <Link to ="/">Privacy Policy</Link>
+            <a href ="https://app.digitrad.world/terms" rel="noreferrer" target="_blank">Privacy Policy</a>
             </FooterLeft>
             <FooterRight>
                <IconContainer>
-                   <a href="https://wa.me/message/JRO5UQOD3LB3D1"><img src={Whatsapp} alt="Whatsapp Icon"/></a>
-                   <a href="https://www.facebook.com/digitrad.ng/"><img src={Facebook} alt="Facebook Icon"/></a>
-                   <a href="https://www.instagram.com/digitrad.world/"><img src={Instagram} alt="Instagram Icon"/></a>
-                   <a href="https://www.linkedin.com/showcase/digitrad-world/"><img src={Linkedin} alt="Linkedin Icon"/></a>
-                   <a href="https://mobile.twitter.com/digitrad_world"><img src={Twitter} alt="Twitter Icon"/></a>
+                   <a href="https://wa.me/message/JRO5UQOD3LB3D1"  rel="noreferrer" target="_blank"><img src={Whatsapp} alt="Whatsapp Icon"/></a>
+                   <a href="https://www.facebook.com/digitrad.ng/"  rel="noreferrer" target="_blank"><img src={Facebook} alt="Facebook Icon"/></a>
+                   <a href="https://www.instagram.com/digitrad.world/"  rel="noreferrer" target="_blank"><img src={Instagram} alt="Instagram Icon"/></a>
+                   <a href="https://www.linkedin.com/showcase/digitrad-world/"  rel="noreferrer" target="_blank"><img src={Linkedin} alt="Linkedin Icon"/></a>
+                   <a href="https://mobile.twitter.com/digitrad_world" rel="noreferrer" target="_blank"><img src={Twitter} alt="Twitter Icon"/></a>
                </IconContainer>
             </FooterRight>
             </FooterContainer>

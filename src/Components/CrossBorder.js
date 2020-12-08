@@ -315,10 +315,10 @@ const IconsWrapper = styled.div`
     margin: auto;
   }
 
-  @media (max-width: 576px) {
+  ${'' /* @media (max-width: 576px) {
     width: 301px;
     margin: auto;
-  }
+  } */}
 `;
 const SmallDigitrad = styled.div`
   text-align: center;
