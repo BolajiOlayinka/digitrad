@@ -10,16 +10,21 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const [background, setBackground] = useState("white");
+  const [boxshadow, setBoxShadow]=useState("transparent")
   const [fixed, setFixed] = useState("initial");
+
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
   // const [SmallBackground, setSmallBackground]=useState("black")
+  
 
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
-      setBackground("rgba(0, 0, 0, 0.8)");
+      setBackground("white");
+      setBoxShadow("0 0 10px rgba(0,0,0,0.2)")
     } else {
       setBackground("white");
+      setBoxShadow("transparent")
     }
   };
   const fixedScroll = () => {
@@ -53,7 +58,7 @@ export default function Header() {
     animateScrollTo(document.querySelector(".finance"));
   };
   return (
-    <NavWrapper background={background} fixed={fixed}>
+    <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
       <StyledNavbar expand="md">
         <div onClick={toggle}>
           {showIcon ? (
@@ -89,13 +94,7 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid white",
-                }}
+                
                 to="/"
                 onClick={() => {
                   ScrolltoInternationalPayment();
@@ -107,13 +106,7 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid white",
-                }}
+                
                 to="/"
                 onClick={() => {
                   ScrolltoLogistics();
@@ -125,13 +118,7 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid white",
-                }}
+                
                 to="/"
                 onClick={() => {
                   ScrolltoFinance();
@@ -165,14 +152,6 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                activeclassname="selected"
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid white",
-                }}
                 to="/"
               >
                 ABOUT
@@ -195,17 +174,18 @@ const NavWrapper = styled.div`
   padding-bottom: 1em;
   color: #373737;
   background: ${(props) => props.background} !important;
-  transition: 0.4s all;
+  box-shadow: ${(props) => props.boxshadow} !important;
+  transition: 0.5s all;
   width: -webkit-fill-available;
-  @media (max-width: 767.9px) {
+  ${'' /* @media (max-width: 767.9px) {
     background-color: rgba(0, 0, 0, 0.8)!important;
-  }
+  } */}
 `;
 const LogoContainer = styled.div`
-  img {
+  ${'' /* img {
     width: 50px;
     height: 38px;
-  }
+  } */}
   @media (max-width: 576px) {
     z-index: 2;
   }
@@ -258,19 +238,19 @@ const StyledLink = styled(Link)`
   line-height: 24px;
   margin-right: 33px;
   padding-bottom: 8px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
 
   :hover {
-    color: var(--mainWhite);
+    color: var(--mainGreen);
     cursor: pointer;
     text-decoration: none;
 
-    border-bottom: 7px solid var(--mainWhite);
+    border-bottom: 2px solid var(--mainGreen);
   }
   :active {
     color: var(--mainGreen);
-    border-bottom: 7px solid var(--mainiGreen);
+    border-bottom: 2px solid var(--mainGreen);
     transition: border-bottom 0.5s ease-in;
   }
 
@@ -299,7 +279,7 @@ const LargeNav = styled.div`
   }
 `;
 const StyledFontAwesome = styled(FontAwesomeIcon)`
-  color: white;
+  color: black;
   font-size: 20px;
 
   @media (min-width: 767.9px) {
@@ -310,7 +290,7 @@ const StyledFontCancel = styled(FontAwesomeIcon)`
   z-index: 2;
   position: absolute;
   top: 0;
-  color: white;
+  color: black;
   margin-top: 14px;
   ${"" /* margin-left: -2px; */}
   font-size: 20px;

@@ -358,10 +358,10 @@ const DesktopWrapper = styled.div`
   margin-bottom: 80px;
   @media(max-width:1024px){
     width:100%;
-    img{
+    ${'' /* img{
       width:90%;
     margin:auto;
-    }
+    } */}
     
   }
   @media (max-width: 768px) {
@@ -444,7 +444,7 @@ width:89px;
 
 const ActionButton = styled.a`
   width: 424.51px;
-  height: 40px;
+  height: 60px;
   display: flex;
   align-items: center;
   color: var(--mainWhite);
