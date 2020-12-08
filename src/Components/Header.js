@@ -9,7 +9,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 // import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const [background, setBackground] = useState("black");
+  const [background, setBackground] = useState("white");
   const [fixed, setFixed] = useState("initial");
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
