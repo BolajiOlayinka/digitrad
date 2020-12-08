@@ -394,9 +394,9 @@ const ActionButton = styled.a`
     text-decoration: none;
   }
   @media (max-width: 576px) {
-    width: 70%;
     margin: auto;
     margin-top: 50px;
+    width: 239px;
   }
 `;
 const LineEnding = styled.hr`
