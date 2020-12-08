@@ -11,7 +11,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 export default function Header() {
   const [background, setBackground] = useState("white");
   const [boxshadow, setBoxShadow] = useState("transparent");
-  const [fixed, setFixed] = useState("initial");
+  const [fixed, setFixed] = useState("fixed");
 
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
@@ -27,7 +27,7 @@ export default function Header() {
     }
   };
   const fixedScroll = () => {
-    if (window.pageYOffset >= 180) {
+    if (window.pageYOffset >= 0) {
       setFixed("fixed");
     } else {
       setFixed("initial");
