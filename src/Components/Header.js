@@ -10,21 +10,20 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const [background, setBackground] = useState("white");
-  const [boxshadow, setBoxShadow]=useState("transparent")
+  const [boxshadow, setBoxShadow] = useState("transparent");
   const [fixed, setFixed] = useState("initial");
 
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
   // const [SmallBackground, setSmallBackground]=useState("black")
-  
 
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
       setBackground("white");
-      setBoxShadow("0 0 10px rgba(0,0,0,0.2)")
+      setBoxShadow("0 0 10px rgba(0,0,0,0.2)");
     } else {
       setBackground("white");
-      setBoxShadow("transparent")
+      setBoxShadow("transparent");
     }
   };
   const fixedScroll = () => {
@@ -94,7 +93,6 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                
                 to="/"
                 onClick={() => {
                   ScrolltoInternationalPayment();
@@ -106,7 +104,6 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                
                 to="/"
                 onClick={() => {
                   ScrolltoLogistics();
@@ -118,7 +115,6 @@ export default function Header() {
             </NavItem>
             <NavItem>
               <StyledLink
-                
                 to="/"
                 onClick={() => {
                   ScrolltoFinance();
@@ -151,11 +147,7 @@ export default function Header() {
               </StyledLink>
             </NavItem>
             <NavItem>
-              <StyledLink
-                to="/"
-              >
-                ABOUT
-              </StyledLink>
+              <StyledLink to="/">ABOUT</StyledLink>
             </NavItem>
           </StyledNav>
         </LargeNav>
@@ -177,12 +169,14 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  ${'' /* @media (max-width: 767.9px) {
+  ${
+    "" /* @media (max-width: 767.9px) {
     background-color: rgba(0, 0, 0, 0.8)!important;
-  } */}
+  } */
+  }
 `;
 const LogoContainer = styled.div`
-  ${'' /* img {
+  ${"" /* img {
     width: 50px;
     height: 38px;
   } */}

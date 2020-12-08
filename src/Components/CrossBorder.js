@@ -21,19 +21,20 @@ export default function CrossBorder() {
   });
   return (
     <React.Fragment>
-    {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
-    <DTSection data-aos="fade-right">
-            <img src={DT} alt="Icon" />
-          </DTSection>
-      <Container >
+      {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
+      <DTSection data-aos="fade-right">
+        <img src={DT} alt="Icon" />
+      </DTSection>
+      <Container>
         <HeaderSection className="crossborder">
-          
           <div>
             <EnglishHeading>Crossborder Marketplace</EnglishHeading>
             <JapaneseHeading>こんなお悩みございませんか？</JapaneseHeading>
           </div>
         </HeaderSection>
-        <SmallJapaneseHeading>こんなお悩みございませんか？</SmallJapaneseHeading>
+        <SmallJapaneseHeading>
+          こんなお悩みございませんか？
+        </SmallJapaneseHeading>
         <IconsWrapper>
           <div className="row align-items-center">
             <div className="col-xl-4 col-lg-4 col-md-4 col-12">
@@ -71,26 +72,39 @@ export default function CrossBorder() {
         <TickSection>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon data-aos="fade-up" style={{transitionDuration: "0.6s"}}>
+              <TickIcon
+                data-aos="fade-up"
+                style={{ transitionDuration: "0.6s" }}
+              >
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>簡単掲載</TickText>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon data-aos="fade-up" style={{transitionDuration: "1.2s"}}>
+              <TickIcon
+                data-aos="fade-up"
+                style={{ transitionDuration: "1.2s" }}
+              >
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>安心サポート</TickText>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon data-aos="fade-up" style={{transitionDuration: "2.4s"}}>
+              <TickIcon
+                data-aos="fade-up"
+                style={{ transitionDuration: "2.4s" }}
+              >
                 <img src={Tick} alt="digitrad Icon" />
               </TickIcon>
               <TickText>今なら掲載無料</TickText>
             </div>
           </div>
         </TickSection>
-        <ActionButton href="https://app.digitrad.world/auth/signin" rel="noreferrer" target="_blank">
+        <ActionButton
+          href="https://app.digitrad.world/auth/signin"
+          rel="noreferrer"
+          target="_blank"
+        >
           LEARN MORE
         </ActionButton>
         <LineEnding />
@@ -101,23 +115,23 @@ export default function CrossBorder() {
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
-  @media(min-width:767px) and (max-width:991px){
-margin-left:107px;
+  @media (min-width: 767px) and (max-width: 991px) {
+    margin-left: 107px;
   }
-  @media(min-width:1200px) and (max-width:1440px){
-margin-left:67px;
+  @media (min-width: 1200px) and (max-width: 1440px) {
+    margin-left: 67px;
   }
-  @media(min-width:1441px) and (max-width:1800px){
-${'' /* margin-left:25%; */}
-margin-left:220px;
+  @media (min-width: 1441px) and (max-width: 1800px) {
+    ${"" /* margin-left:25%; */}
+    margin-left:220px;
   }
-  @media(min-width:1801px) and (max-width:2600px){
-${'' /* margin-left:35%; */}
-margin-left:220px;
+  @media (min-width: 1801px) and (max-width: 2600px) {
+    ${"" /* margin-left:35%; */}
+    margin-left:220px;
   }
- @media(min-width:2601px){
-   margin-left:220px;
- }
+  @media (min-width: 2601px) {
+    margin-left: 220px;
+  }
 `;
 
 const DTSection = styled.div`
@@ -125,8 +139,8 @@ const DTSection = styled.div`
   width: 222px;
   height: 45px;
   margin-top: 116px;
-position:absolute;
-z-index:2;
+  position: absolute;
+  z-index: 2;
   display: flex;
   justify-content: flex-end;
 
@@ -136,7 +150,7 @@ z-index:2;
     padding-bottom: 12px;
     padding-right: 6px;
   }
-  
+
   @media (min-width: 576px) and (max-width: 767.9px) {
     width: 200px;
   }
@@ -149,38 +163,38 @@ z-index:2;
   @media (max-width: 426px) {
     margin-top: 100px;
   }
-  @media(min-width:1024px) and (max-width:1200px){
-    width:222px;
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    width: 222px;
   }
-  @media(min-width:1200px) and (max-width:1440px){
-    width:28%;
+  @media (min-width: 1200px) and (max-width: 1440px) {
+    width: 28%;
   }
-  @media(min-width:1441px) and (max-width:1800px){
-width:35%;
+  @media (min-width: 1441px) and (max-width: 1800px) {
+    width: 35%;
   }
-  @media(min-width:1801px) and (max-width:2300px){
-width:38%;
+  @media (min-width: 1801px) and (max-width: 2300px) {
+    width: 38%;
   }
-  @media(min-width:2301px) and (max-width:2600px){
-width:40%;
+  @media (min-width: 2301px) and (max-width: 2600px) {
+    width: 40%;
   }
-  @media(min-width:2652px) and (max-width:4000px){
-width:40%;
+  @media (min-width: 2652px) and (max-width: 4000px) {
+    width: 40%;
   }
-  @media(min-width:4000px){
-    display:none;
+  @media (min-width: 4000px) {
+    display: none;
   }
 `;
 const Container = styled.div`
-width:100%;
-margin:auto;
+  width: 100%;
+  margin: auto;
   @media (min-width: 1200px) {
     width: 1000px;
     margin: auto;
   }
   @media (min-width: 768px) and (max-width: 991px) {
-    width:90%;
-    margin:auto;
+    width: 90%;
+    margin: auto;
   }
 `;
 
@@ -195,8 +209,8 @@ const EnglishHeading = styled.div`
   align-items: center;
   margin-left: 67px;
   @media (min-width: 1200px) {
-   margin-left: 262px; 
-    ${'' /* margin-left:67px; */}
+    margin-left: 262px;
+    ${"" /* margin-left:67px; */}
   }
   @media (min-width: 991px) and (max-width: 1199px) {
     margin-left: 262px;
@@ -229,7 +243,6 @@ const EnglishHeading = styled.div`
   @media (max-width: 375px) {
     font-size: 30px;
     margin-left: 120px;
-   
   }
 `;
 const JapaneseHeading = styled.div`
@@ -262,21 +275,20 @@ const JapaneseHeading = styled.div`
     height: 50%;
   }
   @media (max-width: 576px) {
-    display:none;
+    display: none;
   }
-  
 `;
-const SmallJapaneseHeading = styled.div `
-height: 50px;
-font-size: 24px;
-line-height: 85px;
-font-weight:bold;
-    width: 350px;
-    margin:auto;
-@media(min-width:576px){
-  display:none;
-}
-`
+const SmallJapaneseHeading = styled.div`
+  height: 50px;
+  font-size: 24px;
+  line-height: 85px;
+  font-weight: bold;
+  width: 350px;
+  margin: auto;
+  @media (min-width: 576px) {
+    display: none;
+  }
+`;
 const Section = styled.div`
   height: 240px;
   margin-top: 45px;
@@ -284,8 +296,8 @@ const Section = styled.div`
     margin-top: 30px;
   }
   @media (max-width: 375px) {
-    width:90%;
-    margin:auto;
+    width: 90%;
+    margin: auto;
     margin-top: 30px;
   }
 `;
@@ -298,14 +310,14 @@ const IconsWrapper = styled.div`
   @media (max-width: 1024px) {
     width: 100%;
   }
-  @media(min-width:768.1px) and (max-width:991px){
-    width:768px;
-    margin:auto;
+  @media (min-width: 768.1px) and (max-width: 991px) {
+    width: 768px;
+    margin: auto;
   }
 
   @media (max-width: 576px) {
     width: 301px;
-    margin:auto;
+    margin: auto;
   }
 `;
 const SmallDigitrad = styled.div`
@@ -326,8 +338,8 @@ const IconHead = styled.div`
   display: flex;
   align-items: center;
   margin: auto;
-  z-index:1;
-  position:relative;
+  z-index: 1;
+  position: relative;
 `;
 const IconText = styled.div`
   font-size: 24px;
@@ -340,12 +352,12 @@ const IconText = styled.div`
   font-weight: 300;
   font-style: normal;
   margin-top: 12.16px;
-  z-index:3;
-  position:relative;
-  @media(min-width:768px) and (max-width:991px){
-    font-size:20px;
-    height:40px;
-    width:200px;
+  z-index: 3;
+  position: relative;
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 20px;
+    height: 40px;
+    width: 200px;
   }
   @media (max-width: 768px) {
     margin: auto;
@@ -356,13 +368,15 @@ const DesktopWrapper = styled.div`
   width: 1004px;
   margin: auto;
   margin-bottom: 80px;
-  @media(max-width:1024px){
-    width:100%;
-    ${'' /* img{
+  img {
+    width: 100%;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    ${"" /* img{
       width:90%;
     margin:auto;
     } */}
-    
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -386,15 +400,15 @@ const TickSection = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-  @media (min-width:576.9px) and (max-width: 767.9px) {
+  @media (min-width: 576.9px) and (max-width: 767.9px) {
     width: 70%;
-    margin:auto;
-    text-align:center;
+    margin: auto;
+    text-align: center;
   }
   @media (max-width: 576px) {
     width: 277px;
-    margin:auto;
-    margin-bottom:27px;
+    margin: auto;
+    margin-bottom: 27px;
   }
 `;
 const TickIcon = styled.div`
@@ -428,17 +442,17 @@ const TickText = styled.div`
   font-weight: 300;
   font-size: 24px;
   line-height: 29px;
-  @media (min-width:576.9px) and (max-width: 767.9px) {
+  @media (min-width: 576.9px) and (max-width: 767.9px) {
     font-weight: 300;
-font-size: 16px;
-line-height: 32px;
-width:150px;
+    font-size: 16px;
+    line-height: 32px;
+    width: 150px;
   }
-  @media(max-width:576px){
+  @media (max-width: 576px) {
     font-weight: 300;
-font-size: 14px;
-line-height: 29px;
-width:89px;
+    font-size: 14px;
+    line-height: 29px;
+    width: 89px;
   }
 `;
 
@@ -454,8 +468,8 @@ const ActionButton = styled.a`
   line-height: 24px;
   justify-content: center;
   margin: auto;
-  :hover{
-    text-decoration:none;
+  :hover {
+    text-decoration: none;
   }
   @media (max-width: 768px) {
     width: 65%;
@@ -470,12 +484,12 @@ const LineEnding = styled.hr`
   width: 974px;
   margin: auto;
   border: 1px solid var(--mainBlack);
-  background-color:var(--mainBlack);
+  background-color: var(--mainBlack);
   margin-top: 70px;
-  @media(max-width:991px){
-    width:80%;
-    margin:auto;
-    margin-top:70px;
+  @media (max-width: 991px) {
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
   }
   @media (max-width: 768px) {
     width: 80%;
@@ -483,7 +497,7 @@ const LineEnding = styled.hr`
     margin-top: 70px;
   }
   @media (max-width: 576px) {
-    margin-top:50px;
+    margin-top: 50px;
     width: 157px;
   }
 `;
