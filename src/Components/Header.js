@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Navbar, Nav, NavItem } from "reactstrap";
-import Logo from "../assets/DT-white.svg";
+import Logo from "../assets/DT-bluebackground.svg";
 import { HashLink as Link } from "react-router-hash-link";
 import animateScrollTo from "animated-scroll-to";
-// import translate from "../Providers/i18n/translate";
-// import LanguageSwitcher from "./LanguageSwitcher";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 // import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +19,7 @@ export default function Header() {
     if (window.pageYOffset > 0) {
       setBackground("rgba(0, 0, 0, 0.8)");
     } else {
-      setBackground("black");
+      setBackground("white");
     }
   };
   const fixedScroll = () => {
@@ -200,7 +198,7 @@ const NavWrapper = styled.div`
   transition: 0.4s all;
   width: -webkit-fill-available;
   @media (max-width: 767.9px) {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8)!important;
   }
 `;
 const LogoContainer = styled.div`
@@ -224,7 +222,7 @@ const StyledNav = styled(Nav)`
     background: rgb(0, 0, 0, 0.9);
     z-index: 1;
     width: 100%;
-    margin-top: 20px;
+    padding-top: 80px;
     li {
       padding: 4px;
       padding-left: 20px;

@@ -559,6 +559,9 @@ const ActionButton = styled.a`
   line-height: 24px;
   justify-content: center;
   margin: auto;
+  :hover{
+    text-decoration:none;
+  }
   @media (min-width: 768px) and (max-width: 1199px) {
     margin-bottom: 70px;
     height: 100%;

@@ -4,7 +4,7 @@ import DT from "../assets/DT.svg";
 import IconOne from "../assets/icon1.svg";
 import IconTwo from "../assets/icon2.svg";
 import IconThree from "../assets/icon3.svg";
-import Desktop from "../assets/desktop.svg";
+import Desktop from "../assets/desktop.png";
 import Logo from "../assets/logo.svg";
 import Tick from "../assets/tick.svg";
 import Aos from "aos";
@@ -91,7 +91,7 @@ export default function CrossBorder() {
           </div>
         </TickSection>
         <ActionButton href="https://app.digitrad.world/auth/signin" rel="noreferrer" target="_blank">
-          SEE IN ACTION
+          LEARN MORE
         </ActionButton>
         <LineEnding />
       </Container>
@@ -454,6 +454,9 @@ const ActionButton = styled.a`
   line-height: 24px;
   justify-content: center;
   margin: auto;
+  :hover{
+    text-decoration:none;
+  }
   @media (max-width: 768px) {
     width: 65%;
     margin: auto;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
-import FreightShip from "../assets/ship.svg";
+import FreightShip from "../assets/ship.png";
 import animateScrollTo from "animated-scroll-to";
 // import { HashLink as Link } from "react-router-hash-link";
 
