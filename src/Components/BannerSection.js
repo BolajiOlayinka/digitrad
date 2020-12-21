@@ -61,7 +61,7 @@ export default function BannerSection() {
         <DividerContainer>
           <Line />
           <DividerButton
-            href="https://app.digitrad.world"
+            href={`${process.env.REACT_APP_URL}`}
             rel="noreferrer"
             target="_blank"
           >
@@ -179,7 +179,7 @@ const RightSection = styled.div`
     margin-top: -5px;
     img {
       width: 140px;
-      height: 140px;
+      ${'' /* height: 140px; */}
       padding-right: 25px;
     }
   }
@@ -187,7 +187,7 @@ const RightSection = styled.div`
     margin-top: -5px;
     img {
       width: 140px;
-      height: 140px;
+      ${'' /* height: 140px; */}
       padding-right: 25px;
     }
   }

@@ -15,7 +15,7 @@ export default function Footer() {
             
             <FooterLeft>
             <div>DiGiTRAD is a registered trademark and product by STANDAGE, Inc</div>
-            <a href ="https://app.digitrad.world/terms" rel="noreferrer" target="_blank">Privacy Policy</a>
+            <a href ={`${process.env.REACT_APP_URL}/terms`} rel="noreferrer" target="_blank">Privacy Policy</a>
             </FooterLeft>
             <FooterRight>
                <IconContainer>

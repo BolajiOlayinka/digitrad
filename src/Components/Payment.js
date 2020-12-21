@@ -168,7 +168,7 @@ export default function Payment() {
           </Highlight>
         </VisibleOnSmall>
         <ActionButton
-          href="https://app.digitrad.world/auth/signin"
+          href={`${process.env.REACT_APP_URL}/auth/signup?service=payment`}
           rel="noreferrer"
           target="_blank"
         >

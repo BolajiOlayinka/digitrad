@@ -101,7 +101,7 @@ export default function CrossBorder() {
           </div>
         </TickSection>
         <ActionButton
-          href="https://app.digitrad.world/auth/signin"
+          href={`${process.env.REACT_APP_URL}/auth/signup?service=marketplace`}
           rel="noreferrer"
           target="_blank"
         >

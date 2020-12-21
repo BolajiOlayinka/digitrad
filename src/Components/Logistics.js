@@ -109,7 +109,7 @@ export default function Logistics() {
         </SizeContainer>
 
         <ActionButton
-          href="https://app.digitrad.world/auth/signin"
+          href={`${process.env.REACT_APP_URL}/auth/signup?service=logistics`}
           rel="noreferrer"
           target="_blank"
         >

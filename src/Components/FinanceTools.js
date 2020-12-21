@@ -45,7 +45,7 @@ export default function FinanceTools() {
 
         <Wrapper>
           <ActionButton
-            href="https://app.digitrad.world/auth/signin"
+            href={`${process.env.REACT_APP_URL}/auth/signup?service=finance`}
             rel="noreferrer"
             target="_blank"
           >
