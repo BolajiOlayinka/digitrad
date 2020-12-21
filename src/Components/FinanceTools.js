@@ -266,15 +266,18 @@ const LargeDT = styled.div`
     width: 22%;
   }
   @media (min-width: 1441px) and (max-width: 1800px) {
-    width: 35%;
+    width: 34.5%;
   }
   @media (min-width: 1801px) and (max-width: 2300px) {
-    width: 38%;
+    width: 33%;
   }
   @media (min-width: 2301px) and (max-width: 2600px) {
-    width: 35%;
+    width: 34%;
   }
-  @media (min-width: 2652px) and (max-width: 4000px) {
+  @media (min-width: 2601px) and (max-width: 3000px) {
+    width: 38%;
+  }
+  @media (min-width: 3001px) and (max-width: 4000px) {
     width: 40%;
   }
   @media (min-width: 4000px) {
