@@ -38,7 +38,7 @@ export default class Calc extends Component {
   fetchApi = () => {
     axios({
       method: "get",
-      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apikey=${process.env.REACT_APP_KEY_ONE}`,
+      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apikey=79092290-DA92-406B-BA02-E1D84B48AA18`,
       headers: {
         "Content-Type": "application/json",
         // "X-CoinAPI-Key":`${process.env.REACT_APP_KEY_ONE}`
@@ -249,23 +249,22 @@ export default class Calc extends Component {
         defaultValue: e.target.value,
       },
       () => {
-        if (
+        if (this.state.defaultValue.length === 0) {
+          this.setState({
+            fixedRates: 0,
+            amountConvert: 0,
+            result: 0,
+          });
+        } else if (
           this.state.ButtonValueOne === "JPY" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue < 100000
         ) {
           let fixedRates = Number(0.02 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -277,16 +276,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.015 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -298,16 +290,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.01 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -318,16 +303,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.007 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -338,16 +316,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.02 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -359,16 +330,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.015 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -380,16 +344,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.01 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -400,16 +357,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.007 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -420,16 +370,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.03 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -441,16 +384,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.015 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -462,16 +398,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.01 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -482,16 +411,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.007 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -502,16 +424,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.03 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -523,16 +438,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.015 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -544,16 +452,9 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.01 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
@@ -564,33 +465,20 @@ export default class Calc extends Component {
         ) {
           let fixedRates = Number(0.007 * this.state.defaultValue);
           let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-            amountConvert: amountConvert,
-          });
-
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
             amountConvert: amountConvert,
             result: result,
           });
         } else {
           let fixedRates = 0.007 * this.state.defaultValue;
-
+          let amountConvert = this.state.defaultValue - fixedRates;
+          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
           this.setState({
             fixedRates: fixedRates,
-          });
-          let amountConvert = this.state.defaultValue - this.state.fixedRates;
-          let result = (
-            this.state.defaultValue * this.state.realtimePrice -
-            this.state.fixedRates
-          ).toFixed(5);
-          this.setState({
-            result: result,
             amountConvert: amountConvert,
+            result: result,
           });
 
           if (this.state.defaultValue < this.state.fixedRates) {
@@ -733,61 +621,55 @@ export default class Calc extends Component {
             </StyledModalHeader>
             <StyledModalBody>
               <ul>
-          
-                  <li
-                    onClick={() => {
-                      this.JPYButtonOneSelect();
-                      this.toggleModalOne();
-                    }}
-                  >
-                    <img src={jpyflag} alt="Japanese Flag" />
-                    Japanese Yen
-                  </li>
-                
-                
-                  <li
-                    onClick={() => {
-                      this.BTCButtonOneSelect();
-                      this.toggleModalOne();
-                    }}
-                  >
-                    <img src={btcflag} alt="Btc flag" />
-                    Bitcoin
-                  </li>
-                
-                
-                  <li
-                    onClick={() => {
-                      this.USDCButtonOneSelect();
-                      this.toggleModalOne();
-                    }}
-                  >
-                    <img src={usdcflag} alt="USDC Coin" />
-                    USD Coin
-                  </li>
-                
-               
-                  <li
-                    onClick={() => {
-                      this.NGNButtonOneSelect();
-                      this.toggleModalOne();
-                    }}
-                  >
-                    <img src={ngnflag} alt="Nigerian Flag" />
-                    Nigerian Naira
-                  </li>
-                
-                
-                  <li
-                    onClick={() => {
-                      this.USDButtonOneSelect();
-                      this.toggleModalOne();
-                    }}
-                  >
-                    <img src={usdflag} alt="America Flag" />
-                    USD United States Dollar
-                  </li>
-                
+                <li
+                  onClick={() => {
+                    this.JPYButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={jpyflag} alt="Japanese Flag" />
+                  Japanese Yen
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.BTCButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={btcflag} alt="Btc flag" />
+                  Bitcoin
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.USDCButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={usdcflag} alt="USDC Coin" />
+                  USD Coin
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.NGNButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={ngnflag} alt="Nigerian Flag" />
+                  Nigerian Naira
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.USDButtonOneSelect();
+                    this.toggleModalOne();
+                  }}
+                >
+                  <img src={usdflag} alt="America Flag" />
+                  USD United States Dollar
+                </li>
               </ul>
             </StyledModalBody>
           </CurrencyModal>
@@ -855,57 +737,55 @@ export default class Calc extends Component {
             </StyledModalHeader>
             <StyledModalBody>
               <ul>
-                
-                  <li
-                    onClick={() => {
-                      this.JPYButtonTwoSelect();
-                      this.toggleModalTwo();
-                    }}
-                  >
-                    <img src={jpyflag} alt="Japanese Flag" />
-                    Japanese Yen
-                  </li>
-      
-                  <li
-                    onClick={() => {
-                      this.BTCButtonTwoSelect();
-                      this.toggleModalTwo();
-                    }}
-                  >
-                    <img src={btcflag} alt="Bitcoin Flag" />
-                    Bitcoin
-                  </li>
-               
-                  <li
-                    onClick={() => {
-                      this.USDCButtonTwoSelect();
-                      this.toggleModalTwo();
-                    }}
-                  >
-                    <img src={usdcflag} alt="USD Coin" />
-                    USD Coin
-                  </li>
-               
-                  <li
-                    onClick={() => {
-                      this.NGNButtonTwoSelect();
-                      this.toggleModalTwo();
-                    }}
-                  >
-                    <img src={ngnflag} alt="Nigerian Flag" />
-                    Nigerian Naira
-                  </li>
-               
-                  <li
-                    onClick={() => {
-                      this.USDButtonTwoSelect();
-                      this.toggleModalTwo();
-                    }}
-                  >
-                    <img src={usdflag} alt="America Flag" />
-                    USD United States Dollar
-                  </li>
-               
+                <li
+                  onClick={() => {
+                    this.JPYButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={jpyflag} alt="Japanese Flag" />
+                  Japanese Yen
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.BTCButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={btcflag} alt="Bitcoin Flag" />
+                  Bitcoin
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.USDCButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={usdcflag} alt="USD Coin" />
+                  USD Coin
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.NGNButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={ngnflag} alt="Nigerian Flag" />
+                  Nigerian Naira
+                </li>
+
+                <li
+                  onClick={() => {
+                    this.USDButtonTwoSelect();
+                    this.toggleModalTwo();
+                  }}
+                >
+                  <img src={usdflag} alt="America Flag" />
+                  USD United States Dollar
+                </li>
               </ul>
             </StyledModalBody>
           </OutputCurrencyModal>
