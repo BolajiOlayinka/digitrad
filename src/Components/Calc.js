@@ -45,34 +45,6 @@ export default class Calc extends Component {
       },
     })
       .then((res) => {
-        // if (
-        //   this.state.ButtonValueOne === "NGN" &&
-        //   this.state.ButtonValueTwo === "NGN"
-        // ) {
-        //   this.setState({
-        //     fixedRates: 150,
-        //   });
-        //   if (this.state.defaultValue < this.state.fixedRates) {
-        //     alert(`You cannot send less than ${this.state.fixedRates}`);
-        //   }
-        // } else if (
-        //   this.state.ButtonValueOne === "NGN" &&
-        //   this.state.ButtonValueTwo === "JPY"
-        // ) {
-        //   this.setState({
-        //     fixedRates: 20,
-        //   });
-        // } else if (
-        //   this.state.ButtonValueOne === "BTC" &&
-        //   this.state.ButtonValueTwo === "NGN"
-        // ) {
-        //   let PercentagefixedRate = Number(0.007 * this.state.defaultValue);
-
-        //   this.setState({
-        //     fixedRates: PercentagefixedRate,
-
-        //   });
-        // }
         if (
           this.state.ButtonValueOne === "JPY" &&
           this.state.ButtonValueTwo === "NGN" &&
@@ -197,15 +169,36 @@ export default class Calc extends Component {
           });
         }
 
-        let RealTimePrice = res.data.rate.toFixed(8);
-        let Amount = Number(this.state.defaultValue - this.state.fixedRates);
-        const result = Number(Amount * RealTimePrice).toFixed(5);
+        if (
+          this.state.ButtonValueOne === "JPY" &&
+          this.state.ButtonValueTwo === "NGN"
+        ) {
+          let RealTimePrice =
+            res.data.rate.toFixed(8) - 0.05 * res.data.rate.toFixed(8);
 
-        this.setState({
-          result: result,
-          realtimePrice: RealTimePrice,
-          amountConvert: Amount,
-        });
+          let Amount = Number(this.state.defaultValue - this.state.fixedRates);
+          const result = Number(Amount * RealTimePrice).toFixed(5);
+          this.setState({
+            realtimePrice: RealTimePrice,
+            result: result,
+            amountConvert: Amount,
+          });
+        } else {
+          let RealTimePrice = res.data.rate.toFixed(8);
+          let Amount = Number(this.state.defaultValue - this.state.fixedRates);
+          const result = Number(Amount * RealTimePrice).toFixed(5);
+          this.setState({
+            result: result,
+            realtimePrice: RealTimePrice,
+            amountConvert: Amount,
+          });
+        }
+
+        // this.setState({
+        //   result: result,
+        //   realtimePrice: RealTimePrice,
+        //   amountConvert: Amount,
+        // });
       })
       .catch((err) => {
         console.log(err);
@@ -228,6 +221,29 @@ export default class Calc extends Component {
       [e.target.name]: e.target.value,
     });
   };
+  calculateRate = (rate) => {
+    const fixedRates = Number(rate * this.state.defaultValue);
+    const amountConvert = this.state.defaultValue - fixedRates;
+    const result = (amountConvert * this.state.realtimePrice).toFixed(5);
+    this.setState({
+      fixedRates: fixedRates,
+      amountConvert: amountConvert,
+      result: result,
+    });
+  };
+  calculateJPYRate = (rate) => {
+    const fixedRates = Number(rate * this.state.defaultValue);
+    const amountConvert = this.state.defaultValue - fixedRates;
+    const realTime = this.state.realtimePrice;
+
+    const result = (amountConvert * realTime).toFixed(5);
+    this.setState({
+      fixedRates: fixedRates,
+      amountConvert: amountConvert,
+      result: result,
+    });
+  };
+
   handleInput = (e) => {
     this.setState(
       {
@@ -245,226 +261,107 @@ export default class Calc extends Component {
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue < 100000
         ) {
-          let fixedRates = Number(0.02 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateJPYRate(0.02);
         } else if (
           this.state.ButtonValueOne === "JPY" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue >= 100000 &&
           this.state.defaultValue < 500000
         ) {
-          let fixedRates = Number(0.015 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateJPYRate(0.015);
         } else if (
           this.state.ButtonValueOne === "JPY" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue >= 500000 &&
           this.state.defaultValue < 10000000
         ) {
-          let fixedRates = Number(0.01 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateJPYRate(0.01);
         } else if (
           this.state.ButtonValueOne === "JPY" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue >= 10000000
         ) {
-          let fixedRates = Number(0.007 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateJPYRate(0.007);
         } else if (
           this.state.ButtonValueOne === "USD" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue < 100000
         ) {
-          let fixedRates = Number(0.02 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.02);
         } else if (
           this.state.ButtonValueOne === "USD" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue >= 100000 &&
           this.state.defaultValue < 500000
         ) {
-          let fixedRates = Number(0.015 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.015);
         } else if (
           this.state.ButtonValueOne === "USD" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue >= 500000 &&
           this.state.defaultValue < 10000000
         ) {
-          let fixedRates = Number(0.01 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.01);
         } else if (
           this.state.ButtonValueOne === "USD" &&
           this.state.ButtonValueTwo === "NGN" &&
           this.state.defaultValue >= 10000000
         ) {
-          let fixedRates = Number(0.007 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.007);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "JPY" &&
           this.state.defaultValue < 500000
         ) {
-          let fixedRates = Number(0.03 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.03);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "JPY" &&
           this.state.defaultValue >= 500000 &&
           this.state.defaultValue < 5000000
         ) {
-          let fixedRates = Number(0.015 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.015);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "JPY" &&
           this.state.defaultValue >= 5000000 &&
           this.state.defaultValue < 10000000
         ) {
-          let fixedRates = Number(0.01 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.01);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "JPY" &&
           this.state.defaultValue >= 10000000
         ) {
-          let fixedRates = Number(0.007 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.007);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "USD" &&
           this.state.defaultValue < 500000
         ) {
-          let fixedRates = Number(0.03 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.03);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "USD" &&
           this.state.defaultValue >= 500000 &&
           this.state.defaultValue < 5000000
         ) {
-          let fixedRates = Number(0.015 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.015);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "USD" &&
           this.state.defaultValue >= 5000000 &&
           this.state.defaultValue < 10000000
         ) {
-          let fixedRates = Number(0.01 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.01);
         } else if (
           this.state.ButtonValueOne === "NGN" &&
           this.state.ButtonValueTwo === "USD" &&
           this.state.defaultValue >= 10000000
         ) {
-          let fixedRates = Number(0.007 * this.state.defaultValue);
-          let amountConvert = this.state.defaultValue - fixedRates;
-          let result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.007);
         } else {
-          let fixedRates = 0.007 * this.state.defaultValue;
-          let amountConvert = this.state.defaultValue - fixedRates;
-          const result = (amountConvert * this.state.realtimePrice).toFixed(5);
-          this.setState({
-            fixedRates: fixedRates,
-            amountConvert: amountConvert,
-            result: result,
-          });
+          this.calculateRate(0.007);
 
           if (this.state.defaultValue < this.state.fixedRates) {
             alert(
