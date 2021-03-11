@@ -99,15 +99,17 @@ export default function Logistics() {
             </Section>
           </TickSection>
         </SmallCircleTick>
-        <PriceConfidant>そして・・・価格にも自信あり！！</PriceConfidant>
+        <Center>
+        <PriceConfidant disabled="true">そして・・・価格にも自信あり！！</PriceConfidant>
+        
         <FontAwesomeContainer>
           <FontAwesomeIcon icon={faArrowDown} />
         </FontAwesomeContainer>
 
-        <SizeContainer>
+        <SizeContainer disabled="true">
           出荷製品のサイズ、重量を入力すると即時で概算物流費が分かります
         </SizeContainer>
-
+        </Center>
         <ActionButton
           href={`${process.env.REACT_APP_URL}/auth/signup?service=logistics`}
           rel="noreferrer"
@@ -270,9 +272,10 @@ const EnglishHeading = styled.div`
 `;
 const JapaneseHeading = styled.div`
   width: 451px;
-  height: 159px;
+  // height: 159px;
   width: 451px;
-  height: 159px;
+  // height: 159px;
+  margin-bottom:35px;
   font-size: 26px;
   font-weight: 300;
   line-height: 45px;
@@ -316,8 +319,9 @@ const DigitradPhrase = styled.div`
   font-size: 36px;
   line-height: 45px;
   width: 782px;
-  height: 45px;
+  // height: 45px;
   margin: auto;
+  margin-bottom:60px;
   color: var(--mainBlue);
   margin-bottom: 100px;
   @media (min-width: 768px) and (max-width: 991px) {
@@ -541,19 +545,19 @@ const TickText = styled.div`
   text-align: center;
   margin-top: 24px;
 `;
-const PriceConfidant = styled.div`
-  width: 355.1px;
-  height: 60px;
+const PriceConfidant = styled.button`
+  padding:8px 15px;
   background-color: var(--mainBlue);
-  align-items: center;
-  display: flex;
-  justify-content: center;
   margin: auto;
+  margin-top:54px;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 45px;
   color: white;
+  outline:0;
+  border-color:transparent;
+ 
   @media (max-width: 576px) {
     width: 349px;
     margin: auto;
@@ -562,14 +566,18 @@ const PriceConfidant = styled.div`
     line-height: 31px;
   }
 `;
-const SizeContainer = styled.div`
-  display: flex;
-  align-items: center;
+const Center = styled.div `
+text-align:center;
+`
+const SizeContainer = styled.button`
+  // display: flex;
+  // align-items: center;
   margin: auto;
-  justify-content: center;
+  // justify-content: center;
   margin-top: 11px;
-  width: 672px;
-  height: 60px;
+  padding:8px 15px;
+  // width: 672px;
+  // height: 60px;
   border: 1px solid var(--mainBlue);
   font-style: normal;
   font-weight: bold;

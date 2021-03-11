@@ -307,7 +307,7 @@ const DTSection = styled.div`
 const StyledWrapper = styled.div`
   display: flex;
   ${"" /* align-items: center; */}
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
   @media (min-width: 768px) and (max-width: 991px) {
     flex-wrap: wrap;
   }
@@ -370,6 +370,7 @@ const PaymentFunctionSection = styled.div`
   margin-bottom: 51px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top:100px;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -517,7 +518,7 @@ const Title = styled.div`
 `;
 const TextBody = styled.div`
   width: 336px;
-  height: 118px;
+  // height: 118px;
   font-weight: 300;
   font-size: 26px;
   line-height: 45px;
