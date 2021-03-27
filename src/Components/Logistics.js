@@ -6,6 +6,8 @@ import "aos/dist/aos.css";
 import TickCircle from "../assets/tickcircle.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import Dots from "../assets/sidepolygon.svg";
+
 export default function Logistics() {
   useEffect(() => {
     Aos.init(
@@ -16,8 +18,10 @@ export default function Logistics() {
     );
   });
   return (
-    <React.Fragment>
-      {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
+    <div style={{ position: "relative" }}>
+      <SideDots>
+        <img src={Dots} alt="Digitrad" />
+      </SideDots>
       <LargeDT data-aos="fade-right">
         <img src={DT} alt="Icon" />
       </LargeDT>
@@ -27,11 +31,11 @@ export default function Logistics() {
             <img src={DT} alt="Icon" />
           </DTSection>
           <div>
-            <EnglishHeading> Overseas Logistics</EnglishHeading>
-            <JapaneseHeading>
+            <Heading>海外物流</Heading>
+            <SubHeading>
               輸出業務は、本当に大変です。
               輸出・輸入基準の確認、各種船積書類の作成、物流会社とのやり取り・・・
-            </JapaneseHeading>
+            </SubHeading>
           </div>
         </HeaderSection>
         <SmallHeaderSection>
@@ -100,26 +104,30 @@ export default function Logistics() {
           </TickSection>
         </SmallCircleTick>
         <Center>
-        <PriceConfidant disabled="true">そして・・・価格にも自信あり！！</PriceConfidant>
-        
-        <FontAwesomeContainer>
-          <FontAwesomeIcon icon={faArrowDown} />
-        </FontAwesomeContainer>
+          <PriceConfidant disabled="true">
+            そして・・・価格にも自信あり！！
+          </PriceConfidant>
 
-        <SizeContainer disabled="true">
-          出荷製品のサイズ、重量を入力すると即時で概算物流費が分かります
-        </SizeContainer>
+          <FontAwesomeContainer>
+            <FontAwesomeIcon icon={faArrowDown} />
+          </FontAwesomeContainer>
+
+          <SizeContainer disabled="true">
+            出荷製品のサイズ、重量を入力すると即時で概算物流費が分かります
+          </SizeContainer>
         </Center>
-        <ActionButton
-          href={`${process.env.REACT_APP_URL}/auth/signup?service=logistics`}
-          rel="noreferrer"
-          target="_blank"
-        >
-          LEARN MORE
-        </ActionButton>
+        <CenterButton>
+          <ActionButton
+            href={`${process.env.REACT_APP_URL}/auth/signup?service=logistics`}
+            rel="noreferrer"
+            target="_blank"
+          >
+            LEARN MORE
+          </ActionButton>
+        </CenterButton>
         <LineEnding />
       </Container>
-    </React.Fragment>
+    </div>
   );
 }
 const Container = styled.div`
@@ -132,6 +140,14 @@ const Container = styled.div`
   @media (min-width: 768px) and (max-width: 991px) {
     width: 100%;
     margin: auto;
+  }
+`;
+const SideDots = styled.div`
+  position: absolute;
+  right: 0;
+  img {
+    width: 265px;
+    height: 441px;
   }
 `;
 
@@ -158,7 +174,7 @@ const LargeDT = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
-  margin-top: 93px;
+  margin-top: 10px;
   position: absolute;
   z-index: 2;
   display: flex;
@@ -227,9 +243,9 @@ const DTSection = styled.div`
     margin-top: 10px;
   }
 `;
-const EnglishHeading = styled.div`
+const Heading = styled.div`
   width: 435px;
-  height: 208px;
+  padding-bottom: 35px;
   font-size: 72px;
   line-height: 85px;
   font-weight: 300;
@@ -270,12 +286,9 @@ const EnglishHeading = styled.div`
     height: 96px;
   }
 `;
-const JapaneseHeading = styled.div`
+const SubHeading = styled.div`
   width: 451px;
-  // height: 159px;
-  width: 451px;
-  // height: 159px;
-  margin-bottom:35px;
+  margin-bottom: 35px;
   font-size: 26px;
   font-weight: 300;
   line-height: 45px;
@@ -321,7 +334,7 @@ const DigitradPhrase = styled.div`
   width: 782px;
   // height: 45px;
   margin: auto;
-  margin-bottom:60px;
+  margin-bottom: 60px;
   color: var(--mainBlue);
   margin-bottom: 100px;
   @media (min-width: 768px) and (max-width: 991px) {
@@ -349,19 +362,18 @@ const DigitradPhrase = styled.div`
     margin-bottom: 100px;
   }
 `;
+const CenterButton = styled.div`
+  text-align: center;
+  margin-top: 50px;
+`;
 const ActionButton = styled.a`
-  width: 470px;
-  height: 60px;
-  display: flex;
-  align-items: center;
+  padding: 18px 158px;
   color: var(--mainWhite);
   background-color: var(--mainGreen);
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
-  justify-content: center;
-  margin: auto;
-  margin-top: 50px;
+
   :hover {
     text-decoration: none;
   }
@@ -546,18 +558,18 @@ const TickText = styled.div`
   margin-top: 24px;
 `;
 const PriceConfidant = styled.button`
-  padding:8px 15px;
+  padding: 8px 15px;
   background-color: var(--mainBlue);
   margin: auto;
-  margin-top:54px;
+  margin-top: 54px;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 45px;
   color: white;
-  outline:0;
-  border-color:transparent;
- 
+  outline: 0;
+  border-color: transparent;
+
   @media (max-width: 576px) {
     width: 349px;
     margin: auto;
@@ -566,16 +578,16 @@ const PriceConfidant = styled.button`
     line-height: 31px;
   }
 `;
-const Center = styled.div `
-text-align:center;
-`
+const Center = styled.div`
+  text-align: center;
+`;
 const SizeContainer = styled.button`
   // display: flex;
   // align-items: center;
   margin: auto;
   // justify-content: center;
   margin-top: 11px;
-  padding:8px 15px;
+  padding: 8px 15px;
   // width: 672px;
   // height: 60px;
   border: 1px solid var(--mainBlue);

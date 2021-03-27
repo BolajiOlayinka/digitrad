@@ -21,15 +21,17 @@ export default function CrossBorder() {
   });
   return (
     <React.Fragment>
-      {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
       <DTSection data-aos="fade-right">
         <img src={DT} alt="Icon" />
       </DTSection>
       <Container>
         <HeaderSection className="crossborder">
           <div>
-            <EnglishHeading>Crossborder Marketplace</EnglishHeading>
-            <JapaneseHeading>こんなお悩みございませんか？</JapaneseHeading>
+            <Heading>
+              国際 <br />
+              マーケットプレイス
+            </Heading>
+            <SubHeading>こんなお悩みございませんか？</SubHeading>
           </div>
         </HeaderSection>
         <SmallJapaneseHeading>
@@ -100,13 +102,15 @@ export default function CrossBorder() {
             </div>
           </div>
         </TickSection>
-        <ActionButton
-          href={`${process.env.REACT_APP_URL}/auth/signup?service=marketplace`}
-          rel="noreferrer"
-          target="_blank"
-        >
-          LEARN MORE
-        </ActionButton>
+        <div className="center">
+          <ActionButton
+            href={`${process.env.REACT_APP_URL}/auth/signup?service=marketplace`}
+            rel="noreferrer"
+            target="_blank"
+          >
+            試してみる
+          </ActionButton>
+        </div>
         <LineEnding />
       </Container>
     </React.Fragment>
@@ -114,12 +118,12 @@ export default function CrossBorder() {
 }
 const HeaderSection = styled.div`
   display: flex;
-  margin-top: 76px;
+  margin-top: 46px;
   @media (min-width: 767px) and (max-width: 991px) {
     margin-left: 107px;
   }
   @media (min-width: 1200px) and (max-width: 1440px) {
-    margin-left: 67px;
+    // margin-left: 67px;
   }
   @media (min-width: 1441px) and (max-width: 1800px) {
     ${"" /* margin-left:25%; */}
@@ -138,7 +142,7 @@ const DTSection = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
-  margin-top: 116px;
+  margin-top: 56px;
   position: absolute;
   z-index: 2;
   display: flex;
@@ -198,9 +202,8 @@ const Container = styled.div`
   }
 `;
 
-const EnglishHeading = styled.div`
-  width: 435px;
-  height: 208px;
+const Heading = styled.div`
+  width: 661px;
   font-size: 72px;
   line-height: 85px;
   font-weight: 300;
@@ -209,7 +212,7 @@ const EnglishHeading = styled.div`
   align-items: center;
   margin-left: 67px;
   @media (min-width: 1200px) {
-    margin-left: 262px;
+    margin-left: 265px;
     ${"" /* margin-left:67px; */}
   }
   @media (min-width: 991px) and (max-width: 1199px) {
@@ -245,7 +248,7 @@ const EnglishHeading = styled.div`
     margin-left: 120px;
   }
 `;
-const JapaneseHeading = styled.div`
+const SubHeading = styled.div`
   width: 715px;
   height: 100px;
   font-weight: bold;
@@ -256,7 +259,7 @@ const JapaneseHeading = styled.div`
   align-items: center;
   margin-left: 67px;
   @media (min-width: 1200px) {
-    margin-left: 67px;
+    margin-left: 265px;
   }
   @media (min-width: 991px) and (max-width: 1199px) {
     margin-left: 67px;
@@ -315,7 +318,7 @@ const IconsWrapper = styled.div`
     margin: auto;
   }
 
-  ${'' /* @media (max-width: 576px) {
+  ${"" /* @media (max-width: 576px) {
     width: 301px;
     margin: auto;
   } */}
@@ -457,17 +460,12 @@ const TickText = styled.div`
 `;
 
 const ActionButton = styled.a`
-  width: 424.51px;
-  height: 60px;
-  display: flex;
-  align-items: center;
+  padding: 18px 50px;
+  text-align: center;
   color: var(--mainWhite);
   background-color: var(--mainGreen);
   font-weight: bold;
   font-size: 24px;
-  line-height: 24px;
-  justify-content: center;
-  margin: auto;
   :hover {
     text-decoration: none;
   }

@@ -6,16 +6,14 @@ import { HashLink as Link } from "react-router-hash-link";
 import animateScrollTo from "animated-scroll-to";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-// import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [background, setBackground] = useState("white");
   const [boxshadow, setBoxShadow] = useState("transparent");
   const [fixed, setFixed] = useState("fixed");
-
   const [showIcon, setShowIcon] = useState(true);
   const [showItem, setShowItem] = useState(false);
-  // const [SmallBackground, setSmallBackground]=useState("black")
 
   const handleScroll = () => {
     if (window.pageYOffset > 0) {
@@ -50,108 +48,123 @@ export default function Header() {
   const ScrolltoLogistics = () => {
     animateScrollTo(document.querySelector(".logistics"));
   };
-  // const ScrolltoLogistics = () => {
-  //   animateScrollTo(3630);
-  // };
+
   const ScrolltoFinance = () => {
     animateScrollTo(document.querySelector(".finance"));
   };
   return (
     <NavWrapper background={background} boxshadow={boxshadow} fixed={fixed}>
-      <StyledNavbar expand="md">
-        <div onClick={toggle}>
-          {showIcon ? (
-            <StyledFontAwesome icon={faBars} />
-          ) : (
-            <StyledFontCancel icon={faBars} />
+      <Container>
+        <StyledNavbar expand="md">
+          <div onClick={toggle}>
+            {showIcon ? (
+              <StyledFontAwesome icon={faBars} />
+            ) : (
+              <StyledFontCancel icon={faBars} />
+            )}
+          </div>
+          <LogoContainer>
+            <Link to="/">
+              <img src={Logo} alt="Digitrad Logo" />
+            </Link>
+          </LogoContainer>
+          {showItem && (
+            <StyledNav navbar>
+              <NavItem>
+                <StyledLink
+                  activestyle={{
+                    fontWeight: "bold",
+                    color: "#f8951d",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    borderBottom: "7px solid white",
+                  }}
+                  to="/"
+                  onClick={() => {
+                    ScrolltoMarketPlace();
+                    toggle();
+                  }}
+                >
+                  CROSSBORDER MARKETPLACE
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink
+                  to="/"
+                  onClick={() => {
+                    ScrolltoInternationalPayment();
+                    toggle();
+                  }}
+                >
+                  INTERNATIONAL PAYMENT
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink
+                  to="/"
+                  onClick={() => {
+                    ScrolltoLogistics();
+                    toggle();
+                  }}
+                >
+                  OVERSEAS LOGISTICS
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink
+                  to="/"
+                  onClick={() => {
+                    ScrolltoFinance();
+                    toggle();
+                  }}
+                >
+                  FINANCIAL TOOLS
+                </StyledLink>
+              </NavItem>
+            </StyledNav>
           )}
-        </div>
-        <LogoContainer>
-          <Link to="/">
-            <img src={Logo} alt="Digitrad Logo" />
-          </Link>
-        </LogoContainer>
-        {showItem && (
-          <StyledNav navbar>
-            <NavItem>
-              <StyledLink
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid white",
-                }}
-                to="/"
-                onClick={() => {
-                  ScrolltoMarketPlace();
-                  toggle();
-                }}
-              >
-                CROSSBORDER MARKETPLACE
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                to="/"
-                onClick={() => {
-                  ScrolltoInternationalPayment();
-                  toggle();
-                }}
-              >
-                INTERNATIONAL PAYMENT
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                to="/"
-                onClick={() => {
-                  ScrolltoLogistics();
-                  toggle();
-                }}
-              >
-                OVERSEAS LOGISTICS
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                to="/"
-                onClick={() => {
-                  ScrolltoFinance();
-                  toggle();
-                }}
-              >
-                FINANCIAL TOOLS
-              </StyledLink>
-            </NavItem>
-          </StyledNav>
-        )}
-        <LargeNav className="ml-auto">
-          <StyledNav navbar>
-            <NavItem>
-              <StyledLink href="https://standage.co.jp/blog/"  rel="noreferrer" target="_blank">ニュース</StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink
-                activeclassname="selected"
-                activestyle={{
-                  fontWeight: "bold",
-                  color: "#f8951d",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  borderBottom: "7px solid white",
-                }}
-                href="https://standage.co.jp/#top-contact"  rel="noreferrer" target="_blank"
-              >
-                お問い合わせ
-              </StyledLink>
-            </NavItem>
-            <NavItem>
-              <StyledLink href="https://standage.co.jp/"  rel="noreferrer" target="_blank">ABOUT</StyledLink>
-            </NavItem>
-          </StyledNav>
-        </LargeNav>
-      </StyledNavbar>
+          <LargeNav className="ml-auto">
+            <StyledNav navbar>
+              <NavItem>
+                <StyledLink
+                  href="https://standage.co.jp/blog/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ニュース
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink
+                  activeclassname="selected"
+                  activestyle={{
+                    fontWeight: "bold",
+                    color: "#f8951d",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                    borderBottom: "7px solid white",
+                  }}
+                  href="https://standage.co.jp/#top-contact"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  お問い合わせ
+                </StyledLink>
+              </NavItem>
+              <NavItem>
+                <StyledLink
+                  href="https://standage.co.jp/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ABOUT
+                </StyledLink>
+              </NavItem>
+            </StyledNav>
+          </LargeNav>
+          <LanguageSwitcher />
+        </StyledNavbar>
+      </Container>
     </NavWrapper>
   );
 }
@@ -169,17 +182,8 @@ const NavWrapper = styled.div`
   box-shadow: ${(props) => props.boxshadow} !important;
   transition: 0.5s all;
   width: -webkit-fill-available;
-  ${
-    "" /* @media (max-width: 767.9px) {
-    background-color: rgba(0, 0, 0, 0.8)!important;
-  } */
-  }
 `;
 const LogoContainer = styled.div`
-  ${"" /* img {
-    width: 50px;
-    height: 38px;
-  } */}
   @media (max-width: 576px) {
     z-index: 2;
   }
@@ -206,13 +210,20 @@ const StyledNav = styled(Nav)`
     }
   }
 `;
+const Container = styled.div`
+  width: 100%;
+  margin: auto;
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin: auto;
+  }
+`;
 const StyledNavbar = styled(Navbar)`
   flex: auto;
   @media (min-width: 1201px) {
     flex: none;
-    width: 1000px;
-    margin: auto;
-    padding-left: 0px;
+    width: 1077px;
+    margin-left: 92px;
   }
   @media (min-width: 1024px) and (max-width: 1199px) {
     padding-left: 30px;

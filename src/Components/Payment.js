@@ -23,7 +23,6 @@ export default function Payment() {
   });
   return (
     <React.Fragment>
-      {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
       <LargeDT data-aos="fade-right">
         <img src={DT} alt="Icon" />
       </LargeDT>
@@ -33,7 +32,7 @@ export default function Payment() {
             <img src={DT} alt="Icon" />
           </DTSection>
           <div>
-            <Title>International Payment</Title>
+            <Title>国際決済</Title>
           </div>
         </HeaderSection>
         <VisibleOnSmall>
@@ -167,13 +166,15 @@ export default function Payment() {
             </div>
           </Highlight>
         </VisibleOnSmall>
-        <ActionButton
-          href={`${process.env.REACT_APP_URL}/auth/signup?service=payment`}
-          rel="noreferrer"
-          target="_blank"
-        >
-          SEE IN ACTION
-        </ActionButton>
+        <div className="center">
+          <ActionButton
+            href={`${process.env.REACT_APP_URL}/auth/signup?service=payment`}
+            rel="noreferrer"
+            target="_blank"
+          >
+            LEARN MORE
+          </ActionButton>
+        </div>
         <LineEnding />
       </Container>
     </React.Fragment>
@@ -187,30 +188,6 @@ const Container = styled.div`
     margin: auto;
   }
 `;
-// const ExtendDT = styled.div `
-// background-color:var(--mainBlue);
-// height:45px;
-// width:25%;
-// position:absolute;
-// z-index:1;
-// margin-top:91px;
-
-// @media(min-width:1024.5px) and (max-width:1199px){
-//   width:15%;
-// }
-// @media(min-width:1800px){
-//   width:31%;
-// }
-// @media(min-width:2600px){
-//   width:35%;
-// }
-// @media(min-width:3000px){
-//   width:40%;
-// }
-// @media(max-width:1024px){
-// display:none;
-// }
-// `
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 76px;
@@ -221,12 +198,10 @@ const HeaderSection = styled.div`
     margin-left: 67px;
   }
   @media (min-width: 1441px) and (max-width: 1800px) {
-    ${"" /* margin-left:25%; */}
-    margin-left:220px;
+    margin-left: 220px;
   }
   @media (min-width: 1801px) and (max-width: 2600px) {
-    ${"" /* margin-left:35%; */}
-    margin-left:220px;
+    margin-left: 220px;
   }
   @media (min-width: 2601px) {
     margin-left: 220px;
@@ -370,7 +345,7 @@ const PaymentFunctionSection = styled.div`
   margin-bottom: 51px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top:100px;
+  margin-top: 100px;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -549,19 +524,13 @@ const TextBodyTwo = styled.div`
   }
 `;
 const ActionButton = styled.a`
-  width: 470px;
-  height: 60px;
-  display: flex;
-  align-items: center;
+  padding: 18px 158px;
   color: var(--mainWhite);
   background-color: var(--mainGreen);
   font-weight: bold;
   font-size: 24px;
-  line-height: 24px;
-  justify-content: center;
-  margin: auto;
-  :hover{
-    text-decoration:none;
+  :hover {
+    text-decoration: none;
   }
   @media (min-width: 768px) and (max-width: 1199px) {
     margin-bottom: 70px;

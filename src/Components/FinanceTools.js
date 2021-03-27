@@ -4,6 +4,7 @@ import Lock from "../assets/lock.svg";
 import DT from "../assets/DT.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Dots from '../assets/sidepolygon.svg';
 
 export default function FinanceTools() {
   useEffect(() => {
@@ -15,8 +16,10 @@ export default function FinanceTools() {
     );
   });
   return (
-    <React.Fragment>
-      {/* <ExtendDT data-aos="fade-right"></ExtendDT> */}
+    <div style={{"position":"relative"}}>
+      <SideDots>
+      <img src={Dots} alt="Digitrad"/>
+      </SideDots>
       <LargeDT data-aos="fade-right">
         <img src={DT} alt="Icon" />
       </LargeDT>
@@ -54,7 +57,7 @@ export default function FinanceTools() {
           <LineEnding />
         </Wrapper>
       </Container>
-    </React.Fragment>
+    </div>
   );
 }
 const Container = styled.div`
@@ -73,33 +76,18 @@ const Container = styled.div`
     margin: auto;
   }
 `;
-// const ExtendDT = styled.div `
-// background-color:var(--mainBlue);
-// height:45px;
-// width:25%;
-// position:absolute;
-// z-index:1;
-// margin-top:91px;
-
-// @media(min-width:1024.5px) and (max-width:1199px){
-//   width:15%;
-// }
-// @media(min-width:1800px){
-//   width:31%;
-// }
-// @media(min-width:2600px){
-//   width:35%;
-// }
-// @media(min-width:3000px){
-//   width:40%;
-// }
-// @media(max-width:1024px){
-// display:none;
-// }
-// `
+const SideDots = styled.div `
+position:absolute;
+left:0;
+top:60px;
+img{
+  width:265px;
+  height:441px;
+}
+`
 const HeaderSection = styled.div`
   display: flex;
-  margin-top: 76px;
+  margin-top: 70px;
   @media (min-width: 767px) and (max-width: 991px) {
     margin-left: 0px;
   }
@@ -244,7 +232,7 @@ const LargeDT = styled.div`
   background-color: var(--mainBlue);
   width: 222px;
   height: 45px;
-  margin-top: 93px;
+  margin-top: 10px;
   position: absolute;
   z-index: 2;
   display: flex;
@@ -370,29 +358,25 @@ const SmallImageSection = styled.div`
 `;
 const Wrapper = styled.div`
   width: 100%;
+
   margin: auto;
+  text-align:center;
   @media (min-width: 1200px) {
     width: 1034px;
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
-    margin-top: 50px;
+    margin-top: 70px;
   }
 `;
 
 const ActionButton = styled.a`
-  width: 470px;
-  height: 60px;
-  display: flex;
-  align-items: center;
+  padding:18px 158px;
   color: var(--mainWhite);
   background-color: var(--mainGreen);
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
-  justify-content: center;
-  margin: auto;
-  margin-top: 50px;
   :hover {
     text-decoration: none;
   }
