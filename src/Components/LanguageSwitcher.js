@@ -7,7 +7,7 @@ export default function LanguageSwitcher() {
     <div>
       <ButtonNavlink to="/jp">JP</ButtonNavlink>
       <span style={{ color: "#333333", fontSize: "12px" }}>|</span>
-      <ButtonNavlink to="/">EN</ButtonNavlink>
+      <ButtonNavlink to="/en">EN</ButtonNavlink>
     </div>
   );
 }

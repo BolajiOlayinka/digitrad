@@ -3,7 +3,8 @@ import Header from "./Components/Header";
 import SubFooter from "./Components/SubFooter";
 import Footer from "./Components/Footer";
 import JP from "./Components/JP/index";
-import { Switch, Route,Redirect } from "react-router-dom";
+import EN from "./Components/EN/index";
+import { Switch, Route, Redirect } from "react-router-dom";
 // import styled from 'styled-components';
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -12,10 +13,9 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-      <Route exact path="/" render={() => (
-    <Redirect to="/jp"/>
-)}/>
+        <Route exact path="/" render={() => <Redirect to="/jp" />} />
         <Route exact path="/jp" component={JP} />
+        <Route exact path="/en" component={EN} />
       </Switch>
       <SubFooter />
       <Footer />
