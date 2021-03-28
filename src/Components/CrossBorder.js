@@ -33,6 +33,7 @@ export default function CrossBorder() {
             </Heading>
             <SubHeading>こんなお悩みございませんか？</SubHeading>
           </div>
+          <SmallHeadingSection>CrossBorder MarketPlace</SmallHeadingSection>
         </HeaderSection>
         <SmallJapaneseHeading>
           こんなお悩みございませんか？
@@ -72,34 +73,24 @@ export default function CrossBorder() {
           <img src={Desktop} alt="" />
         </DesktopWrapper>
         <TickSection>
-          <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon
-                data-aos="fade-up"
-                style={{ transitionDuration: "0.6s" }}
-              >
-                <img src={Tick} alt="digitrad Icon" />
-              </TickIcon>
-              <TickText>簡単掲載</TickText>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon
-                data-aos="fade-up"
-                style={{ transitionDuration: "1.2s" }}
-              >
-                <img src={Tick} alt="digitrad Icon" />
-              </TickIcon>
-              <TickText>安心サポート</TickText>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-4 col-4 text-center">
-              <TickIcon
-                data-aos="fade-up"
-                style={{ transitionDuration: "2.4s" }}
-              >
-                <img src={Tick} alt="digitrad Icon" />
-              </TickIcon>
-              <TickText>今なら掲載無料</TickText>
-            </div>
+          <div>
+            <TickIcon data-aos="fade-up" style={{ transitionDuration: "0.6s" }}>
+              <img src={Tick} alt="digitrad Icon" />
+            </TickIcon>
+            <TickText>簡単掲載</TickText>
+          </div>
+          <div>
+            <TickIcon data-aos="fade-up" style={{ transitionDuration: "1.2s" }}>
+              <img src={Tick} alt="digitrad Icon" />
+            </TickIcon>
+            <TickText>安心サポート</TickText>
+          </div>
+
+          <div>
+            <TickIcon data-aos="fade-up" style={{ transitionDuration: "2.4s" }}>
+              <img src={Tick} alt="digitrad Icon" />
+            </TickIcon>
+            <TickText>今なら掲載無料</TickText>
           </div>
         </TickSection>
         <div className="center">
@@ -126,12 +117,10 @@ const HeaderSection = styled.div`
     // margin-left: 67px;
   }
   @media (min-width: 1441px) and (max-width: 1800px) {
-    ${"" /* margin-left:25%; */}
-    margin-left:220px;
+    margin-left: 220px;
   }
   @media (min-width: 1801px) and (max-width: 2600px) {
-    ${"" /* margin-left:35%; */}
-    margin-left:220px;
+    margin-left: 220px;
   }
   @media (min-width: 2601px) {
     margin-left: 220px;
@@ -164,9 +153,7 @@ const DTSection = styled.div`
   @media (max-width: 575.9px) {
     width: 100px;
   }
-  @media (max-width: 426px) {
-    margin-top: 100px;
-  }
+
   @media (min-width: 1024px) and (max-width: 1200px) {
     width: 222px;
   }
@@ -213,7 +200,6 @@ const Heading = styled.div`
   margin-left: 67px;
   @media (min-width: 1200px) {
     margin-left: 265px;
-    ${"" /* margin-left:67px; */}
   }
   @media (min-width: 991px) and (max-width: 1199px) {
     margin-left: 262px;
@@ -228,24 +214,21 @@ const Heading = styled.div`
     width: 300px;
     font-size: 56px;
     margin-left: 230px;
-    height: 200px;
   }
-  @media (max-width: 575.9px) {
+  @media (max-width: 576px) {
+    display: none;
+  }
+`;
+const SmallHeadingSection = styled.div`
+  @media (min-width: 576px) {
+    display: none;
+  }
+  @media (max-width: 576px) {
     width: 200px;
-    font-size: 45px;
-    line-height: 54px;
-    margin-left: 130px;
-    height: 160px;
-  }
-  @media (max-width: 426px) {
+    font-weight: 300;
     font-size: 36px;
     line-height: 44px;
     margin-left: 130px;
-    height: 96px;
-  }
-  @media (max-width: 375px) {
-    font-size: 30px;
-    margin-left: 120px;
   }
 `;
 const SubHeading = styled.div`
@@ -317,11 +300,6 @@ const IconsWrapper = styled.div`
     width: 768px;
     margin: auto;
   }
-
-  ${"" /* @media (max-width: 576px) {
-    width: 301px;
-    margin: auto;
-  } */}
 `;
 const SmallDigitrad = styled.div`
   text-align: center;
@@ -376,10 +354,6 @@ const DesktopWrapper = styled.div`
   }
   @media (max-width: 1024px) {
     width: 100%;
-    ${"" /* img{
-      width:90%;
-    margin:auto;
-    } */}
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -400,20 +374,25 @@ const TickSection = styled.div`
   width: 720px;
   margin: auto;
   margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
   @media (max-width: 768px) {
     width: 100%;
   }
   @media (min-width: 576.9px) and (max-width: 767.9px) {
     width: 70%;
     margin: auto;
+    margin-bottom: 40px;
     text-align: center;
   }
   @media (max-width: 576px) {
-    width: 277px;
+    width: 336px;
     margin: auto;
     margin-bottom: 27px;
   }
 `;
+
+
 const TickIcon = styled.div`
   text-align: center;
   width: 105px;
@@ -437,8 +416,6 @@ const TickIcon = styled.div`
  }
 `;
 const TickText = styled.div`
-  width: 220px;
-  height: 50px;
   margin-top: 20px;
   margin: auto;
   font-style: normal;
@@ -455,7 +432,8 @@ const TickText = styled.div`
     font-weight: 300;
     font-size: 14px;
     line-height: 29px;
-    width: 89px;
+
+    text-align: center;
   }
 `;
 
