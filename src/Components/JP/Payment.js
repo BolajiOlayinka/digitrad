@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import PaymentImage from "../assets/paymentimage.svg";
+import PaymentImage from "../../assets/paymentimage.svg";
 import Calculator from "./Calc";
-import DT from "../assets/DT.svg";
-import Timer from "../assets/timer.svg";
-import Secured from "../assets/secure.svg";
-import Percent from "../assets/percent.svg";
-import TenMin from "../assets/10Min.svg";
+import DT from "../../assets/DT.svg";
+import Timer from "../../assets/timer.svg";
+import Secured from "../../assets/secure.svg";
+import Percent from "../../assets/percent.svg";
+import TenMin from "../../assets/10Min.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -273,7 +273,7 @@ const DTSection = styled.div`
     width: 180px;
   }
   @media (max-width: 576px) {
-    margin-top:0px;
+    margin-top: 0px;
     width: 85px;
   }
   @media (max-width: 425px) {
@@ -370,9 +370,10 @@ const VisibleOnSmall = styled.div`
   @media (min-width: 768px) {
     display: none;
   }
-  @media(max-width:768px){
-    margin-bottom:30px;
-  }`;
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+`;
 const Highlight = styled.div`
   color: var(--mainGreen);
   @media (max-width: 768px) {
@@ -404,7 +405,7 @@ const TopSmallVisibility = styled.div`
     font-size: 15px;
     line-height: 20px;
     margin: auto;
-    font-weight:300;
+    font-weight: 300;
   }
 `;
 const FunctionHeader = styled.div`
@@ -489,24 +490,21 @@ const Title = styled.div`
     width: 400px;
     margin-bottom: 40px;
   }
-  @media(max-width:576px){
-    display:none;
+  @media (max-width: 576px) {
+    display: none;
   }
-  
 `;
-const SmallTitle = styled.div `
-font-weight: 300;
-font-size: 36px;
-line-height: 44px;
-width:235px;
-margin-left:50px;
-margin-bottom:23px;
-@media(min-width:576.1px){
-  display:none;
-}
-
-
-`
+const SmallTitle = styled.div`
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 44px;
+  width: 235px;
+  margin-left: 50px;
+  margin-bottom: 23px;
+  @media (min-width: 576.1px) {
+    display: none;
+  }
+`;
 const TextBody = styled.div`
   width: 336px;
   font-weight: 300;
@@ -554,7 +552,7 @@ const ActionButton = styled.a`
     padding-bottom: 18px;
   }
   @media (max-width: 576px) {
-    padding:8px 34px;
+    padding: 8px 34px;
   }
 `;
 const LineEnding = styled.hr`

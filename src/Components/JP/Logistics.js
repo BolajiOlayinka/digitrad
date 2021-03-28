@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import DT from "../assets/DT.svg";
+import DT from "../../assets/DT.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import TickCircle from "../assets/tickcircle.svg";
+import TickCircle from "../../assets/tickcircle.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import Dots from "../assets/sidepolygon.svg";
+import Dots from "../../assets/sidepolygon.svg";
 
 export default function Logistics() {
   useEffect(() => {

@@ -28,9 +28,11 @@ const LogoContainer = styled.div`
   text-align: center;
   img {
     width: 228.96px;
-    height: 37.73px;
-    margin-top: 79.13px;
-    margin-bottom: 232.14px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     cursor:pointer;
+  }
+  @media(max-width:576px){
+    display:none;
   }
 `;

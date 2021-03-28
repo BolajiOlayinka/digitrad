@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import DT from "../assets/DT.svg";
-import IconOne from "../assets/icon1.svg";
-import IconTwo from "../assets/icon2.svg";
-import IconThree from "../assets/icon3.svg";
-import Desktop from "../assets/desktop.png";
-import Logo from "../assets/logo.svg";
-import Tick from "../assets/tick.svg";
+import DT from "../../assets/DT.svg";
+import IconOne from "../../assets/icon1.svg";
+import IconTwo from "../../assets/icon2.svg";
+import IconThree from "../../assets/icon3.svg";
+import Desktop from "../../assets/desktop.png";
+import Logo from "../../assets/logo.svg";
+import Tick from "../../assets/tick.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 

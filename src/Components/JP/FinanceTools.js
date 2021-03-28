@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Lock from "../assets/lock.svg";
-import DT from "../assets/DT.svg";
+import Lock from "../../assets/lock.svg";
+import DT from "../../assets/DT.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Dots from '../assets/sidepolygon.svg';
+import Dots from "../../assets/sidepolygon.svg";
 
 export default function FinanceTools() {
   useEffect(() => {
@@ -16,9 +16,9 @@ export default function FinanceTools() {
     );
   });
   return (
-    <div style={{"position":"relative"}}>
+    <div style={{ position: "relative" }}>
       <SideDots>
-      <img src={Dots} alt="Digitrad"/>
+        <img src={Dots} alt="Digitrad" />
       </SideDots>
       <LargeDT data-aos="fade-right">
         <img src={DT} alt="Icon" />
@@ -76,15 +76,18 @@ const Container = styled.div`
     margin: auto;
   }
 `;
-const SideDots = styled.div `
-position:absolute;
-left:0;
-top:60px;
-img{
-  width:265px;
-  height:441px;
-}
-`
+const SideDots = styled.div`
+  position: absolute;
+  left: 0;
+  top: 60px;
+  img {
+    width: 265px;
+    height: 441px;
+  }
+  @media(max-width:991px){
+    display:none;
+  }
+`;
 const HeaderSection = styled.div`
   display: flex;
   margin-top: 70px;
@@ -358,9 +361,9 @@ const SmallImageSection = styled.div`
 `;
 const Wrapper = styled.div`
   width: 100%;
-
-  margin: auto;
-  text-align:center;
+  margin:auto;
+  margin-top:68px;
+  text-align: center;
   @media (min-width: 1200px) {
     width: 1034px;
     margin: auto;
@@ -368,10 +371,11 @@ const Wrapper = styled.div`
     padding-right: 15px;
     margin-top: 70px;
   }
+  
 `;
 
 const ActionButton = styled.a`
-  padding:18px 158px;
+  padding: 18px 158px;
   color: var(--mainWhite);
   background-color: var(--mainGreen);
   font-weight: bold;
@@ -381,9 +385,8 @@ const ActionButton = styled.a`
     text-decoration: none;
   }
   @media (max-width: 576px) {
-    margin: auto;
-    margin-top: 50px;
-    width: 239px;
+    display:none;
+    padding:8px 34px;
   }
 `;
 const LineEnding = styled.hr`
@@ -408,7 +411,8 @@ const LineEnding = styled.hr`
     margin-top: 70px;
   }
   @media (max-width: 576px) {
-    margin-top: 50px;
-    width: 157px;
+    display:none;
+    // margin-top: 50px;
+    // width: 157px;
   }
 `;

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Logo from "../assets/logo.svg";
-import FreightShip from "../assets/ship.png";
+import Logo from "../../assets/logo.svg";
+import FreightShip from "../../assets/ship.png";
 import animateScrollTo from "animated-scroll-to";
-import TopTri from "../assets/toptri.svg";
-import Up from "../assets/arrowup.svg";
-// import { HashLink as Link } from "react-router-hash-link";
+import TopTri from "../../assets/toptri.svg";
+import Up from "../../assets/arrowup.svg";
 
 export default function BannerSection() {
   const [TriIndex, setTriIndex] = useState(13);
@@ -231,8 +230,7 @@ const BannerText = styled.div`
   margin-top: 26px;
   font-size: 72px;
   line-height: 98px;
- 
- 
+
   @media (min-width: 576.1px) and (max-width: 767.9px) {
     width: 100%;
     font-size: 48px;
@@ -240,28 +238,28 @@ const BannerText = styled.div`
     height: 100%;
     margin-top: 20px;
   }
-  @media(max-width:576px){
-    display:none;
+  @media (max-width: 576px) {
+    display: none;
   }
 `;
-const SmallBannerText = styled.div `
-@media(min-width:576.1px){
-  display:none;
-}
-margin-bottom:25px;
-`
-const Text= styled.div `
-font-size: 14px;
-line-height: 19px;
-margin-top:9px;
-`
-const SubText= styled.div `
-font-weight: 300;
-font-size: 24px;
-line-height: 28px;
-margin-top:6px;
-width:222px;
-`
+const SmallBannerText = styled.div`
+  @media (min-width: 576.1px) {
+    display: none;
+  }
+  margin-bottom: 25px;
+`;
+const Text = styled.div`
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 9px;
+`;
+const SubText = styled.div`
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 6px;
+  width: 222px;
+`;
 const StyledSectionButton = styled.button`
   display: flex;
   align-items: center;
