@@ -404,9 +404,9 @@ const DividerButton = styled.a`
   justify-content: center;
   font-size: 18px;
   line-height: 25px;
-  width: 325px;
-  height: 35px;
-  padding: 5px 18px 5px 18px;
+  // width: 325px;
+  // height: 35px;
+  padding: 5px 61px;
   background-color: var(--mainGreen);
   color: var(--mainWhite);
   :hover {

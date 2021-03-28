@@ -223,11 +223,12 @@ const RightSection = styled.div`
   }
 `;
 const BannerText = styled.div`
-  width: 486px;
+  width: 562px;
   color: var(--mainBlack);
   margin-top: 26px;
-  font-size: 72px;
-  line-height: 98px;
+  font-size: 64px;
+line-height: 75px;
+font-weight:300;
 
   @media (min-width: 576.1px) and (max-width: 767.9px) {
     width: 100%;
@@ -402,9 +403,7 @@ const DividerButton = styled.a`
   justify-content: center;
   font-size: 18px;
   line-height: 25px;
-  width: 325px;
-  height: 35px;
-  padding: 5px 18px 5px 18px;
+  padding: 5px 9px;
   background-color: var(--mainGreen);
   color: var(--mainWhite);
   :hover {
