@@ -33,6 +33,7 @@ export default function Payment() {
           </DTSection>
           <div>
             <Title>国際決済</Title>
+            <SmallTitle>International Payment</SmallTitle>
           </div>
         </HeaderSection>
         <VisibleOnSmall>
@@ -272,6 +273,7 @@ const DTSection = styled.div`
     width: 180px;
   }
   @media (max-width: 576px) {
+    margin-top:0px;
     width: 85px;
   }
   @media (max-width: 425px) {
@@ -368,7 +370,9 @@ const VisibleOnSmall = styled.div`
   @media (min-width: 768px) {
     display: none;
   }
-`;
+  @media(max-width:768px){
+    margin-bottom:30px;
+  }`;
 const Highlight = styled.div`
   color: var(--mainGreen);
   @media (max-width: 768px) {
@@ -470,6 +474,12 @@ const Title = styled.div`
   width: 421px;
   margin-left: 50px;
   margin-bottom: 127px;
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    margin-left: 282px;
+  }
+  @media (min-width: 1200px) {
+    margin-left: 222px;
+  }
   @media (min-width: 768px) and (max-width: 991px) {
     font-size: 60px;
     margin-bottom: 40px;
@@ -478,22 +488,26 @@ const Title = styled.div`
     width: 400px;
     margin-bottom: 40px;
   }
-  @media (max-width: 576px) {
-    font-size: 36px;
-    line-height: 44px;
-    width: 244px;
-    margin-left: 52px;
+  @media(max-width:576px){
+    display:none;
   }
-  @media (min-width: 1024px) and (max-width: 1199px) {
-    margin-left: 282px;
-  }
-  @media (min-width: 1200px) {
-    margin-left: 222px;
-  }
+  
 `;
+const SmallTitle = styled.div `
+font-weight: 300;
+font-size: 36px;
+line-height: 44px;
+width:235px;
+margin-left:50px;
+margin-bottom:23px;
+@media(min-width:576.1px){
+  display:none;
+}
+
+
+`
 const TextBody = styled.div`
   width: 336px;
-  // height: 118px;
   font-weight: 300;
   font-size: 26px;
   line-height: 45px;
@@ -538,15 +552,8 @@ const ActionButton = styled.a`
     padding-top: 18px;
     padding-bottom: 18px;
   }
-  @media (max-width: 767.9px) {
-    margin-bottom: 70px;
-    height: 100%;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    margin-top: 70px;
-  }
   @media (max-width: 576px) {
-    width: 239px;
+    padding:8px 34px;
   }
 `;
 const LineEnding = styled.hr`
