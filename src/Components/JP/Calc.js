@@ -174,7 +174,7 @@ export default class Calc extends Component {
           this.state.ButtonValueTwo === "NGN"
         ) {
           let RealTimePrice =
-            res.data.rate.toFixed(8) - 0.05 * res.data.rate.toFixed(8);
+            res.data.rate.toFixed(4) - 0.05 * res.data.rate.toFixed(4);
 
           let Amount = Number(this.state.defaultValue - this.state.fixedRates);
           const result = Number(Amount * RealTimePrice).toFixed(5);
@@ -184,7 +184,7 @@ export default class Calc extends Component {
             amountConvert: Amount,
           });
         } else {
-          let RealTimePrice = res.data.rate.toFixed(8);
+          let RealTimePrice = res.data.rate.toFixed(3);
           let Amount = Number(this.state.defaultValue - this.state.fixedRates);
           const result = Number(Amount * RealTimePrice).toFixed(5);
           this.setState({
@@ -695,6 +695,8 @@ const SendSection = styled.div`
 `;
 const Wrapper = styled.div`
   @media (max-width: 426px) {
+    width:290px;
+    margin:auto;
     ${"" /* width: 100%;
     margin: auto; */}
   }
