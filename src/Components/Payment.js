@@ -404,6 +404,7 @@ const TopSmallVisibility = styled.div`
     font-size: 15px;
     line-height: 20px;
     margin: auto;
+    font-weight:300;
   }
 `;
 const FunctionHeader = styled.div`

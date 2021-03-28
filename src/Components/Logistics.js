@@ -32,6 +32,7 @@ export default function Logistics() {
           </DTSection>
           <div>
             <Heading>海外物流</Heading>
+            <SmallHeading>Overseas Logistics</SmallHeading>
             <SubHeading>
               輸出業務は、本当に大変です。
               輸出・輸入基準の確認、各種船積書類の作成、物流会社とのやり取り・・・
@@ -148,6 +149,9 @@ const SideDots = styled.div`
   img {
     width: 265px;
     height: 441px;
+  }
+  @media (max-width: 991px) {
+    display: none;
   }
 `;
 
@@ -270,20 +274,21 @@ const Heading = styled.div`
     width: 300px;
     font-size: 56px;
     margin-left: 30px;
-    height: 200px;
   }
-  @media (max-width: 575.9px) {
-    width: 200px;
+  @media (max-width: 576px) {
+    display: none;
+  }
+`;
+const SmallHeading = styled.div`
+  @media (min-width: 576.1px) {
+    display: none;
+  }
+  @media (max-width: 576px) {
+    width: 244px;
+    font-weight: 300;
     font-size: 36px;
     line-height: 44px;
     margin-left: 50px;
-    height: 90px;
-  }
-  @media (max-width: 426px) {
-    font-size: 36px;
-    line-height: 44px;
-    margin-left: 50px;
-    height: 96px;
   }
 `;
 const SubHeading = styled.div`
@@ -332,7 +337,6 @@ const DigitradPhrase = styled.div`
   font-size: 36px;
   line-height: 45px;
   width: 782px;
-  // height: 45px;
   margin: auto;
   margin-bottom: 60px;
   color: var(--mainBlue);
@@ -346,7 +350,6 @@ const DigitradPhrase = styled.div`
   @media (min-width: 576.9px) and (max-width: 767.9px) {
     width: 90%;
     margin: auto;
-
     font-size: 28px;
     line-height: 45px;
     margin-bottom: 100px;
@@ -378,17 +381,7 @@ const ActionButton = styled.a`
     text-decoration: none;
   }
   @media (max-width: 576px) {
-    width: 60%;
-    margin: auto;
-    margin-top: 50px;
-  }
-  @media (max-width: 425px) {
-    width: 239px;
-    margin: auto;
-    margin-top: 50px;
-  }
-  @media (max-width: 576px) {
-    margin-bottom: 50px;
+    padding: 8px 34px;
   }
 `;
 const LineEnding = styled.hr`
@@ -429,9 +422,6 @@ const SmallBackgroundLine = styled.hr`
     margin-left: 48px;
     height: 250px;
   }
-  ${"" /* @media(max-width:375px){
-  margin-left:55px;
-} */}
 `;
 const BackgroundLine = styled.hr`
   color: var(--mainGreen);
@@ -486,11 +476,12 @@ const SectionText = styled.div`
   text-align: center;
   margin-left: 30px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 576px) {
     width: 165px;
     font-weight: 300;
     font-size: 20px;
     line-height: 29px;
+    text-align: left;
   }
 `;
 const SmallCircleTick = styled.div`
@@ -519,8 +510,7 @@ const SmallHeaderSection = styled.div`
 const CircleTickSection = styled.div`
   position: relative;
   z-index: 2;
-  ${"" /* text-align:center; */}
-  width:1000px;
+  width: 1000px;
   margin: auto;
   margin-top: -60px;
   text-align: center;
@@ -582,14 +572,9 @@ const Center = styled.div`
   text-align: center;
 `;
 const SizeContainer = styled.button`
-  // display: flex;
-  // align-items: center;
   margin: auto;
-  // justify-content: center;
   margin-top: 11px;
   padding: 8px 15px;
-  // width: 672px;
-  // height: 60px;
   border: 1px solid var(--mainBlue);
   font-style: normal;
   font-weight: bold;
