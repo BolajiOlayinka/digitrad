@@ -289,10 +289,7 @@ const StyledSectionButton = styled.button`
   @media (min-width: 992px) and (max-width: 1023.9px) {
     font-size: 16px;
   }
-  @media (min-width: 768px) and (max-width: 991.9px) {
-    font-size: 12px;
-    padding: 6px 8px 6px 8px;
-  }
+  
   @media (min-width: 576px) and (max-width: 767.9px) {
     font-size: 14px;
     padding: 6px 10px 6px 10px;
@@ -337,6 +334,7 @@ const ButtonSection = styled.div`
   padding-bottom: 40px;
   width:630px;
   margin:auto;
+ 
   @media (min-width: 576px) and (max-width: 767.9px) {
     width: 100%;
     flex-wrap: wrap;
