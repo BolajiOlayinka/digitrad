@@ -28,8 +28,8 @@ const LogoContainer = styled.div`
   text-align: center;
   img {
     width: 228.96px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 247px;
+    margin-bottom: 48px;
     cursor:pointer;
   }
   @media(max-width:576px){
