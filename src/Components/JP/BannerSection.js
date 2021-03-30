@@ -59,19 +59,19 @@ export default function BannerSection() {
         </BannerWrapper>
         <ButtonSection>
           <StyledSectionButton onClick={ScrolltoMarketPlace}>
-            CROSSBORDER MARKETPLACE
+          海外マーケットプレイス
           </StyledSectionButton>
 
           <StyledSectionButton onClick={ScrolltoInternationalPayment}>
-            INTERNATIONAL PAYMENT
+          国際送金
           </StyledSectionButton>
 
           <StyledSectionButton onClick={ScrolltoLogistics}>
-            OVERSEAS LOGISTICS
+          国際物流
           </StyledSectionButton>
 
           <StyledSectionButton onClick={ScrolltoFinance}>
-            FINANCIAL TOOLS
+          ファイナンス
           </StyledSectionButton>
         </ButtonSection>
         <DividerContainer>
@@ -335,6 +335,8 @@ const ButtonSection = styled.div`
   justify-content: space-between;
   padding-top: 43px;
   padding-bottom: 40px;
+  width:630px;
+  margin:auto;
   @media (min-width: 576px) and (max-width: 767.9px) {
     width: 100%;
     flex-wrap: wrap;

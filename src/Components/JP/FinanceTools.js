@@ -359,8 +359,8 @@ const ServicePoints = styled.div`
     height: 30px;
     margin-right: 24px;
   }
-  @media(max-width:374px){
-    margin-left:10px;
+  @media (max-width: 374px) {
+    margin-left: 10px;
   }
 `;
 

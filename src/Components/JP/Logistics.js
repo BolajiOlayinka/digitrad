@@ -123,7 +123,7 @@ export default function Logistics() {
             rel="noreferrer"
             target="_blank"
           >
-            LEARN MORE
+            TRY NOW
           </ActionButton>
         </CenterButton>
         <LineEnding />

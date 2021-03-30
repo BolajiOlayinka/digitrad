@@ -32,7 +32,7 @@ export default function Payment() {
             <img src={DT} alt="Icon" />
           </DTSection>
           <div>
-            <Title>国際決済</Title>
+            <Title>国際送金</Title>
             <SmallTitle>International Payment</SmallTitle>
           </div>
         </HeaderSection>
@@ -173,7 +173,7 @@ export default function Payment() {
             rel="noreferrer"
             target="_blank"
           >
-            LEARN MORE
+            試してみる
           </ActionButton>
         </div>
         <LineEnding />

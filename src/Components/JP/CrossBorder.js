@@ -28,7 +28,7 @@ export default function CrossBorder() {
         <HeaderSection className="crossborder">
           <div>
             <Heading>
-              国際 <br />
+            海外 <br />
               マーケットプレイス
             </Heading>
             <SubHeading>こんなお悩みございませんか？</SubHeading>
@@ -438,7 +438,7 @@ const TickText = styled.div`
 `;
 
 const ActionButton = styled.a`
-  padding: 18px 50px;
+  padding: 18px 140px;
   text-align: center;
   color: var(--mainWhite);
   background-color: var(--mainGreen);

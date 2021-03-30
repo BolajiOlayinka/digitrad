@@ -98,7 +98,7 @@ export default function CrossBorder() {
             rel="noreferrer"
             target="_blank"
           >
-            SEE IN ACTION
+            VISIT MARKETPLACE
           </ActionButton>
         </div>
         <LineEnding />
@@ -437,7 +437,7 @@ const TickText = styled.div`
 `;
 
 const ActionButton = styled.a`
-  padding: 18px 50px;
+  padding: 18px 80px;
   text-align: center;
   color: var(--mainWhite);
   background-color: var(--mainGreen);
