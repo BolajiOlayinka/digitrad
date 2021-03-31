@@ -5,7 +5,6 @@ import DT from "../../assets/DT.svg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Dots from "../../assets/sidepolygon.svg";
-import Close from "../../assets/close.svg";
 import Check from "../../assets/check.svg";
 
 export default function FinanceTools() {
