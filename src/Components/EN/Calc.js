@@ -190,7 +190,7 @@ export default class Calc extends Component {
           let RealTimePrice =
             (res.data.rate - 0.05 * res.data.rate).toFixed(3);
 
-          let Amount = Number(this.state.defaultValue - this.state.fixedRates).toFixed(8);
+          let Amount = Number(this.state.defaultValue - this.state.fixedRates);
           const result = Number(Amount * RealTimePrice).toFixed(4);
           this.setState({
             realtimePrice: RealTimePrice,
@@ -602,7 +602,7 @@ export default class Calc extends Component {
         <Wrapper>
           <CalculatorHeader>
             <img src={DT} alt="Digitrad Icon" />
-            <HeaderText>計算してみましょう</HeaderText>
+            <HeaderText>Instant Estimate</HeaderText>
           </CalculatorHeader>
           <SendSection>
             <InputSection>
