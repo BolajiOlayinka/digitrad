@@ -174,31 +174,66 @@ export default class Calc extends Component {
           this.state.ButtonValueTwo === "NGN"
         ) {
           let RealTimePrice =
-            res.data.rate.toFixed(4) - 0.05 * res.data.rate.toFixed(4);
+            res.data.rate.toFixed(3) - 0.05 * res.data.rate.toFixed(3);
 
           let Amount = Number(this.state.defaultValue - this.state.fixedRates);
-          const result = Number(Amount * RealTimePrice).toFixed(5);
+          const result = Number(Amount * RealTimePrice).toFixed(4);
           this.setState({
             realtimePrice: RealTimePrice,
             result: result,
             amountConvert: Amount,
           });
-        } else {
+        } else if (
+          this.state.ButtonValueOne === "USD" &&
+          this.state.ButtonValueTwo === "NGN"
+        ) {
+          let RealTimePrice =
+            (res.data.rate - 0.05 * res.data.rate).toFixed(3);
+
+          let Amount = Number(this.state.defaultValue - this.state.fixedRates).toFixed(8);
+          const result = Number(Amount * RealTimePrice).toFixed(4);
+          this.setState({
+            realtimePrice: RealTimePrice,
+            result: result,
+            amountConvert: Amount,
+          });
+        }else if (
+          this.state.ButtonValueOne === "USDC" &&
+          this.state.ButtonValueTwo === "NGN"
+        ) {
+          let RealTimePrice =
+            (res.data.rate - 0.05 * res.data.rate).toFixed(3);
+
+          let Amount = Number(this.state.defaultValue - this.state.fixedRates);
+          const result = Number(Amount * RealTimePrice).toFixed(4);
+          this.setState({
+            realtimePrice: RealTimePrice,
+            result: result,
+            amountConvert: Amount,
+          });
+        }else if (
+          
+          this.state.ButtonValueTwo === "BTC"
+        ) {
+          let RealTimePrice =
+            (res.data.rate - 0.05 * res.data.rate).toFixed(8);
+            let Amount = Number(this.state.defaultValue - this.state.fixedRates);
+            const result = Number(Amount * RealTimePrice).toFixed(8);
+          this.setState({
+            realtimePrice: RealTimePrice,
+            result: result,
+            amountConvert: Amount,
+          });
+        }else{
           let RealTimePrice = res.data.rate.toFixed(3);
           let Amount = Number(this.state.defaultValue - this.state.fixedRates);
-          const result = Number(Amount * RealTimePrice).toFixed(5);
+          const result = Number(Amount * RealTimePrice).toFixed(4);
           this.setState({
             result: result,
             realtimePrice: RealTimePrice,
             amountConvert: Amount,
           });
         }
-
-        // this.setState({
-        //   result: result,
-        //   realtimePrice: RealTimePrice,
-        //   amountConvert: Amount,
-        // });
       })
       .catch((err) => {
         console.log(err);
@@ -222,9 +257,9 @@ export default class Calc extends Component {
     });
   };
   calculateRate = (rate) => {
-    const fixedRates = Number(rate * this.state.defaultValue);
+    const fixedRates = Number(rate * this.state.defaultValue).toFixed(3);
     const amountConvert = this.state.defaultValue - fixedRates;
-    const result = (amountConvert * this.state.realtimePrice).toFixed(5);
+    const result = (amountConvert * this.state.realtimePrice).toFixed(4);
     this.setState({
       fixedRates: fixedRates,
       amountConvert: amountConvert,
@@ -234,9 +269,9 @@ export default class Calc extends Component {
   calculateJPYRate = (rate) => {
     const fixedRates = Number(rate * this.state.defaultValue);
     const amountConvert = this.state.defaultValue - fixedRates;
-    const realTime = this.state.realtimePrice;
+    const realTime = this.state.realtimePrice.toFixed(4);
 
-    const result = (amountConvert * realTime).toFixed(5);
+    const result = (amountConvert * realTime).toFixed(4);
     this.setState({
       fixedRates: fixedRates,
       amountConvert: amountConvert,
@@ -363,11 +398,11 @@ export default class Calc extends Component {
         } else {
           this.calculateRate(0.007);
 
-          if (this.state.defaultValue < this.state.fixedRates) {
-            alert(
-              `You cannot send less than ${this.state.fixedRates} ${this.state.ButtonValueOne}`
-            );
-          }
+          // if (this.state.defaultValue < this.state.fixedRates) {
+          //   alert(
+          //     `You cannot send less than ${this.state.fixedRates} ${this.state.ButtonValueOne}`
+          //   );
+          // }
         }
       }
     );
