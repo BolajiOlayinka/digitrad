@@ -602,7 +602,7 @@ export default class Calc extends Component {
         <Wrapper>
           <CalculatorHeader>
             <img src={DT} alt="Digitrad Icon" />
-            <HeaderText>Instant Estimate</HeaderText>
+            <HeaderText>計算してみましょう</HeaderText>
           </CalculatorHeader>
           <SendSection>
             <InputSection>
