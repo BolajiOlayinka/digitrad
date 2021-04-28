@@ -38,7 +38,7 @@ export default class Calc extends Component {
   fetchApi = () => {
     axios({
       method: "get",
-      url: `https://rest.coinapi.io/v1/exchangerate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}?apikey=79F91BDD-E04F-4EBE-97E2-BC69E155373A`,
+      url: `http://stg.app.digitrad.world/api/master/currency/rate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}`,
       headers: {
         "Content-Type": "application/json",
         // "X-CoinAPI-Key":`${process.env.REACT_APP_KEY_ONE}`
