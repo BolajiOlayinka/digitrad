@@ -38,7 +38,7 @@ export default class Calc extends Component {
   fetchApi = () => {
     axios({
       method: "get",
-      url: `http://stg.app.digitrad.world/api/master/currency/rate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}`,
+      url: `https://stg.app.digitrad.world/api/master/currency/rate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}`,
       headers: {
         "Content-Type": "application/json"
       },
