@@ -40,8 +40,7 @@ export default class Calc extends Component {
       method: "get",
       url: `http://stg.app.digitrad.world/api/master/currency/rate/${this.state.ButtonValueOne}/${this.state.ButtonValueTwo}`,
       headers: {
-        "Content-Type": "application/json",
-        // "X-CoinAPI-Key":`${process.env.REACT_APP_KEY_ONE}`
+        "Content-Type": "application/json"
       },
     })
       .then((res) => {
